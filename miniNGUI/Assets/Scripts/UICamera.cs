@@ -29,7 +29,7 @@ public class UICamera : MonoBehaviour {
     RaycastHit lastHit;
     static MouseOrTouch currentTouch;
     static MouseOrTouch[] mMouse = new MouseOrTouch[] { new MouseOrTouch() };
-    static GameObject hoveredObject;    // 当前只会有一个
+    static public GameObject hoveredObject;    // 当前只会有一个
     Vector2 lastTouchPosition;
     static bool isDragging = false;
 
