@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BetterList.cs" />
      <Compile Include="Assets\Scripts\EventDelegate.cs" />
      <Compile Include="Assets\Scripts\NGUITools.cs" />
+     <Compile Include="Assets\Scripts\TestDrawCall.cs" />
      <Compile Include="Assets\Scripts\UIButton.cs" />
      <Compile Include="Assets\Scripts\UIButtonColor.cs" />
      <Compile Include="Assets\Scripts\UICamera.cs" />
@@ -56,6 +58,7 @@
      <Compile Include="Assets\Scripts\UIPanel.cs" />
      <Compile Include="Assets\Scripts\UIWidget.cs" />
      <Compile Include="Assets\Scripts\UIWidgetContainer.cs" />
+     <None Include="Assets\Unlit - Transparent Colored.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.2/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
