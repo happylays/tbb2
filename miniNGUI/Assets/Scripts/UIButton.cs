@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class UIButton : UIButtonColor {
 
     // field:--------------------------
-
+    static public UIButton current;
+    public List<EventDelegate> onClick = new List<EventDelegate>();
 
     // properties::--------------------------
-    override bool isEnabled
+    public override bool isEnabled
     {
         get
         {
@@ -23,7 +25,7 @@ public class UIButton : UIButtonColor {
 	// method:--------------------------
 
     // state
-    override void OnInit() 
+    protected override void OnInit() 
     {
         base.OnInit();
     }
@@ -42,8 +44,8 @@ public class UIButton : UIButtonColor {
     }
     
     // event
-    void OnDragOver() { }
-    void OnDragOut() { }
+    void OnDragOver() { return; }
+    void OnDragOut() { return; }
     void OnClick() {
         if (current == null && isEnabled)
         {
@@ -52,7 +54,7 @@ public class UIButton : UIButtonColor {
             current = null;
         }
     }
-    override void SetState(State state) {
+    public override void SetState(State state) {
         base.SetState(state);
 
         switch (state)

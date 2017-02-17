@@ -25,8 +25,10 @@ public class UIButtonColor : UIWidgetContainer {
     // method:--------------------------
 
     // state
-    void Awake() { }
-    void Start() { }
+    void Awake() { if (!mInitDone) OnInit(); }
+    
+    void Start() { if (!isEnabled) SetState(State.Disabled); }
+
     protected virtual void OnInit()
     {
         mInitDone = true;
@@ -52,7 +54,7 @@ public class UIButtonColor : UIWidgetContainer {
     void OnDragOver() { }
     void OnDragOut() { }
     void OnClick() { }
-    virtual void SetState(State state) {
+    public virtual void SetState(State state) {
         if (!mInitDone)
         {
             mInitDone = true;

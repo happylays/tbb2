@@ -83,7 +83,7 @@ public class UICamera : MonoBehaviour {
         bool unpressed = Input.GetMouseButtonUp(0);
         currentTouch = mMouse[0];
         ProcessTouch(pressed, unpressed);
-
+        currentTouch = null;
     }
 
     // process event of touch
@@ -114,10 +114,18 @@ public class UICamera : MonoBehaviour {
             // 还没开始drag，拖动一段了
             if (!currentTouch.dragStarted && currentTouch.last != currentTouch.current)
             {
+                // drag1: 第一次拖，且object不一样，拖动到外部
+                currentTouch.dragStarted = true;
+                currentTouch.delta = currentTouch.totalDelta;
 
+                isDragging = true;
+                Notify(currentTouch.dragged, "OnDragStart", null);
+                Notify(currentTouch.last, "OnDragOver", currentTouch.dragged);
+                isDragging = false;
             }
             else if (!currentTouch.dragStarted && drag < mag)
             {
+                // drag2：current和last一样了，在object内部拖动
                 justStarted = true;
                 currentTouch.dragStarted = true;
                 currentTouch.delta = currentTouch.totalDelta;
@@ -132,18 +140,19 @@ public class UICamera : MonoBehaviour {
                 //如果justStarted
                 //!justStarted, 目标不同了
                 if (justStarted)
-                {
+                {   // 1.刚开始拖，内部拖动
+
                     Notify(currentTouch.dragged, "OnDragStart", null);
                     // drag对象悬浮于drag区域，在drag区域内移动多次触发
                     Notify(currentTouch.current, "OnDragOver", currentTouch.dragged);
                 }
                 else if (currentTouch.last != currentTouch.current)
-                {   // drag出原Object，到另一个object上
+                {   // 2.拖到外部或别的object了；drag出原Object，到另一个object上
                     Notify(currentTouch.last, "OnDragOut", currentTouch.dragged);
                     
                     Notify(currentTouch.current, "OnDragOver", currentTouch.dragged);
                 }
-                // process drag
+                // 3.拖动中
                 Notify(currentTouch.dragged, "OnDrag", currentTouch.delta);
 
                 //更新currentTouch最新object
