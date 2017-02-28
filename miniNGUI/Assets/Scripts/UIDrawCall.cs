@@ -13,8 +13,9 @@ public class UIDrawCall : MonoBehaviour {
     public BetterList<Color32> cols = new BetterList<Color32>();
 
     Material            mMaterial;
-    public Texture             mTexture;
+    public Texture      mTexture;
     Shader              mShader;
+    Transform           mTrans;     // cached transform
     Mesh                mMesh;
     MeshFilter          mFilter;
     MeshRenderer        mRenderer;
@@ -22,15 +23,25 @@ public class UIDrawCall : MonoBehaviour {
 
     [HideInInspector]
     public int[] mIndices;
+    static List<int[]> mCache = new List<int[]>(maxIndexBufferCache);
+    const int maxIndexBufferCache = 10;
+
     bool mRebuildMat = true;
-    float mRenderQueue = 3000;
+    public bool isDirty = false;
+
+    // widget' depth -> panel.depth -> renderQueue
+    // 渲染队列值，由widget的depth决定panel的depth，再决定出material的renderQueue
+    // 也就是渲染顺序
+    int mRenderQueue = 3000;  
     int mTriangles = 0;
 
-    const int maxIndexBufferCache = 10;
-    static List<int[]> mCache = new List<int[]>(maxIndexBufferCache);
+    public int depthStart = int.MaxValue;
+    public int depthEnd = int.MaxValue;    
+    public UIPanel panel;
+    
 
     // properties::----------------------------
-    Material baseMaterial
+    public Material baseMaterial
     {
         get 
         { 
@@ -46,7 +57,7 @@ public class UIDrawCall : MonoBehaviour {
         }
     }
     Material dynamicMaterial { get { return mDynamicMat; } }
-    Texture mainTexture {
+    public Texture mainTexture {
         get
         {
             return mTexture;
@@ -71,6 +82,28 @@ public class UIDrawCall : MonoBehaviour {
         }
     }
 
+    public int renderQueue
+    {
+        get
+        {
+            return mRenderQueue;
+        }
+        set
+        {
+            if (mRenderQueue != value)
+            {
+                mRenderQueue = value;
+
+                if (mDynamicMat != null)
+                {
+                    mDynamicMat.renderQueue = value;
+                }
+            }
+        }
+    }
+
+    public Transform cachedTransform { get { if (mTrans == null) mTrans = transform; return mTrans; } }
+
     // method:----------------------------
     // set dc geometry
     public void UpdateGeometry() {
@@ -80,6 +113,7 @@ public class UIDrawCall : MonoBehaviour {
         {
             // cache all components
             if (mFilter == null) mFilter = gameObject.GetComponent<MeshFilter>();
+            if (mFilter == null) mFilter = gameObject.AddComponent<MeshFilter>();
 
             // populate index buffer
             int indexCount = (count >> 1) * 3;
@@ -118,6 +152,7 @@ public class UIDrawCall : MonoBehaviour {
             mFilter.mesh = mMesh;
 
             if (mRenderer == null) mRenderer = gameObject.GetComponent<MeshRenderer>();
+            if (mRenderer == null) mRenderer = gameObject.AddComponent<MeshRenderer>();
 
             // update material
             UpdateMaterials();
@@ -248,4 +283,57 @@ public class UIDrawCall : MonoBehaviour {
         mCache.Add(rv);
         return rv;
     }
+
+    static public void Destroy(UIDrawCall dc)
+    {
+        if (dc)
+        {
+            if (Application.isPlaying)
+            {
+                if (mActiveList.Remove(dc))
+                {
+                    NGUITools.SetActive(dc.gameObject, false);
+                    mInactiveList.Add(dc);
+                }                    
+            }
+            else
+            {
+                mActiveList.Remove(dc);
+                NGUITools.DestroyImmediate(dc.gameObject);
+            }
+        }
+    }
+
+    static public void ReleaseAll()
+    {
+        ClearAll();
+        ReleaseInactive();
+    }
+
+    static public void ClearAll()
+    {
+        bool playing = Application.isPlaying;
+
+        for (int i = mActiveList.size; i > 0; )
+        {
+            UIDrawCall dc = mActiveList[--i];
+            if (dc)
+            {
+                if (playing) NGUITools.SetActive(dc.gameObject, false);
+                else NGUITools.DestroyImmediate(dc.gameObject);
+            }
+        }
+        mActiveList.Clear();
+    }
+
+    static public void ReleaseInactive()
+    {
+        for (int i = mInactiveList.size; i > 0; )
+        {
+            UIDrawCall dc = mInactiveList[--i];
+            if (dc) NGUITools.DestroyImmediate(dc.gameObject);
+        }
+        mInactiveList.Clear();
+    }
+
 }
