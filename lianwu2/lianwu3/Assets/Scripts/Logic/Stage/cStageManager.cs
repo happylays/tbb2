@@ -35,5 +35,26 @@ public class cStageManager : cSingleton<cStageManager> {
 
     public void Exit() { }
 
-    public void ChangeStage(cBaseStage.eSTAGE stage) { }
+    public void ChangeStage(cBaseStage.eSTAGE stage) {
+
+        if (mCurStage == stage) return;
+
+        mStages[(int)mCurStage].Close();
+
+        mStages[(int)stage].InitStage();
+        mStages[(int)stage].Open();
+
+        ManagedStageMap(mCurStage, stage);
+
+        mCurStage = stage;
+    
+    }
+
+    public void ManagedStageMap(cBaseStage.eSTAGE curStage, cBaseStage.eSTAGE newStage)
+    {
+        switch (newStage)
+        {
+
+        }
+    }
 }
