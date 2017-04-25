@@ -1,13 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cLoginUIManager : MonoBehaviour {
+public class cWorldManager : cSingleton<cWorldManager> {
 
     public void Init() { }
-
-    public void Open() { }
-
-    public void Process() { }
 
     public void Close() { }
 }

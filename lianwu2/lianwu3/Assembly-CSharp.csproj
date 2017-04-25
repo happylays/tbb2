@@ -160,9 +160,12 @@
      <Compile Include="Assets\Scripts\Engine\Camera\cCameraManager.cs" />
      <Compile Include="Assets\Scripts\Engine\Camera\cLookAtCamera.cs" />
      <Compile Include="Assets\Scripts\Engine\Resource\ResourceMgr.cs" />
+     <Compile Include="Assets\Scripts\Engine\Scene\cSceneManager.cs" />
      <Compile Include="Assets\Scripts\Engine\Sound\AudioBehaviour.cs" />
      <Compile Include="Assets\Scripts\Engine\Sound\cAudioManager.cs" />
      <Compile Include="Assets\Scripts\Engine\Sound\cSoundSystem.cs" />
+     <Compile Include="Assets\Scripts\Engine\World\cWorldManager.cs" />
+     <Compile Include="Assets\Scripts\Engine\cSingleton.cs" />
      <Compile Include="Assets\Scripts\Loader\AssetLoader.cs" />
      <Compile Include="Assets\Scripts\Loader\RoleLoader.cs" />
      <Compile Include="Assets\Scripts\Loader\StaticDataLoader.cs" />
@@ -176,7 +179,7 @@
      <Compile Include="Assets\Scripts\Logic\ItemBag\cItemBagData.cs" />
      <Compile Include="Assets\Scripts\Logic\ItemBag\cItemBagLogic.cs" />
      <Compile Include="Assets\Scripts\Logic\Logic.cs" />
-     <Compile Include="Assets\Scripts\Logic\MainFrame\Applications.cs" />
+     <Compile Include="Assets\Scripts\Logic\MainFrame\MainApp.cs" />
      <Compile Include="Assets\Scripts\Logic\Role\Player\PlayerAttr.cs" />
      <Compile Include="Assets\Scripts\Logic\Role\Player\PlayerBase.cs" />
      <Compile Include="Assets\Scripts\Logic\Role\Player\PlayerGene.cs" />
@@ -194,7 +197,9 @@
      <Compile Include="Assets\Scripts\Logic\Stage\Lobby\LobbyUIManager.cs" />
      <Compile Include="Assets\Scripts\Logic\Stage\Login\LoginStage.cs" />
      <Compile Include="Assets\Scripts\Logic\Stage\Login\LoginUIManager.cs" />
-     <Compile Include="Assets\Scripts\Logic\Stage\cStage.cs" />
+     <Compile Include="Assets\Scripts\Logic\Stage\Room\cRoomStage.cs" />
+     <Compile Include="Assets\Scripts\Logic\Stage\Room\cRoomUIManager.cs" />
+     <Compile Include="Assets\Scripts\Logic\Stage\cBaseStage.cs" />
      <Compile Include="Assets\Scripts\Logic\Stage\cStageManager.cs" />
      <Compile Include="Assets\Scripts\Network\Medal\Msg_Medal.cs" />
      <Compile Include="Assets\Scripts\Network\Medal\Msg_MedalInfo.cs" />
@@ -220,6 +225,7 @@
      <Compile Include="Assets\Scripts\UI\UIMgr.cs" />
      <Compile Include="Assets\Scripts\UI\UIWnd.cs" />
      <None Include="Assets\Art_new\Fbx\scene_room\Animation\新建文本文档.txt" />
+     <None Include="Assets\Scripts\Engine\Option\新建文本文档.txt" />
      <None Include="Assets\Scripts\Common\Utils\STL\新建文本文档.txt" />
      <None Include="Assets\Art_new\Scenes\scene_room\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t4m4textures.shader" />

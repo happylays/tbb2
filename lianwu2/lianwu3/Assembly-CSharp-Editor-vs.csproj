@@ -81,6 +81,7 @@
      <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
      <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <None Include="Assets\Art_new\Fbx\scene_room\Animation\新建文本文档.txt" />
+     <None Include="Assets\Scripts\Engine\Option\新建文本文档.txt" />
      <None Include="Assets\Scripts\Common\Utils\STL\新建文本文档.txt" />
      <None Include="Assets\Art_new\Scenes\scene_room\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t4m4textures.shader" />

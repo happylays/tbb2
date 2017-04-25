@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameStage : MonoBehaviour {
+public class cGameStage : cBaseStage
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void InitStage() { }
+
+    public override void Open() { }
+
+    public override void Process() { }
+
+    public override void Close() { }
+
+    public override void Exit() { }
 }

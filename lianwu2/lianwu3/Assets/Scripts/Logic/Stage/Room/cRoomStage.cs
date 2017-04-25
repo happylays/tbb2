@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cLobbyStage : cBaseStage {
+public class cRoomStage : cBaseStage {
 
     public override void InitStage() { }
 
