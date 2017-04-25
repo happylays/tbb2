@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{6546D618-44D6-0733-E351-34BFEBF9D5DA}</ProjectGuid>
+	<ProjectGuid>{67EA6F9F-C147-7D57-F872-C63AD81F0DE9}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,52 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\BMFontReader.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\ChangeLabelFontWizard.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\ChangeSpriteWizard.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\ComponentSelector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUIEditorTools.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUIJson.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUIMenu.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUISelectionTools.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUISettings.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\NGUITransformInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\SpriteSelector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIAtlasInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIAtlasMaker.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UICameraTool.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UICreateNewUIWizard.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UICreateWidgetWizard.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIDrawCallInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIFilledSpriteInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIFontInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIFontMaker.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIImageButtonInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UILabelInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIPanelInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIPanelTool.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIPopupListInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIScrollBarInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UISlicedSpriteInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UISliderInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UISpriteAnimationInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UISpriteInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITextureInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITexturePacker.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
-     <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+     <Compile Include="Assets\Scripts\Engine\Camera\NewBehaviourScript.js" />
      <None Include="Assets\Art_new\Fbx\scene_room\Animation\新建文本文档.txt" />
      <None Include="Assets\Scripts\Common\Utils\STL\新建文本文档.txt" />
-     <None Include="Assets\Art_new\Scenes\scene_room\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_room\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t4m4textures.shader" />
      <None Include="Assets\Scripts\UI\GameStage\MailWindow\新建文本文档.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\mode1_add.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-maskedcolored.shader" />
-     <None Include="Assets\Art_new\Scenes\scene_dance\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_dance\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\gui-textshader(softclip).shader" />
      <None Include="Assets\Art_new\Fbx\scene_lobby\Materials\新建文本文档.txt" />
      <None Include="Assets\Scripts\UI\GameStage\FriendWindow\新建文本文档.txt" />
-     <None Include="Assets\Scripts\Engine\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.5.1.txt" />
      <None Include="Assets\Shaders\ui\XQ-Alpha-ETC.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\gui-textshader(alphaclip).shader" />
@@ -99,12 +65,11 @@
      <None Include="Assets\Art_new\UI\Texture\ui_texture\t_denglu.txt" />
      <None Include="Assets\Art_new\Scenes\meishu_UI\新建文本文档.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\texture\pingdingtext.txt" />
-     <None Include="Assets\Art_new\Scenes\scene_lobby\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_lobby\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t3m3textures.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored(alphaclip).shader" />
      <None Include="Assets\Shaders\scene\新建文本文档.txt" />
      <None Include="Assets\Art_new\Fbx\scene_room\Textures\新建文本文档.txt" />
-     <None Include="Assets\Art_new\Scenes\scene_login\新建文本文档.txt" />
      <None Include="Assets\Art_new\Fbx\scene_lobby\Fbx\新建文本文档.txt" />
      <None Include="Assets\Scripts\UI\GameStage\RoleWindow\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(alphaclip).shader" />
@@ -136,7 +101,7 @@
      <None Include="Assets\Art_new\UI\Texture\icon_texture\fushi_01.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-additivecolored.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(softclip).shader" />
-     <None Include="Assets\Art_new\Scenes\scene_create\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_create\新建文本文档.txt" />
      <None Include="Assets\Scripts\Logic\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 1.82e.txt" />
      <None Include="Assets\Art_new\Fbx\scene_lobby\Animation\新建文本文档.txt" />
@@ -144,16 +109,6 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.2/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.2/Editor/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{34C72D71-8DF6-4D4D-0FCD-0B71346C4E3F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

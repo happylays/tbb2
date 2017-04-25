@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FB1F09A2-B64B-21D8-96C5-35EF97E6C4A3}</ProjectGuid>
+	<ProjectGuid>{6546D618-44D6-0733-E351-34BFEBF9D5DA}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -80,65 +80,67 @@
      <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITexturePacker.cs" />
      <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UITiledSpriteInspector.cs" />
      <Compile Include="Assets\AddOn\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
-     <None Include="Assets\Art_new\Scenes\Stages\scene_create\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Fbx\scene_room\Animation\新建文本文档.txt" />
      <None Include="Assets\Scripts\Common\Utils\STL\新建文本文档.txt" />
-     <None Include="Assets\Art_new\Fbx\scene_lobby\Fbx\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\scene_room\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t4m4textures.shader" />
+     <None Include="Assets\Scripts\UI\GameStage\MailWindow\新建文本文档.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\mode1_add.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-maskedcolored.shader" />
-     <None Include="Assets\Scripts\Logic\Scene\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\scene_dance\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\gui-textshader(softclip).shader" />
+     <None Include="Assets\Art_new\Fbx\scene_lobby\Materials\新建文本文档.txt" />
+     <None Include="Assets\Scripts\UI\GameStage\FriendWindow\新建文本文档.txt" />
+     <None Include="Assets\Scripts\Engine\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.5.1.txt" />
-     <None Include="Assets\Art_new\Scenes\Effects\新建文本文档.txt" />
      <None Include="Assets\Shaders\ui\XQ-Alpha-ETC.shader" />
-     <None Include="Assets\Art_new\Fbx\scene_room\Fbx\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\gui-textshader(alphaclip).shader" />
-     <None Include="Assets\Art_new\Fbx\scene_room\Animation\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed)(alphaclip).shader" />
      <None Include="Assets\Art_new\UI\Texture\ui_texture\t_denglu.txt" />
-     <None Include="Assets\Art_new\Scenes\Stages\scene_room\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\meishu_UI\新建文本文档.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\texture\pingdingtext.txt" />
+     <None Include="Assets\Art_new\Scenes\scene_lobby\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t3m3textures.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored(alphaclip).shader" />
-     <None Include="Assets\Art_new\Scenes\Stages\scene_lobby\新建文本文档.txt" />
-     <None Include="Assets\Scripts\UI\LobbyStage\新建文本文档.txt" />
+     <None Include="Assets\Shaders\scene\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Fbx\scene_room\Textures\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\scene_login\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Fbx\scene_lobby\Fbx\新建文本文档.txt" />
+     <None Include="Assets\Scripts\UI\GameStage\RoleWindow\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(alphaclip).shader" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.6.1c.txt" />
      <None Include="Assets\Shaders\fx\Particle SoftAdd.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-dynamicfont(softclip).shader" />
      <None Include="Assets\Art_new\MatchMode\mode1\mode1font.txt" />
-     <None Include="Assets\Art_new\Scenes\Stages\scene_dance\新建文本文档.txt" />
-     <None Include="Assets\Scripts\UI\GameStage\FriendWindow\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed)(softclip).shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored(softclip).shader" />
-     <None Include="Assets\Art_new\Fbx\scene_lobby\Animation\新建文本文档.txt" />
+     <None Include="Assets\Shaders\character\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-dynamicfont(alphaclip).shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored.shader" />
+     <None Include="Assets\Scripts\Logic\Role\Movement\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-depthcutout.shader" />
+     <None Include="Assets\Art_new\Fbx\scene_room\Fbx\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.0.7c.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.6.1.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored.shader" />
      <None Include="Assets\Shaders\fx\Particle Add Aphle.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcoloredoverlay.shader" />
-     <None Include="Assets\Scripts\Logic\Role\Movement\新建文本文档.txt" />
-     <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed).shader" />
-     <None Include="Assets\Scripts\UI\GameStage\MailWindow\新建文本文档.txt" />
-     <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-depth.shader" />
-     <None Include="Assets\Shaders\character\新建文本文档.txt" />
-     <None Include="Assets\Art_new\MatchMode\mode1\mode1.txt" />
      <None Include="Assets\Art_new\Fbx\scene_lobby\Textures\新建文本文档.txt" />
+     <None Include="Assets\Scripts\UI\LobbyStage\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Fbx\scene_room\Materials\新建文本文档.txt" />
+     <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed).shader" />
+     <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-depth.shader" />
+     <None Include="Assets\Art_new\MatchMode\mode1\mode1.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-dynamicfont.shader" />
      <None Include="Assets\Art_new\UI\Texture\ui_texture\creatrole.txt" />
-     <None Include="Assets\Art_new\Scenes\meishu_UI\新建文本文档.txt" />
      <None Include="Assets\Art_new\UI\Texture\icon_texture\fushi_01.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-additivecolored.shader" />
-     <None Include="Assets\Art_new\Fbx\scene_lobby\Materials\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(softclip).shader" />
-     <None Include="Assets\Scripts\UI\GameStage\RoleWindow\新建文本文档.txt" />
-     <None Include="Assets\Art_new\Fbx\scene_room\Materials\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\scene_create\新建文本文档.txt" />
+     <None Include="Assets\Scripts\Logic\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 1.82e.txt" />
-     <None Include="Assets\Shaders\scene\新建文本文档.txt" />
-     <None Include="Assets\Art_new\Fbx\scene_room\Textures\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Fbx\scene_lobby\Animation\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Effects\新建文本文档.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.7.2/Standalone/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -151,7 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-vs.csproj">
-      <Project>{302500D3-0DEF-B936-B0ED-C84135AF50A3}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
+      <Project>{34C72D71-8DF6-4D4D-0FCD-0B71346C4E3F}</Project>      <Name>Assembly-CSharp-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
