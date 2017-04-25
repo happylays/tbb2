@@ -1,0 +1,44 @@
+{"frames": {
+
+"creat.png":
+{
+	"frame": {"x":2,"y":2,"w":145,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":145,"h":85},
+	"sourceSize": {"w":145,"h":85}
+},
+"nan.png":
+{
+	"frame": {"x":149,"y":2,"w":70,"h":69},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":69},
+	"sourceSize": {"w":70,"h":69}
+},
+"nv.png":
+{
+	"frame": {"x":149,"y":73,"w":66,"h":76},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":66,"h":76},
+	"sourceSize": {"w":66,"h":76}
+},
+"shaizi.png":
+{
+	"frame": {"x":2,"y":151,"w":43,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":41},
+	"sourceSize": {"w":43,"h":41}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "creatrole.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":256},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:1bbdfe50d2864f2b99e1302c0a4fa039$"
+}
+}

@@ -1,0 +1,92 @@
+{"frames": {
+
+"denglu_button.png":
+{
+	"frame": {"x":368,"y":2,"w":140,"h":140},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":140},
+	"sourceSize": {"w":140,"h":140}
+},
+"denglu_di.png":
+{
+	"frame": {"x":2,"y":2,"w":364,"h":337},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":364,"h":337},
+	"sourceSize": {"w":364,"h":337}
+},
+"denglu_gou.png":
+{
+	"frame": {"x":474,"y":234,"w":20,"h":14},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":20,"h":14},
+	"sourceSize": {"w":20,"h":14}
+},
+"denglu_kuang.png":
+{
+	"frame": {"x":474,"y":179,"w":29,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":29,"h":29},
+	"sourceSize": {"w":29,"h":29}
+},
+"denglu_mm.png":
+{
+	"frame": {"x":368,"y":144,"w":104,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":44},
+	"sourceSize": {"w":104,"h":44}
+},
+"denglu_shuru.png":
+{
+	"frame": {"x":474,"y":210,"w":23,"h":22},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":22},
+	"sourceSize": {"w":23,"h":22}
+},
+"denglu_taitou.png":
+{
+	"frame": {"x":2,"y":341,"w":253,"h":110},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":253,"h":110},
+	"sourceSize": {"w":253,"h":110}
+},
+"denglu_xl.png":
+{
+	"frame": {"x":474,"y":144,"w":33,"h":33},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":33},
+	"sourceSize": {"w":33,"h":33}
+},
+"denglu_zc.png":
+{
+	"frame": {"x":368,"y":236,"w":68,"h":61},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":68,"h":61},
+	"sourceSize": {"w":68,"h":61}
+},
+"denglu_zh.png":
+{
+	"frame": {"x":368,"y":190,"w":104,"h":44},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":104,"h":44},
+	"sourceSize": {"w":104,"h":44}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "t_denglu.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:3d81c4031276d01a2996662816fefc9a$"
+}
+}

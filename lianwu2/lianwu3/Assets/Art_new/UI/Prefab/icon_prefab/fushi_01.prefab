@@ -1,0 +1,1856 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: fushi_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  material: {fileID: 2100000, guid: 0307589383e42514cb8738dc871d3e79, type: 2}
+  sprites:
+  - name: all_17000
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17500
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17501
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17502
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17503
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17504
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17505
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17506
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17507
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: all_17510
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2000
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2001
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2002
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2003
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2004
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2005
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2006
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2007
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2008
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2009
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2010
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2011
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2012
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2013
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2014
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2015
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2016
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2017
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2018
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2019
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2020
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2021
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2022
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2023
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2024
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2500
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2501
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2502
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2503
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2504
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2505
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2506
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2507
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2508
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2509
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2510
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2511
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2512
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2513
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2514
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2515
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2516
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2517
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: coat_2518
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_1
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_10
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_11
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_12
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_13
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_14
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_15
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_16
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_17
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_18
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_19
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_2
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_20
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_21
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_22
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_23
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_24
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_25
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_26
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_3
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_4
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_5
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_500
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_501
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_502
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 590
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 590
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_503
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 492
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 492
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_504
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 394
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 394
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_505
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 296
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 296
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_506
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_507
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 100
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 100
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_508
+    outer:
+      serializedVersion: 2
+      x: 884
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 884
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_509
+    outer:
+      serializedVersion: 2
+      x: 786
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 786
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_510
+    outer:
+      serializedVersion: 2
+      x: 688
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 688
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_511
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_512
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_513
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_514
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_515
+    outer:
+      serializedVersion: 2
+      x: 198
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 198
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_516
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 2
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 100
+      y: 2
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_518
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 884
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 884
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_520
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 786
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 786
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_521
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 688
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 688
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_6
+    outer:
+      serializedVersion: 2
+      x: 590
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 590
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_7
+    outer:
+      serializedVersion: 2
+      x: 492
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 492
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_8
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: hair_9
+    outer:
+      serializedVersion: 2
+      x: 296
+      y: 198
+      width: 96
+      height: 96
+    inner:
+      serializedVersion: 2
+      x: 296
+      y: 198
+      width: 96
+      height: 96
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1
