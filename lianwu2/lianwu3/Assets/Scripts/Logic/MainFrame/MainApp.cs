@@ -1,19 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LoveDance.Client.Network;
 
 public class cMainApp : cSingleton<cMainApp>
 {
     cSoundSystem mSoundSystem;
     cResourceManager mResourceManager;
     cCameraManager mCameraManager;
-    cStageManager mStageManager;
+    //cStageManager mStageManager;
 
-    void Awake() 
-    {
-        Init();
-    }
-
-    void Init() 
+    public void Init() 
     {
         mSoundSystem = new cSoundSystem();
         mSoundSystem.Init();
@@ -24,22 +20,23 @@ public class cMainApp : cSingleton<cMainApp>
         mCameraManager = new cCameraManager();
         mCameraManager.Init();
 
-        mStageManager = new cStageManager();
-        mStageManager.Init();
+        cStageManager.Instance.Init();
     }
 
-    void Update() {
+    public void Process() {
 
-        mResourceManager.Process();
+        //mResourceManager.Process();
 
-        mCameraManager.Process();
+        //mCameraManager.Process();
 
-        mStageManager.Process();
+        cStageManager.Instance.Process();
+
+        NetworkMgr.ProcessNetwork();
   
     }
 
     void Exit() 
     {
-        mStageManager.Exit();
+        cStageManager.Instance.Exit();
     }
 }

@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LoveDance.Client.Logic.Login;
 
 public class cLoginStage : cBaseStage {
 
     bool mLoadComplete = false;
     cLoginUIManager mLoginUIManager;
+    protected override string Level
+    {
+        get { return "scene_login"; }
+    }
 
     public override void InitStage() {
         
@@ -14,9 +19,13 @@ public class cLoginStage : cBaseStage {
         mLoginUIManager.Init();
 
         //cMainApp.Instance.InitGMTool();
+
+        cLoginLogic.CreateLogic(NetObserver).RegistNetMessage();
     }
 
     public override void Open() {
+
+        mLoadComplete = false;
 
         cWorldManager.Instance.Close();
 
@@ -24,7 +33,7 @@ public class cLoginStage : cBaseStage {
 
         cResourceManager.Instance.LoadInitSData();
                 
-        cNetwork.Instance.Connect("172.168.6.36");
+        //cNetwork.Instance.Connect("172.168.6.36");
     }
 
     public override void Process() {
@@ -35,8 +44,8 @@ public class cLoginStage : cBaseStage {
             mLoadComplete = true;            
         }
 
-        if (mLoadComplete)
-            cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);
+        //if (mLoadComplete)
+        //    cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);
 
         mLoginUIManager.Process();
     }

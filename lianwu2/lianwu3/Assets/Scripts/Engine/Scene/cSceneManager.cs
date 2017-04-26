@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cSceneManager : MonoBehaviour {
+public class cSceneManager : cSingleton<cSceneManager> {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void LoadLevel(string level)
+    {
+        cSceneLoader.Instance.LoadLevel(level);
+    }
 }

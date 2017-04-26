@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cBaseStage : MonoBehaviour {
+public class cBaseStage : NetMonoBehaviour
+{
 
     public enum eSTAGE
     {
@@ -14,6 +15,11 @@ public class cBaseStage : MonoBehaviour {
     };
 
     protected cStageManager mStageManager;
+
+    protected virtual string Level
+    {
+        get { return string.Empty; }
+    }
 
     public virtual void Init(cStageManager StageManager) {
         mStageManager = StageManager;
@@ -29,5 +35,10 @@ public class cBaseStage : MonoBehaviour {
 
     public virtual void Exit() { }
 
+    public virtual void LoadLevel() {
+
+        cSceneManager.Instance.LoadLevel(Level);
+
+    }
 
 }

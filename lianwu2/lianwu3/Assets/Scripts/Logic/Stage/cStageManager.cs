@@ -1,19 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LoveDance.Client.Network;
 
 public class cStageManager : cSingleton<cStageManager> {
 
     cBaseStage[] mStages = new cBaseStage[(int)cBaseStage.eSTAGE.eStage_Max];
     cBaseStage.eSTAGE mCurStage;
 
-    ServerConnect mServerConnect;
+    //NetworkMgr mNetworkMgr;
     //cGameResourceManager mGameResourceManager;
     //cSceneManager mSceneManager;
     UIMgr mUIMgr;
     PlayerManager mPlayerManager;
 
-    public void Init() {
-        ServerConnect.Instance.Init();
+    public void Init() {        
+
+        NetworkMgr.InitNetwork();
         UIMgr.Instance.Init();
 
         mCurStage = cBaseStage.eSTAGE.eStage_Login;
@@ -40,7 +42,7 @@ public class cStageManager : cSingleton<cStageManager> {
         if (mCurStage == stage) return;
 
         mStages[(int)mCurStage].Close();
-
+        
         mStages[(int)stage].InitStage();
         mStages[(int)stage].Open();
 
@@ -54,7 +56,13 @@ public class cStageManager : cSingleton<cStageManager> {
     {
         switch (newStage)
         {
-
+            case cBaseStage.eSTAGE.eStage_Login:
+            case cBaseStage.eSTAGE.eStage_Lobby:
+            case cBaseStage.eSTAGE.eStage_Room:
+            case cBaseStage.eSTAGE.eStage_Game:
+                cCameraManager.Instance.ChangeCamera();
+                mStages[(int)newStage].LoadLevel();
+                break;
         }
     }
 }
