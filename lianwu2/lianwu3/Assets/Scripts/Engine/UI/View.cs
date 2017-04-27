@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 public class View : NetMonoBehaviour
 {
-    [HideInInspector]
-    public GameObject gameObject;
+    //[HideInInspector]
+    //public GameObject gameObject;
 
     [HideInInspector]
     public View parent;
 
-    virtual public void Init(GameObject go)
+    void Awake()
     {
-        this.gameObject = go;
+        Init();
+    }
+
+    virtual public void Init()
+    {
+        //this.gameObject = go;
         addMsg();
     }
 

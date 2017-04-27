@@ -16,7 +16,7 @@ public class cStageManager : cSingleton<cStageManager> {
     public void Init() {        
 
         NetworkMgr.InitNetwork();
-        UIMgr.Instance.Init();
+        UIMgr.Init();
 
         mCurStage = cBaseStage.eSTAGE.eStage_Login;
         mStages[(int)cBaseStage.eSTAGE.eStage_Login] = new cLoginStage();

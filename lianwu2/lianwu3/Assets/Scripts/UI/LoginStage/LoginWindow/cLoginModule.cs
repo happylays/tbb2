@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoginModule : MonoBehaviour {
+public class cLoginModule : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

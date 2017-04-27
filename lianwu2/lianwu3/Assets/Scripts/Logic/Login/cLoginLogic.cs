@@ -24,7 +24,7 @@ namespace LoveDance.Client.Logic.Login
             base.RegistNetMessage();
             
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_LoginResult, OnRoleLoginRes);
-            //NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_NotActivated, this.OnShowActiveWnd);
+            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_RequireCreateRole, this.OnSelectRole);
             //NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_CheckActivateResult, this.OnCheckActiveResult);
         }
         
@@ -34,6 +34,15 @@ namespace LoveDance.Client.Logic.Login
             //if (resMsg != null && resMsg.nResult == 0)
             //{
                 cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);
+            //}
+        }
+
+        void OnSelectRole(GameMsgBase msg)
+        {
+            GameMsg_S2C_RequireCreateRole resMsg = msg as GameMsg_S2C_RequireCreateRole;
+            //if (resMsg != null && resMsg.nResult == 0)
+            //{
+                cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby); // SelectStage
             //}
         }
 

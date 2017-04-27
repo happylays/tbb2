@@ -3,10 +3,10 @@ using LoveDance.Client.Common;
 using LoveDance.Client.Network;
 using LoveDance.Client.Network.Login;
 
-public class cLoginView : MonoBehaviour
+public class cLoginView : View
 {
     //mvc
-    private cLoginClip _uiClip;
+    private cLoginClip _uiClip;    
 
     void Start()
     {

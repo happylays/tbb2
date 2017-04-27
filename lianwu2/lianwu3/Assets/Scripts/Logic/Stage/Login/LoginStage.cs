@@ -13,7 +13,7 @@ public class cLoginStage : cBaseStage {
 
     public override void InitStage() {
         
-        cResourceManager.Instance.InitLogin();
+        //cResourceManager.Instance.InitLogin();
         
         mLoginUIManager = new cLoginUIManager();
         mLoginUIManager.Init();
@@ -31,18 +31,18 @@ public class cLoginStage : cBaseStage {
 
         mLoginUIManager.Open();
 
-        cResourceManager.Instance.LoadInitSData();
+        //cResourceManager.Instance.LoadInitSData();
                 
         //cNetwork.Instance.Connect("172.168.6.36");
     }
 
     public override void Process() {
 
-        cResourceManager.eDATA_STAGE stage = cResourceManager.Instance.CheckInitData();
-        if (stage == cResourceManager.eDATA_STAGE.eEnd)
-        {
-            mLoadComplete = true;            
-        }
+        //cResourceManager.eDATA_STAGE stage = cResourceManager.Instance.CheckInitData();
+        //if (stage == cResourceManager.eDATA_STAGE.eEnd)
+        //{
+        //    mLoadComplete = true;            
+        //}
 
         //if (mLoadComplete)
         //    cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);

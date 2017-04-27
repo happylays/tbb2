@@ -11,7 +11,7 @@ using System.Collections.Generic;
 /// Tools for the editor
 /// </summary>
 
-public class NGUIEditorTools
+public class NGUIEditorTools 
 {
 	static Texture2D mWhiteTex;
 	static Texture2D mBackdropTex;

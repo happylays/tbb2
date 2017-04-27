@@ -1,45 +1,209 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using LoveDance.Client.Common;
+//using LoveDance.Client.Data.Setting;
+using LoveDance.Client.Loader;
+//using LoveDance.Client.Data;
 
-public class cResourceManager : cSingleton<cResourceManager>
+namespace LoveDance.Client.Logic.Ress
 {
-    public enum eDATA_STAGE
+    public class ClientResourcesMgr
     {
-        eStart = 0,
-        eEnd,
-        eError
-    }
+        static bool s_IsInitUIRes = false;
+        static bool s_IsInitRemainRes = false;
+        static bool s_IsInitCommUIRes = false;
+        static bool s_IsInitRequiredRes = false;
 
-    cItemSData mItemSData;
-    cAmusementSData mAmusementSData;
+        static bool s_IsInitingUIRes = false;
+        static bool s_IsInitingRemainRes = false;
+        static bool s_IsInitingCommUIRes = false;
+        static bool s_IsInitingRequiredRes = false;
 
-    protected eDATA_STAGE mDataLoadFlag;
+        public static bool IsInitRemainRes
+        {
+            get
+            {
+                return s_IsInitRemainRes;
+            }
+        }
 
-    public void Init() {
-        mDataLoadFlag = eDATA_STAGE.eStart;
-    }
+        public static bool AlreadyInitRequiredRes
+        {
+            get
+            {
+                return s_IsInitRequiredRes && !s_IsInitingRequiredRes;
+            }
+        }
 
-    public void InitLogin() {
-        mDataLoadFlag = eDATA_STAGE.eStart;
-    }
+        /// <summary>
+        /// 初始化loader路径
+        /// </summary>
+        public static void InitGameLoader()
+        {
+            
 
-    public void LoadInitSData() 
-    {
-        mDataLoadFlag = eDATA_STAGE.eStart;
+            UIWndLoader.InitUIWndLoader(
+                CommonValue.UIDir,
+                CommonValue.UIWWWDir,
+                CommonValue.InUIDir,
+                CommonValue.InUIWWWDir,
+                CommonValue.NetUIDir);
 
-        mItemSData = new cItemSData();
-        mItemSData.Init();
+            UIAtlasLoader.InitUIAtlasLoader(
+                CommonValue.UIAtlasDir,
+                CommonValue.UIAtlasWWWDir,
+                CommonValue.InUIAtlasDir,
+                CommonValue.InUIAtlasWWWDir,
+                CommonValue.NetUIAtlasDir);
 
-        mAmusementSData = new cAmusementSData();
-        mAmusementSData.Init();
+        }
 
-        mDataLoadFlag = eDATA_STAGE.eEnd;
-    }
-    
-    public void Process() { }
+        /// <summary>
+        /// 加载客户端资源
+        /// </summary>
+        public static IEnumerator LoadClientResource()
+        {
+            IEnumerator itor = LoadRequiredResource();
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
 
-    public eDATA_STAGE CheckInitData()
-    {
-        return mDataLoadFlag;
+            itor = LoadUIResource();
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
+
+            //itor = LoadCommonUI();
+            //while (itor.MoveNext())
+            //{
+            //    yield return null;
+            //}
+
+            //itor = LoadRemainResource();
+            //while (itor.MoveNext())
+            //{
+            //    yield return null;
+            //}
+        }
+
+        //TODO
+        public static void ReleaseClientResource()
+        {
+
+        }
+
+        /// <summary>
+        /// 加载UI资源
+        /// </summary>
+        public static IEnumerator LoadUIResource()
+        {
+            if (!s_IsInitUIRes)
+            {
+                s_IsInitUIRes = true;
+                s_IsInitingUIRes = true;
+
+                //IEnumerator itor = ShaderLoader.LoadAllShader(
+                //    CommonValue.ShaderDir,
+                //    CommonValue.ShaderWWWDir,
+                //    CommonValue.InShaderDir,
+                //    CommonValue.InShaderWWWDir,
+                //    CommonValue.NetShaderDir);
+
+                //while (itor.MoveNext())
+                //{
+                //    yield return null;
+                //}
+
+                IEnumerator itor;
+                itor = UIWndLoader.PrepareUI();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
+
+                s_IsInitingUIRes = false;
+            }
+            else
+            {
+                while (s_IsInitingUIRes)
+                {
+                    yield return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 加载关键性资源
+        /// </summary>
+        public static IEnumerator LoadRequiredResource()
+        {
+            if (!s_IsInitRequiredRes)
+            {
+                s_IsInitingRequiredRes = true;
+                s_IsInitRequiredRes = true;
+
+                //while (!WWWDownLoaderConfig.IsVersionConfigInfoReady)
+                //{
+                //    yield return null;
+                //}
+
+                //IEnumerator itor = LoadStaticData();
+                //while (itor.MoveNext())
+                //{
+                //    yield return null;
+                //}
+
+                IEnumerator itor = UIWndLoader.LoadUIConfig(CommonValue.UIDir, CommonValue.InUIDir, CommonValue.NetUIDir);
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
+
+                s_IsInitingRequiredRes = false;
+            }
+            else
+            {
+                while (s_IsInitingRequiredRes)
+                {
+                    yield return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 加载公共UI资源
+        /// </summary>
+        public static IEnumerator LoadCommonUI()
+        {
+            if (!s_IsInitCommUIRes)
+            {
+                s_IsInitingCommUIRes = true;
+                s_IsInitCommUIRes = true;
+
+                IEnumerator itor = UIWndLoader.LoadMainWndAsync();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
+
+                s_IsInitingCommUIRes = false;
+            }
+            else
+            {
+                while (s_IsInitingCommUIRes)
+                {
+                    yield return null;
+                }
+            }
+        }
+        
+        /// <summary>
+        /// 加载静态数据
+        /// </summary>
+        static IEnumerator LoadStaticData()
+        {
+            yield return null;            
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using LoveDance.Client.Common;
+using LoveDance.Client.Logic.Ress;
 
 public class cLobbyStage : cBaseStage
 {
@@ -14,11 +16,14 @@ public class cLobbyStage : cBaseStage
 
     public override void InitStage()
     {
-        cResourceManager.Instance.InitLogin();
+        ClientResourcesMgr.InitGameLoader();
 
         mLobbyUIManager = new cLobbyUIManager();
         mLobbyUIManager.Init();
 
+        UICoroutine.InitUICoroutine();
+
+        
         //cMainApp.Instance.InitGMTool();
     }
 
@@ -32,15 +37,36 @@ public class cLobbyStage : cBaseStage
         mLobbyUIManager.Open();
 
         //cResourceManager.Instance.LoadInitSData();
+
+        //1. cResourceManager.Instance.LoadClientResource();
+        ClientResourcesMgr.LoadClientResource();
+
+        //2. 
+        UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_createrole, null));
+        
+        
+        //3. AnimationLoader.LoadRoleCreateAnimation();
+        //4. PreparePlayerModel();
+        //5. LoadMusic();
+        //6. LoadBgTexture();
     }
+
+    IEnumerator ShowUI() {
+        IEnumerator itor = UIMgr.ShowUIAsync(UIFlag.ui_createrole, null);
+        while (itor.MoveNext())
+        {
+            yield return null;
+        }
+    }
+
 
     public override void Process()
     {
-        cResourceManager.eDATA_STAGE stage = cResourceManager.Instance.CheckInitData();
-        if (stage == cResourceManager.eDATA_STAGE.eEnd)
-        {
-            mLoadComplete = true;
-        }
+        //cResourceManager.eDATA_STAGE stage = cResourceManager.Instance.CheckInitData();
+        //if (stage == cResourceManager.eDATA_STAGE.eEnd)
+        //{
+        //    mLoadComplete = true;
+        //}
 
         //if (mLoadComplete)
         //    cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);

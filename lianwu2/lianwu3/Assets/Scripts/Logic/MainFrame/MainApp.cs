@@ -5,7 +5,7 @@ using LoveDance.Client.Network;
 public class cMainApp : cSingleton<cMainApp>
 {
     cSoundSystem mSoundSystem;
-    cResourceManager mResourceManager;
+    //cResourceManager mResourceManager;
     cCameraManager mCameraManager;
     //cStageManager mStageManager;
 
@@ -14,8 +14,8 @@ public class cMainApp : cSingleton<cMainApp>
         mSoundSystem = new cSoundSystem();
         mSoundSystem.Init();
 
-        mResourceManager = new cResourceManager();
-        mResourceManager.Init();
+        //mResourceManager = new cResourceManager();
+        //mResourceManager.Init();
 
         mCameraManager = new cCameraManager();
         mCameraManager.Init();
