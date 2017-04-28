@@ -38,12 +38,7 @@ public class cLobbyStage : cBaseStage
 
         //cResourceManager.Instance.LoadInitSData();
 
-        //1. cResourceManager.Instance.LoadClientResource();
-        ClientResourcesMgr.LoadClientResource();
-
-        //2. 
-        UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_createrole, null));
-        
+        UICoroutine.uiCoroutine.StartCoroutine(Load());
         
         //3. AnimationLoader.LoadRoleCreateAnimation();
         //4. PreparePlayerModel();
@@ -51,14 +46,14 @@ public class cLobbyStage : cBaseStage
         //6. LoadBgTexture();
     }
 
-    IEnumerator ShowUI() {
-        IEnumerator itor = UIMgr.ShowUIAsync(UIFlag.ui_createrole, null);
-        while (itor.MoveNext())
-        {
-            yield return null;
-        }
-    }
+    IEnumerator Load()
+    {
+        //1. cResourceManager.Instance.LoadClientResource();
+        yield return UICoroutine.uiCoroutine.StartCoroutine(ClientResourcesMgr.LoadClientResource());
 
+        //2. 
+        UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_activity, null));
+    }
 
     public override void Process()
     {

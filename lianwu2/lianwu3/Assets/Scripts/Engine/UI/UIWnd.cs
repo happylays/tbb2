@@ -65,7 +65,7 @@ public abstract class UIWnd : NetMonoBehaviour
 		}
 	}
 
-	protected virtual void Awake()
+	public virtual void Awake()
 	{
 		UIMgr.RegisterUI( this );
 	}

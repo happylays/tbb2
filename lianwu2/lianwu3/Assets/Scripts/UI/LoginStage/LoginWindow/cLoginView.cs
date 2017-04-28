@@ -8,6 +8,11 @@ public class cLoginView : View
     //mvc
     private cLoginClip _uiClip;    
 
+    public override void Awake()
+    {
+        Init();
+    }
+
     void Start()
     {
         OnShowWnd();
@@ -98,6 +103,8 @@ public class cLoginView : View
     //old
     public void OnShowWnd()
     {
+        //gameObject.SetActive(true);
+
         initView();
         addEvent();
         initData();

@@ -1,0 +1,180 @@
+{"frames": {
+
+"fl_new.png":
+{
+	"frame": {"x":447,"y":123,"w":40,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":41},
+	"sourceSize": {"w":40,"h":41}
+},
+"gc_anniu.png":
+{
+	"frame": {"x":168,"y":94,"w":86,"h":138},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":86,"h":138},
+	"sourceSize": {"w":86,"h":138}
+},
+"gc_anniu_1.png":
+{
+	"frame": {"x":256,"y":124,"w":148,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":148,"h":112},
+	"sourceSize": {"w":148,"h":112}
+},
+"gc_di.png":
+{
+	"frame": {"x":2,"y":291,"w":127,"h":85},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":127,"h":85},
+	"sourceSize": {"w":127,"h":85}
+},
+"gc_di_2.png":
+{
+	"frame": {"x":155,"y":234,"w":92,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":91},
+	"sourceSize": {"w":92,"h":91}
+},
+"gc_input.png":
+{
+	"frame": {"x":489,"y":142,"w":16,"h":15},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":16,"h":15},
+	"sourceSize": {"w":16,"h":15}
+},
+"gc_jiantou.png":
+{
+	"frame": {"x":489,"y":159,"w":14,"h":23},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":14,"h":23},
+	"sourceSize": {"w":14,"h":23}
+},
+"gc_kuang.png":
+{
+	"frame": {"x":447,"y":52,"w":48,"h":35},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":35},
+	"sourceSize": {"w":48,"h":35}
+},
+"gc_taitou.png":
+{
+	"frame": {"x":2,"y":2,"w":256,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":90},
+	"sourceSize": {"w":256,"h":90}
+},
+"gc_taitou_1.png":
+{
+	"frame": {"x":447,"y":89,"w":48,"h":32},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":32},
+	"sourceSize": {"w":48,"h":32}
+},
+"gc_wupinkuan.png":
+{
+	"frame": {"x":447,"y":2,"w":48,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":48},
+	"sourceSize": {"w":48,"h":48}
+},
+"gc_zs.png":
+{
+	"frame": {"x":2,"y":183,"w":151,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":151,"h":106},
+	"sourceSize": {"w":151,"h":106}
+},
+"gc_zs_1.png":
+{
+	"frame": {"x":2,"y":94,"w":164,"h":87},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":164,"h":87},
+	"sourceSize": {"w":164,"h":87}
+},
+"gc_zs_2.png":
+{
+	"frame": {"x":406,"y":166,"w":81,"h":164},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":81,"h":164},
+	"sourceSize": {"w":81,"h":164}
+},
+"gc_zs_3.png":
+{
+	"frame": {"x":260,"y":2,"w":185,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":185,"h":120},
+	"sourceSize": {"w":185,"h":120}
+},
+"gc_zx_button.png":
+{
+	"frame": {"x":489,"y":123,"w":17,"h":17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":17,"h":17},
+	"sourceSize": {"w":17,"h":17}
+},
+"gc_zx_button_1.png":
+{
+	"frame": {"x":2,"y":378,"w":26,"h":17},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":17},
+	"sourceSize": {"w":26,"h":17}
+},
+"huodong_denghao.png":
+{
+	"frame": {"x":131,"y":291,"w":22,"h":16},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":22,"h":16},
+	"sourceSize": {"w":24,"h":20}
+},
+"huodong_yeshu.png":
+{
+	"frame": {"x":497,"y":14,"w":10,"h":10},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":2,"y":2,"w":10,"h":10},
+	"sourceSize": {"w":14,"h":16}
+},
+"huodong_yeshu_1.png":
+{
+	"frame": {"x":497,"y":2,"w":10,"h":10},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":10,"h":10},
+	"sourceSize": {"w":16,"h":16}
+},
+"xx_paopao.png":
+{
+	"frame": {"x":406,"y":124,"w":26,"h":26},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":26,"h":26},
+	"sourceSize": {"w":26,"h":26}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "t_guangchang.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:cefb692601c186afd3b128624c480503$"
+}
+}

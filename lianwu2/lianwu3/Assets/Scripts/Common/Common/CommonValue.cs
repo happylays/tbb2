@@ -124,7 +124,7 @@ namespace LoveDance.Client.Common
 				{
 					if(s_PhoneOSCB == null)
 					{
-						Debug.LogError("CommonSetting PhoneOSCB can not be null.");
+						////Debug.LogError("CommonSetting PhoneOSCB can not be null.");
 					}
 					else
 					{

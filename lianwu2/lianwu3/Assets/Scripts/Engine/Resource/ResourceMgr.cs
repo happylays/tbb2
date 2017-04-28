@@ -103,19 +103,19 @@ namespace LoveDance.Client.Logic.Ress
                 s_IsInitUIRes = true;
                 s_IsInitingUIRes = true;
 
-                //IEnumerator itor = ShaderLoader.LoadAllShader(
-                //    CommonValue.ShaderDir,
-                //    CommonValue.ShaderWWWDir,
-                //    CommonValue.InShaderDir,
-                //    CommonValue.InShaderWWWDir,
-                //    CommonValue.NetShaderDir);
+                IEnumerator itor = ShaderLoader.LoadAllShader(
+                    CommonValue.ShaderDir,
+                    CommonValue.ShaderWWWDir,
+                    CommonValue.InShaderDir,
+                    CommonValue.InShaderWWWDir,
+                    CommonValue.NetShaderDir);
 
-                //while (itor.MoveNext())
-                //{
-                //    yield return null;
-                //}
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
 
-                IEnumerator itor;
+                //IEnumerator itor;
                 itor = UIWndLoader.PrepareUI();
                 while (itor.MoveNext())
                 {

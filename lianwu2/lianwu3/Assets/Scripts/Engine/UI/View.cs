@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
-public class View : NetMonoBehaviour
+using LoveDance.Client.Common;
+
+public class View : UIWnd
 {
     //[HideInInspector]
     //public GameObject gameObject;
 
+    public override UIFlag UIID
+    {
+        get { return UIFlag.none; }
+    }
+
     [HideInInspector]
     public View parent;
 
-    void Awake()
+    public override void Awake()
     {
+        base.Awake();
         Init();
+        
     }
 
     virtual public void Init()

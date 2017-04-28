@@ -139,6 +139,7 @@
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.6.1c.txt" />
      <None Include="Assets\Shaders\fx\Particle SoftAdd.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-dynamicfont(softclip).shader" />
+     <None Include="Assets\Art_new\UI\Texture\ui_texture\t_guangchang.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\mode1font.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed)(softclip).shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored(softclip).shader" />
