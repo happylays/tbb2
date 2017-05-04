@@ -51,7 +51,8 @@ public class cLobbyStage : cBaseStage
 
         //cResourceManager.Instance.LoadInitSData();
 
-        UICoroutine.uiCoroutine.StartCoroutine(Load());
+        //UICoroutine.uiCoroutine.StartCoroutine(Load());
+        UICoroutine.uiCoroutine.StartCoroutine(LoadRole());
 
         // coroutine        
         //LoadMusic();

@@ -70,6 +70,7 @@ public class cLoginView : View
         NetworkMgr.SendMsg(msg);
 
         NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
+        //NetworkMgr.DoMessage(GameMsgType.MSG_S2C_CreateRoleSuc);
     }
     
     // receive msg

@@ -7,7 +7,8 @@ public class cBaseStage : NetMonoBehaviour
     public enum eSTAGE
     {
         eStage_Login = 0,
-        eStage_Lobby,
+        //eStage_Select,
+        eStage_Lobby,        
         eStage_Room,
         eStage_Game,
 

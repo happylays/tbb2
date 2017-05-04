@@ -220,13 +220,13 @@ namespace LoveDance.Client.Logic.Ress
                 s_IsInitingRemainRes = true;
                 s_IsInitRemainRes = true;
 
-                IEnumerator itor = SkinnLoader.LoaddefaultSkins();
-                while (itor.MoveNext())
-                {
-                    yield return null;
-                }
+                //IEnumerator itor = SkinnLoader.LoaddefaultSkins();
+                //while (itor.MoveNext())
+                //{
+                //    yield return null;
+                //}
 
-                itor = BoneLoader.LoadPlayerBone();
+                IEnumerator itor = BoneLoader.LoadPlayerBone();
                 while (itor.MoveNext())
                 {
                     yield return null;

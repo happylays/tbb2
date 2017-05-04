@@ -19,7 +19,9 @@ public class cStageManager : cSingleton<cStageManager> {
         UIMgr.Init();
 
         mCurStage = cBaseStage.eSTAGE.eStage_Login;
+        //mStages = new cBaseStage[(int)cBaseStage.eSTAGE.eStage_Max];
         mStages[(int)cBaseStage.eSTAGE.eStage_Login] = new cLoginStage();
+        //mStages[(int)cBaseStage.eSTAGE.eStage_Select] = new cSelectStage();
         mStages[(int)cBaseStage.eSTAGE.eStage_Lobby] = new cLobbyStage();
         mStages[(int)cBaseStage.eSTAGE.eStage_Room] = new cRoomStage();
         mStages[(int)cBaseStage.eSTAGE.eStage_Game] = new cGameStage();
