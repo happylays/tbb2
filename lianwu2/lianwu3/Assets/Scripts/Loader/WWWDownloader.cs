@@ -549,7 +549,8 @@ namespace LoveDance.Client.Loader
 					gtInfo.m_callBack = callBack;
 					gtInfo.m_strFileUrl = strURL;//for组装下载路径 and 保存路径;
 
-					gtAssetPack = new DownLoadPack(m_strWWWDownLoadUrl, gtInfo, assetType, DownLoadFinish, exData, debugError);
+					//gtAssetPack = new DownLoadPack(m_strWWWDownLoadUrl, gtInfo, assetType, DownLoadFinish, exData, debugError);
+                    gtAssetPack = new DownLoadPack(m_strWWWDownLoadUrl, gtInfo, assetType, null, exData, debugError);
 
 					m_AssetPackMap.Add(strName, gtAssetPack);
 				}
@@ -796,65 +797,65 @@ namespace LoveDance.Client.Loader
 		/// <summary>
 		/// 下载某个资源完成,回调;
 		/// </summary>
-		static private void DownLoadFinish(DownLoadPack assetPack)
-		{
-			if (!assetPack.AssetReady)
-			{
-				Debug.LogError("WWWDownLoader DownLoadFinish,Asset is not Ready.");
-				return;
-			}
+        //static private void DownLoadFinish(DownLoadPack assetPack)
+        //{
+        //    if (!assetPack.AssetReady)
+        //    {
+        //        Debug.LogError("WWWDownLoader DownLoadFinish,Asset is not Ready.");
+        //        return;
+        //    }
 
-			string strName = assetPack.AssetInfo.m_strName;
-			string strMD5 = XQMD5.GetByteMd5String(assetPack.DataBytes);
-			if (assetPack.AssetType != DownLoadAssetType.ConfigVersion)
-			{
-				if (assetPack.DataBytes != null)
-				{
-					//检查服务器MD5和资源是否匹配;
-					if (WWWDownLoaderConfig.EqualsFileMD5WithNetMD5(strName, strMD5))
-					{
-						string strSavePath = CommonValue.ResDir + assetPack.AssetInfo.m_strFileUrl;
-						SaveFile(strSavePath, assetPack.DataBytes);
+        //    string strName = assetPack.AssetInfo.m_strName;
+        //    string strMD5 = XQMD5.GetByteMd5String(assetPack.DataBytes);
+        //    if (assetPack.AssetType != DownLoadAssetType.ConfigVersion)
+        //    {
+        //        if (assetPack.DataBytes != null)
+        //        {
+        //            //检查服务器MD5和资源是否匹配;
+        //            if (WWWDownLoaderConfig.EqualsFileMD5WithNetMD5(strName, strMD5))
+        //            {
+        //                string strSavePath = CommonValue.ResDir + assetPack.AssetInfo.m_strFileUrl;
+        //                SaveFile(strSavePath, assetPack.DataBytes);
 
-						WWWDownLoaderConfig.SaveNewAssetMD5(strName, strMD5, assetPack.AssetInfo.m_strBelongConfig);
-					}
-					else
-					{
-						//配置文件 不存在MD5码;
-					}
-				}
-				else
-				{
-					Debug.LogError("WWWDownLoader DownLoadFinish,DownLoad fail: " + strName);
-				}
-			}
+        //                WWWDownLoaderConfig.SaveNewAssetMD5(strName, strMD5, assetPack.AssetInfo.m_strBelongConfig);
+        //            }
+        //            else
+        //            {
+        //                //配置文件 不存在MD5码;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Debug.LogError("WWWDownLoader DownLoadFinish,DownLoad fail: " + strName);
+        //        }
+        //    }
 
-			//当前下载的总量;
-			m_nDownLoadSize += assetPack.AssetInfo.m_nSize;
+        //    //当前下载的总量;
+        //    m_nDownLoadSize += assetPack.AssetInfo.m_nSize;
 
-			WWWDownLoaderConfig.RemoveNeedUpdateList(strName, strMD5);//从未下载的资源列表 移除;
-			RemoveAssetPackNameList(strName);//从下载队列移除;
+        //    WWWDownLoaderConfig.RemoveNeedUpdateList(strName, strMD5);//从未下载的资源列表 移除;
+        //    RemoveAssetPackNameList(strName);//从下载队列移除;
 
-			if (m_AssetPackMap[strName].m_AssetRefer > 0)//外部在等待这个资源;
-			{
-				//回调通知;
-				if (assetPack.AssetInfo.m_callBack != null)
-				{
-					assetPack.AssetInfo.m_callBack((object)assetPack);
-					assetPack.AssetInfo.m_callBack = null;
-				}
-			}
-			else
-			{
-				//是keepLoading的资源,在下载完成之后,还没有外部引用,是无用的资源,释放;
-				RemoveDownLoad(strName, assetPack.AssetInfo.m_callBack);
-				assetPack.Stop();
-			}
+        //    if (m_AssetPackMap[strName].m_AssetRefer > 0)//外部在等待这个资源;
+        //    {
+        //        //回调通知;
+        //        if (assetPack.AssetInfo.m_callBack != null)
+        //        {
+        //            assetPack.AssetInfo.m_callBack((object)assetPack);
+        //            assetPack.AssetInfo.m_callBack = null;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        //是keepLoading的资源,在下载完成之后,还没有外部引用,是无用的资源,释放;
+        //        RemoveDownLoad(strName, assetPack.AssetInfo.m_callBack);
+        //        assetPack.Stop();
+        //    }
 
 
-			//结束下载后 继续队列的下一个元素下载;
-			StartAll();
-		}
+        //    //结束下载后 继续队列的下一个元素下载;
+        //    StartAll();
+        //}
 
 		/// <summary>
 		/// 生成本地文件;

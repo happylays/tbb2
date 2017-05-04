@@ -122,11 +122,13 @@
      <None Include="Assets\Scripts\Engine\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 2.5.1.txt" />
      <None Include="Assets\Shaders\ui\XQ-Alpha-ETC.shader" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_room\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\gui-textshader(alphaclip).shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(packed)(alphaclip).shader" />
      <None Include="Assets\Art_new\UI\Texture\ui_texture\t_denglu.txt" />
      <None Include="Assets\Art_new\Scenes\meishu_UI\新建文本文档.txt" />
      <None Include="Assets\Art_new\MatchMode\mode1\texture\pingdingtext.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_dance\新建文本文档.txt" />
      <None Include="Assets\Art_new\Scenes\scene_lobby\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\t3m3textures.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-premultipliedcolored(alphaclip).shader" />
@@ -167,8 +169,10 @@
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-additivecolored.shader" />
      <None Include="Assets\AddOn\NGUI\Resources\Shaders\unlit-transparentcolored(softclip).shader" />
      <None Include="Assets\Art_new\Scenes\scene_create\新建文本文档.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_create\新建文本文档.txt" />
      <None Include="Assets\Scripts\Logic\Scene\新建文本文档.txt" />
      <None Include="Assets\AddOn\NGUI\ReadMe - 1.82e.txt" />
+     <None Include="Assets\Art_new\Scenes\Stages\scene_lobby\新建文本文档.txt" />
      <None Include="Assets\Art_new\Fbx\scene_lobby\Animation\新建文本文档.txt" />
      <None Include="Assets\Art_new\Scenes\Effects\新建文本文档.txt" />
  <Reference Include="UnityEngine.UI">

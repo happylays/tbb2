@@ -450,5 +450,30 @@ namespace LoveDance.Client.Data.Item
 		}
 	}
 
+    public class PlaceFashionInfo : IStaticDataBase
+    {
+        public uint ID
+        {
+            get { return m_Place; }
+        }
+
+        public uint m_Place = 0;//部位
+        public List<uint> m_FashionValue = new List<uint>();//时尚值
+
+        public bool Load(XQFileStream xFs)
+        {
+            m_Place = xFs.ReadUInt();
+
+            ushort valueCount = xFs.ReadUShort();
+            uint fashionValue = 0;
+            for (int i = 0; i < valueCount; ++i)
+            {
+                fashionValue = xFs.ReadUInt();
+                m_FashionValue.Add(fashionValue);
+            }
+
+            return true;
+        }
+    }
 
 }

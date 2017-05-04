@@ -5,7 +5,7 @@ using LoveDance.Client.Common;
 using LoveDance.Client.Network;
 //using LoveDance.Client.Network.SystemSetting;
 //using LoveDance.Client.Logic.VIP;
-//using LoveDance.Client.Logic.Role;
+using LoveDance.Client.Logic.Role;
 //using LoveDance.Client.Logic;
 //using LoveDance.Client.Data.Setting;
 
@@ -29,7 +29,7 @@ public class PlayerManager
             //CommonLogicData.MainPlayerID = newPlayer.RoleAttr.RoleID;
 
             MainPlayerItem roleItem = new MainPlayerItem();
-            roleItem.InitItemList(newPlayer.RoleAttr.BadgeGridNum);
+            roleItem.InitItemList(9);//newPlayer.RoleAttr.BadgeGridNum);
             newPlayer.RoleItem = roleItem;
 
         }
@@ -81,59 +81,43 @@ public class PlayerManager
         return newPlayer;
     }
 
-    public static PlayerBase CopyLogicDress(PlayerBase srcPlayer, bool includeEquip)
-    {
-        GameObject targetGO = new GameObject();
-        NewPlayer newPlayer = targetGO.AddComponent<NewPlayer>();
-        newPlayer.IsToShow = true;
+    //public static PlayerBase CopyLogicDress(PlayerBase srcPlayer, bool includeEquip)
+    //{
+    //    GameObject targetGO = new GameObject();
+    //    NewPlayer newPlayer = targetGO.AddComponent<NewPlayer>();
+    //    newPlayer.IsToShow = true;
 
-        if (srcPlayer != null)
-        {
-			PlayerAttr attrClone = null;
-			PlayerItem itemClone = null;
-			PlayerGene geneClone = null;
+    //    if (srcPlayer != null)
+    //    {
+    //        PlayerAttr attrClone = null;
+    //        PlayerItem itemClone = null;
+    //        PlayerGene geneClone = null;
 			
-			if (srcPlayer.RoleAttr != null)
-			{
-				attrClone = (PlayerAttr)srcPlayer.RoleAttr.Clone();
-			}
-			newPlayer.RoleAttr = attrClone;
+    //        if (srcPlayer.RoleAttr != null)
+    //        {
+    //            attrClone = (PlayerAttr)srcPlayer.RoleAttr.Clone();
+    //        }
+    //        newPlayer.RoleAttr = attrClone;
 			
-			if (includeEquip)
-			{
-				if (srcPlayer.RoleItem != null)
-				{
-					itemClone = (PlayerItem)srcPlayer.RoleItem.Clone();
-				}
-				if (srcPlayer.RoleGene != null)
-				{
-					geneClone = (PlayerGene)srcPlayer.RoleGene.Clone();
-				}
-				newPlayer.RoleItem = itemClone;
-				newPlayer.RoleGene = geneClone;
-			}
-		}
+    //        if (includeEquip)
+    //        {
+    //            if (srcPlayer.RoleItem != null)
+    //            {
+    //                itemClone = (PlayerItem)srcPlayer.RoleItem.Clone();
+    //            }
+    //            if (srcPlayer.RoleGene != null)
+    //            {
+    //                geneClone = (PlayerGene)srcPlayer.RoleGene.Clone();
+    //            }
+    //            newPlayer.RoleItem = itemClone;
+    //            newPlayer.RoleGene = geneClone;
+    //        }
+    //    }
 
-        newPlayer.PlayerMoveType = srcPlayer.PlayerMoveType;
+    //    newPlayer.PlayerMoveType = srcPlayer.PlayerMoveType;
 
-        return newPlayer;
-    }
-
-	public static void AddPlayerToControl(NewPlayer newPlayer)
-	{
-		//不屏蔽本人和UI预览的
-		if ((newPlayer.RoleAttr.RoleID == CommonLogicData.MainPlayerID) || (newPlayer.RoleAttr.RoleID == 0))
-		{
-			return;
-		}
-
-		if (!PlayerSetting.ShowLightEffect)
-		{
-			newPlayer.SetClothEffectIsVisible(false);
-		}
-
-		m_PlayerList.Add(newPlayer);
-	}
+    //    return newPlayer;
+    //}
 
 	public static void RemovePlayerFromControl(NewPlayer newPlayer)
 	{
@@ -145,22 +129,7 @@ public class PlayerManager
 			}
 		}
 	}
-
-	/// <summary>
-	/// 设置玩家（NewPlayer）身上的光效石特效显示（隐藏）
-	/// </summary>
-	/// <param name="state"></param>
-	public static void ShowClothEffect(bool state)
-	{
-		for (int i = 0; i < m_PlayerList.Count; i++)
-		{
-			if (m_PlayerList[i] != null)
-			{
-				m_PlayerList[i].SetClothEffectIsVisible(state);
-			}
-		}
-	}
-
+    
 	/// <summary>
 	/// 清除缓存的players数据
 	/// </summary>

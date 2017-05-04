@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using LoveDance.Client.Loader;
 using LoveDance.Client.Common;
 using LoveDance.Client.Network;
-//using LoveDance.Client.Data.Item;
+using LoveDance.Client.Data.Item;
 //using LoveDance.Client.Network.VIP;
 //using LoveDance.Client.Network.Player;
 //using LoveDance.Client.Network.Gene;
 //using LoveDance.Client.Data.Lantern;
 //using LoveDance.Client.Data.Cloth;
 //using LoveDance.Client.Data.GeneEffect;
-//using LoveDance.Client.Data;
+using LoveDance.Client.Data;
 //using LoveDance.Client.Data.Setting;
-//using LoveDance.Client.Network.Item;
+using LoveDance.Client.Network.Item;
 //using LoveDance.Client.Logic.VIP;
 using LoveDance.Client.Logic.Role;
 //using LoveDance.Client.Network.Medal;
@@ -33,6 +33,7 @@ using LoveDance.Client.Logic.Ress;
 //using LoveDance.Client.Network.Room;
 //using LoveDance.Client.Network.Wedding;
 //using LoveDance.Client.Logic.Wedding;
+using LoveDance.Client.Data.Setting;
 
 /// <summary>
 /// 玩家对象实体类;
@@ -468,21 +469,6 @@ public class NewPlayer : PlayerBase
 	}
 
 
-
-	/// <summary>
-	/// 根据变身ID刷新人物
-	/// </summary>
-	IEnumerator RefreshTransform(int trasformID)
-	{
-		while (!ClientResourcesMgr.IsInitRemainRes)
-		{
-			yield return null;
-		}
-
-		OnRefreshTransformID(trasformID);
-	}
-
-
 	public override IEnumerator CreateMainPlayerPhysics(PlayerStyleType curStyle)
 	{
 		IsToShow = true;
@@ -556,135 +542,7 @@ public class NewPlayer : PlayerBase
 		StartDownLoadCloth();
 	}
 
-
-	public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca)
-	{
-		CreateUIRoleCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default));
-	}
-
-	public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel)
-	{
-		CreateUIRoleCamera(topLeft, bottomRight, ca, camLevel, GameLayer.Player_UI);
-	}
-
-	public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, GameLayer targetLayer)
-	{
-		CreateUIRoleCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default), targetLayer);
-	}
-
-	public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer)
-	{
-		CreateUIRoleCamera(topLeft, bottomRight, ca, camLevel, targetLayer, 15);
-	}
-
-	public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer, float fieldOfView)
-	{
-		if (m_UIRoleCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIRoleCamera = new GameObject("UIRoleCamera");
-
-			mTempTrans = m_UIRoleCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(172.5f, 0f, 180f);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.9f, 7.6f);
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIRoleCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.Nothing;
-			cr.depth = ca.depth;
-			cr.cullingMask = 1 << (int)targetLayer;
-			cr.fieldOfView = fieldOfView;
-			cr.nearClipPlane = camLevel.Level.x;
-			cr.farClipPlane = camLevel.Level.y;
-
-			Vector3 tl = ca.WorldToScreenPoint(topLeft);
-			Vector3 br = ca.WorldToScreenPoint(bottomRight);
-			Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-			if (rect != cr.rect)
-			{
-				cr.rect = rect;
-			}
-
-			m_LastStyle = CurrentStyle;
-			CurrentStyle = PlayerStyleType.World;
-
-			CommonFunc.SetLayer(cachedGameObject, targetLayer, true, GameLayer.Player);
-			m_CurrentPlayerLayer = targetLayer;
-			//create light;
-			GameObject Playerlight = new GameObject("Player_UI_LIGHT");
-			Light l = Playerlight.AddComponent<Light>();
-			l.type = LightType.Directional;
-			l.color = Color.white;
-			l.intensity = 0.35f;
-			l.renderMode = LightRenderMode.ForcePixel;
-			l.cullingMask = 1 << (int)targetLayer;
-			mTempTrans = l.transform;
-			mTempTrans.parent = m_UIRoleCamera.transform;
-			mTempTrans.localRotation = Quaternion.Euler(13.7f, 327.7f, 334.3f);
-
-			//Disable LightProb because we have a light;
-			EnableLightProb(false);
-		}
-	}
-
-	public override void UpdateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca,  GameLayer targetLayer)
-	{
-		UpdateUIRoleCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default), targetLayer);
-	}
-
-	public override void UpdateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer)
-	{
-		if (m_UIRoleCamera != null)
-		{
-			Camera cr = m_UIRoleCamera.GetComponent<Camera>();
-			if (cr != null && ca != null)
-			{
-				Vector3 tl = ca.WorldToScreenPoint(topLeft);
-				Vector3 br = ca.WorldToScreenPoint(bottomRight);
-
-				Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-				if (rect != cr.rect)
-				{
-					cr.rect = rect;
-				}
-			}
-		}
-		else
-		{
-			CreateUIRoleCamera(topLeft, bottomRight, ca, camLevel, targetLayer);
-		}
-	}
-
-	public override void EnableLightProb(bool bEnable)
-	{
-		SkinnedMeshRenderer[] ss = cachedGameObject.GetComponentsInChildren<SkinnedMeshRenderer>(true);
-		int skinLength = ss.Length;
-		for (int i = 0; i < skinLength; ++i)
-		{
-			SkinnedMeshRenderer s = ss[i];
-			if (s != null)
-			{
-				s.useLightProbes = bEnable;
-			}
-			else
-			{
-				Debug.LogError("NewPlayer EnableLightProb failed.SkinnedMeshRenderer can not be null.");
-			}
-		}
-		m_buseLightProb = bEnable;
-
-	}
-
+    
 	public override void ChangeCurrentLayer(GameLayer targetLayer, GameLayer srcLayer)
 	{
 		m_CurrentPlayerLayer = targetLayer;
@@ -694,444 +552,7 @@ public class NewPlayer : PlayerBase
 
 		CommonFunc.SetLayer(cachedGameObject, m_CurrentPlayerLayer, true, srcLayer);
 	}
-
-	public override void DestroyUIRoleCamera()
-	{
-		if (m_UIRoleCamera != null)
-		{
-			Destroy(m_UIRoleCamera);
-			m_UIRoleCamera = null;
-
-			CurrentStyle = m_LastStyle;
-			m_LastStyle = PlayerStyleType.None;
-			m_CurrentPlayerLayer = GameLayer.Player;
-			CommonFunc.SetLayer(cachedGameObject, GameLayer.Player, true, GameLayer.Player_UI);
-			EnableLightProb(true);
-		}
-	}
-
-	public override void CreateCeremonyRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel)
-	{
-		if (m_UIRoleCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIRoleCamera = new GameObject("UIRoleCeremonyCamera");
-
-			mTempTrans = m_UIRoleCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(172.5f, 180f, 180f);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.8f, -7.6f);
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIRoleCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.Nothing;
-			cr.depth = ca.depth;
-			cr.cullingMask = 1 << (int)GameLayer.Player_UI;
-			cr.fieldOfView = 15;
-			cr.nearClipPlane = camLevel.Level.x;
-			cr.farClipPlane = camLevel.Level.y;
-
-			Vector3 tl = ca.WorldToScreenPoint(topLeft);
-			Vector3 br = ca.WorldToScreenPoint(bottomRight);
-			Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-			if (rect != cr.rect)
-			{
-				cr.rect = rect;
-			}
-
-			CommonFunc.SetLayer(cachedGameObject, GameLayer.Player_UI, true, GameLayer.Player);
-			m_CurrentPlayerLayer = GameLayer.Player_UI;
-			//create light;
-			GameObject Playerlight = new GameObject("Player_UI_LIGHT");
-			Light l = Playerlight.AddComponent<Light>();
-			l.type = LightType.Directional;
-			l.color = Color.white;
-			l.intensity = 0.35f;
-			l.renderMode = LightRenderMode.ForcePixel;
-			l.cullingMask = 1 << (int)GameLayer.Player_UI;
-			mTempTrans = l.transform;
-			mTempTrans.parent = m_UIRoleCamera.transform;
-			mTempTrans.localRotation = Quaternion.Euler(13.7f, 327.7f, 334.3f);
-
-			//Disable LightProb because we have a light;
-			EnableLightProb(false);
-		}
-	}
-
-	public override void DestroyCeremonyRoleCamera()
-	{
-		if (m_UIRoleCamera != null)
-		{
-			Destroy(m_UIRoleCamera);
-			m_UIRoleCamera = null;
-
-			m_CurrentPlayerLayer = GameLayer.Player;
-			CommonFunc.SetLayer(cachedGameObject, GameLayer.Player, true, GameLayer.Player_UI);
-
-			EnableLightProb(true);
-		}
-	}
-
-	/// <summary>
-	/// 半身像;
-	/// </summary>
-	public override Camera CreateUIBustCamera(Camera ca)
-	{
-		return CreateUIBustCamera( ca, new CameraLevel(CameraLevel.Default), m_CurrentPlayerLayer);
-	}
-
-	/// <summary>
-	/// 半身像;
-	/// </summary>
-	public override Camera CreateUIBustCamera( Camera ca, GameLayer targetLayer)
-	{
-		return CreateUIBustCamera( ca, new CameraLevel(CameraLevel.Default), targetLayer);
-	}
-
-	/// <summary>
-	/// 半身像;
-	/// </summary>
-	public override Camera CreateUIBustCamera(Camera ca, CameraLevel camLevel, GameLayer targetLayer)
-	{
-		if (m_UIBustCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIBustCamera = new GameObject("UIBustCamera");
-
-			mTempTrans = m_UIBustCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(3f, 180, 0);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.55f, 4f);
-			ChangeUIFaceCameraPosY();
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIBustCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.SolidColor;
-			cr.depth = -2;
-			cr.cullingMask = 1 << (int)targetLayer;
-			cr.fieldOfView = 11;
-			cr.nearClipPlane = camLevel.Level.x;
-			cr.farClipPlane = camLevel.Level.y;
-			cr.farClipPlane = 5;
-
-			CommonFunc.SetLayer(cachedGameObject, targetLayer, true, GameLayer.Player);
-			m_CurrentPlayerLayer = targetLayer;
-			
-			//create light;
-			GameObject Playerlight = new GameObject("Player_UI_LIGHT");
-			Light l = Playerlight.AddComponent<Light>();
-			l.type = LightType.Directional;
-			l.color = Color.white;
-			l.intensity = 0.35f;
-			l.renderMode = LightRenderMode.ForcePixel;
-			l.cullingMask = 1 << (int)targetLayer;
-			mTempTrans = l.transform;
-			mTempTrans.parent = m_UIBustCamera.transform;
-			mTempTrans.localRotation = Quaternion.Euler(13.7f, 327.7f, 334.3f);
-
-			//Disable LightProb because we have a light;
-			EnableLightProb(false);
-
-			return cr;
-		}
-		return m_UIBustCamera.GetComponent<Camera>();
-	}
-
-	public override void DestroyUIBustCamera()
-	{
-		if (m_UIBustCamera != null)
-		{
-			Destroy(m_UIBustCamera);
-			m_UIBustCamera = null;
-
-			EnableLightProb(true);
-		}
-	}
-
-	public override void CreateUIFaceCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca)
-	{
-		CreateUIFaceCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default), m_CurrentPlayerLayer);
-	}
-
-	public override void CreateUIFaceCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, GameLayer targetLayer)
-	{
-		CreateUIFaceCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default), targetLayer);
-	}
-
-	public override void CreateUIFaceCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer)
-	{
-		if (m_UIFaceCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIFaceCamera = new GameObject("UIFaceCamera");
-
-			mTempTrans =  m_UIFaceCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(180f, 0f, 180f);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.55f, 1.8f);
-			ChangeUIFaceCameraPosY();
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIFaceCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.Nothing;
-			cr.depth = ca.depth;
-			cr.cullingMask = 1 << (int)targetLayer;
-			cr.fieldOfView = 15;
-			cr.nearClipPlane = camLevel.Level.x;
-			cr.farClipPlane = camLevel.Level.y;
-
-			CommonFunc.SetLayer(cachedGameObject, targetLayer, true, GameLayer.Player);
-			m_CurrentPlayerLayer = targetLayer;
-
-			Vector3 tl = ca.WorldToScreenPoint(topLeft);
-			Vector3 br = ca.WorldToScreenPoint(bottomRight);
-			Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-			if (rect != cr.rect)
-			{
-				cr.rect = rect;
-			}
-		}
-	}
-
-	public override void CreateUICoupleFaceCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, float angleOffset, bool needLight)
-	{
-		if (m_UIFaceCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIFaceCamera = new GameObject("UIFaceCamera");
-
-			mTempTrans = m_UIFaceCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(180f, angleOffset, 180f);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.55f, 2.5f);
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIFaceCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.Nothing;
-			cr.depth = ca.depth;
-			cr.cullingMask = 1 << (int)GameLayer.Player_UI_Secnod;
-			cr.fieldOfView = 15;
-			CameraLevel tempCamLev = new CameraLevel(CameraLevel.UIPlayer);
-			cr.nearClipPlane = tempCamLev.Level.x;
-			cr.farClipPlane = tempCamLev.Level.y;
-
-			CommonFunc.SetLayer(cachedGameObject, GameLayer.Player_UI_Secnod, true, GameLayer.Player);
-			m_CurrentPlayerLayer = GameLayer.Player_UI_Secnod;
-
-			Vector3 tl = ca.WorldToScreenPoint(topLeft);
-			Vector3 br = ca.WorldToScreenPoint(bottomRight);
-			Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-			if (rect != cr.rect)
-			{
-				cr.rect = rect;
-			}
-
-			if (needLight)
-			{
-				//create light;
-				GameObject Playerlight = new GameObject("Player_UI_LIGHT");
-				Light l = Playerlight.AddComponent<Light>();
-				l.type = LightType.Directional;
-				l.color = Color.white;
-				l.intensity = 0.35f;
-				l.renderMode = LightRenderMode.ForcePixel;
-				l.cullingMask = 1 << (int)GameLayer.Player_UI_Secnod;
-				mTempTrans = l.transform;
-				mTempTrans.parent = m_UIFaceCamera.transform;
-				mTempTrans.localRotation = Quaternion.Euler(13.7f, 327.7f, 334.3f);
-			}
-			//Disable LightProb because we have a light;
-			EnableLightProb(false);
-		}
-	}
-
-	public override void DestroyUICoupleFaceCamera()
-	{
-		if (m_UIFaceCamera != null)
-		{
-			Destroy(m_UIFaceCamera);
-			m_UIFaceCamera = null;
-
-			EnableLightProb(true);
-		}
-	}
-
-	public override void ShowUIFaceCamera()
-	{
-		if (m_UIFaceCamera != null)
-		{
-			m_UIFaceCamera.gameObject.SetActive(true);
-		}
-	}
-
-	public override void HideUIFaceCamera()
-	{
-		if (m_UIFaceCamera != null)
-		{
-			m_UIFaceCamera.gameObject.SetActive(false);
-		}
-	}
-
-	public override void CreateUIHalfBodyCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, float angleOffset)
-	{
-		if (m_UIHalfBodyCamera == null)
-		{
-			if (ca == null)
-			{
-				ca = Camera.main;
-			}
-
-			IsToShow = true;
-
-			m_UIHalfBodyCamera = new GameObject("UIHalfBodyCamera");
-
-			mTempTrans = m_UIHalfBodyCamera.transform;
-			Quaternion q = mTempTrans.localRotation;
-			q.eulerAngles = new Vector3(180f, angleOffset, 180f);
-
-			mTempTrans.parent = cachedTransform;
-			mTempTrans.localPosition = new Vector3(0f, 1.4f, 4f);
-			ChangeUIHalfBodyCameraPosY();
-			mTempTrans.localRotation = q;
-			mTempTrans.localScale = Vector3.zero;
-
-			Camera cr = m_UIHalfBodyCamera.AddComponent<Camera>();
-			cr.clearFlags = CameraClearFlags.Nothing;
-			cr.depth = ca.depth;
-			cr.cullingMask = 1 << (int)m_CurrentPlayerLayer;
-			cr.fieldOfView = 15;
-			CameraLevel camLevel = new CameraLevel(CameraLevel.UIPlayer);
-			cr.nearClipPlane = camLevel.Level.x;
-			cr.farClipPlane = camLevel.Level.y;
-
-			Vector3 tl = ca.WorldToScreenPoint(topLeft);
-			Vector3 br = ca.WorldToScreenPoint(bottomRight);
-			Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-			if (rect != cr.rect)
-			{
-				cr.rect = rect;
-			}
-		}
-	}
-
-	public override void DestroyUIFaceCamera()
-	{
-		if (m_UIFaceCamera != null)
-		{
-			Destroy(m_UIFaceCamera);
-			m_UIFaceCamera = null;
-		}
-	}
-
-	public override void DestroyUIHalfBodyCamera()
-	{
-		if (m_UIHalfBodyCamera != null)
-		{
-			Destroy(m_UIHalfBodyCamera);
-			m_UIHalfBodyCamera = null;
-		}
-	}
-
-	public override void UpdateUIFaceCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca)
-	{
-		if (m_UIFaceCamera != null)
-		{
-			Camera cr = m_UIFaceCamera.GetComponent<Camera>();
-			if (cr != null && ca != null)
-			{
-				Vector3 tl = ca.WorldToScreenPoint(topLeft);
-				Vector3 br = ca.WorldToScreenPoint(bottomRight);
-
-				Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
-				if (rect != cr.rect)
-				{
-					cr.rect = rect;
-				}
-			}
-		}
-	}
-
-	private void ShowHandEffect(bool bShow)
-	{
-		if (m_RoleBone != null)
-		{
-			TrailRenderer leftHandRen = m_RoleBone.m_LeftHandBone.GetComponent<TrailRenderer>();
-			TrailRenderer rightHandRen = m_RoleBone.m_RightHandBone.GetComponent<TrailRenderer>();
-
-			if (leftHandRen != null)
-			{
-				leftHandRen.enabled = bShow;
-			}
-
-			if (rightHandRen != null)
-			{
-				rightHandRen.enabled = bShow;
-			}
-		}
-	}
-
-	private void ReplaceBodyPartSync(uint itemType, ItemCloth_Type partType, string partResName, ItemCloth_Type[] arExcludeType, bool bShowLoading)
-	{
-		StartCoroutine(LoadBodyPartAsync(itemType, partType, partResName, arExcludeType, bShowLoading));
-	}
-
-	public override void RevertBodyPartSync(ItemCloth_Type partType, bool bShowLoading)
-	{
-		StartCoroutine(UnloadBodyPartAsync(partType, false, bShowLoading));
-	}
-
-	public override void RevertBodySync(bool bShowLoading)
-	{
-		StartCoroutine(RevertBodyAsync(bShowLoading));
-		StartCoroutine(RevertClothEffectAsync());
-	}
-
-	public override void AddEffectPartSync(ushort geneID, int effectID, int effectPriority, bool bShowLoading)
-	{
-		StartCoroutine(LoadEffectPartAsync(geneID, effectID, effectPriority, bShowLoading));
-	}
-
-	public override void RemoveEffectPartSync(ushort geneID, bool bShowLoading)
-	{
-		StartCoroutine(UnloadEffectPartAsync(geneID, bShowLoading));
-	}
-
+        
 	public override IEnumerator DestroyPlayer()
 	{
 		IsToShow = false;
@@ -1218,6 +639,8 @@ public class NewPlayer : PlayerBase
 
 	private IEnumerator CreateBody(PhysicsType pType)
 	{
+        RoleBodyLoader[] arrAttachLoader = new RoleBodyLoader[(int)ItemCloth_Type.ItemCloth_Type_MaxNumber];
+		
 		if (pType == PhysicsType.Player)
 		{
 			bool bEuipSuit = AddEquipBody(ref arrAttachLoader);
@@ -1266,46 +689,10 @@ public class NewPlayer : PlayerBase
 
 		m_bBodyCreated = true;
 		SendMessage("OnBodyCreated", null, SendMessageOptions.DontRequireReceiver);
-
-		itor = RevertClothEffectAsync();
-		while (itor.MoveNext())
-		{
-			yield return null;
-		}
-		
+        		
 		StartDownLoadCloth();
 
 		EndHandling();
-	}
-
-	/// <summary>
-	/// 创建座驾
-	/// </summary>
-	IEnumerator CreateVehicle()
-	{
-		IEnumerator itor = RevertVehicleAsync(false);
-		while (itor.MoveNext())
-		{
-			yield return null;
-		}
-	}
-
-	IEnumerator CreateEffect()
-	{
-		IEnumerator itor = RevertEffectAsync(false);
-		while (itor.MoveNext())
-		{
-			yield return null;
-		}
-	}
-
-
-	/// <summary>
-	/// 将当前的player添加的本地player控制器
-	/// </summary>
-	void AddPlayerToPlayerControl()
-	{
-		PlayerManager.AddPlayerToControl(this);
 	}
 
 	/// <summary>
@@ -1508,371 +895,6 @@ public class NewPlayer : PlayerBase
 		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves,
 			GetRoleBodyLoader(SystemSetting.GetInitEquip("gloves", RoleAttr.IsBoy), ItemCloth_Type.ItemCloth_Type_Gloves, null),
 			ref arrAttachLoader);
-	}
-
-	void AddNpcGuideBody(ref RoleBodyLoader[] arrAttachLoader)
-	{
-		string equipStr = SystemSetting.GetNpcEquip("headwear_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Cap,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Cap, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("hair_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hair,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Hair, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("face_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Face,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Face, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("shoulders_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Shoulders,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Shoulders, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("gloves_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Gloves, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("righthand_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_RightHand,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_RightHand, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("cloth_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Suit,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Suit, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNpcEquip("shoes_npc");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Feet,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Feet, null),
-				ref arrAttachLoader);
-		}
-	}
-
-	void AddNpcMinisterBody(ref RoleBodyLoader[] arrAttachLoader)
-	{
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hair,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("hair_minister"), ItemCloth_Type.ItemCloth_Type_Hair, null),
-			ref arrAttachLoader);
-
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Face,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("face_minister"), ItemCloth_Type.ItemCloth_Type_Face, null),
-			ref arrAttachLoader);
-
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Body,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("coat_minister"), ItemCloth_Type.ItemCloth_Type_Body, null),
-			ref arrAttachLoader);
-
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Feet,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("shoes_minister"), ItemCloth_Type.ItemCloth_Type_Feet, null),
-			ref arrAttachLoader);
-
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Leg,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("leg_minister"), ItemCloth_Type.ItemCloth_Type_Leg, null),
-			ref arrAttachLoader);
-
-		AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves,
-			GetRoleBodyLoader(SystemSetting.GetWeddingProp("gloves_minister"), ItemCloth_Type.ItemCloth_Type_Gloves, null),
-			ref arrAttachLoader);
-	}
-
-	void AddNpcDancePartnerBody(ref RoleBodyLoader[] arrAttachLoader)
-	{
-		string equipStr = SystemSetting.GetNoviceProp("hair_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hair,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Hair, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNoviceProp("face_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Face,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Face, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNoviceProp("coat_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Body,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Body, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNoviceProp("shoes_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Feet,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Feet, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNoviceProp("leg_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Leg,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Feet, null),
-				ref arrAttachLoader);
-		}
-
-		equipStr = SystemSetting.GetNoviceProp("gloves_minister");
-		if (!string.IsNullOrEmpty(equipStr))
-		{
-			AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves,
-				GetRoleBodyLoader(equipStr, ItemCloth_Type.ItemCloth_Type_Gloves, null),
-				ref arrAttachLoader);
-		}
-	}
-
-	void AddNpcLanternBody(ref RoleBodyLoader[] arrAttachLoader)
-	{
-		LanternNpcData npcInfo = StaticData.LanternMgr.GetLanternNpcInfoByID(m_NpcID);
-		if (npcInfo != null)
-		{
-			if (npcInfo.m_Trans != 0)
-			{
-				AddRoleBody(ItemCloth_Type.ItemCloth_Type_Transform, GetRoleBodyLoader(npcInfo.m_Trans), ref arrAttachLoader);
-			}
-			else
-			{
-				if (npcInfo.m_Hair != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hair, GetRoleBodyLoader(npcInfo.m_Hair), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Face != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Face, GetRoleBodyLoader(npcInfo.m_Face), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Body != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Body, GetRoleBodyLoader(npcInfo.m_Body), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Gloves != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves, GetRoleBodyLoader(npcInfo.m_Gloves), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Leg != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Leg, GetRoleBodyLoader(npcInfo.m_Leg), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Cap != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Cap, GetRoleBodyLoader(npcInfo.m_Cap), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Facial != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Facial_Content, GetRoleBodyLoader(npcInfo.m_Facial), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Shoulders != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Shoulders, GetRoleBodyLoader(npcInfo.m_Shoulders), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Wing != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Wing, GetRoleBodyLoader(npcInfo.m_Wing), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_LeftHand != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_LeftHand, GetRoleBodyLoader(npcInfo.m_LeftHand), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_RightHand != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_RightHand, GetRoleBodyLoader(npcInfo.m_RightHand), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Wrist != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Wrist, GetRoleBodyLoader(npcInfo.m_Wrist), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Hip != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hip, GetRoleBodyLoader(npcInfo.m_Hip), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Socks != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Socks, GetRoleBodyLoader(npcInfo.m_Socks), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_Feet != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Feet, GetRoleBodyLoader(npcInfo.m_Feet), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_TwoHandTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooArm, GetRoleBodyLoader(npcInfo.m_TwoHandTatto), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_TwoLegTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooLeg, GetRoleBodyLoader(npcInfo.m_TwoLegTatto), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_BodyTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooBody, GetRoleBodyLoader(npcInfo.m_BodyTatto), ref arrAttachLoader);
-				}
-			}
-
-			m_nSkinItem = npcInfo.m_NpcSkin;
-		}
-		else
-		{
-			AddDefaultBody(false, ref arrAttachLoader);
-		}
-	}
-
-	private void AddNpcBigMamaBody(ref RoleBodyLoader[] arrAttachLoader)
-	{
-		BigMamaNpcData npcInfo = StaticData.DanceGroupMgr.GetBigMamaNpcByID(m_NpcID);
-		if (npcInfo != null)
-		{
-			if (npcInfo.m_nTrans != 0)
-			{
-				AddRoleBody(ItemCloth_Type.ItemCloth_Type_Transform, GetRoleBodyLoader(npcInfo.m_nTrans), ref arrAttachLoader);
-			}
-			else
-			{
-				if (npcInfo.m_nHair != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hair, GetRoleBodyLoader(npcInfo.m_nHair), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nFace != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Face, GetRoleBodyLoader(npcInfo.m_nFace), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nBody != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Body, GetRoleBodyLoader(npcInfo.m_nBody), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nGloves != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Gloves, GetRoleBodyLoader(npcInfo.m_nGloves), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nLeg != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Leg, GetRoleBodyLoader(npcInfo.m_nLeg), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nCap != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Cap, GetRoleBodyLoader(npcInfo.m_nCap), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nFacial != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Facial_Content, GetRoleBodyLoader(npcInfo.m_nFacial), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nShoulders != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Shoulders, GetRoleBodyLoader(npcInfo.m_nShoulders), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nWing != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Wing, GetRoleBodyLoader(npcInfo.m_nWing), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nLeftHand != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_LeftHand, GetRoleBodyLoader(npcInfo.m_nLeftHand), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nRightHand != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_RightHand, GetRoleBodyLoader(npcInfo.m_nRightHand), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nWrist != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Wrist, GetRoleBodyLoader(npcInfo.m_nWrist), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nHip != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Hip, GetRoleBodyLoader(npcInfo.m_nHip), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nSocks != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Socks, GetRoleBodyLoader(npcInfo.m_nSocks), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_nFeet != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_Feet, GetRoleBodyLoader(npcInfo.m_nFeet), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_TwoHandTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooArm, GetRoleBodyLoader(npcInfo.m_TwoHandTatto), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_TwoLegTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooLeg, GetRoleBodyLoader(npcInfo.m_TwoLegTatto), ref arrAttachLoader);
-				}
-
-				if (npcInfo.m_BodyTatto != 0)
-				{
-					AddRoleBody(ItemCloth_Type.ItemCloth_Type_TattooBody, GetRoleBodyLoader(npcInfo.m_BodyTatto), ref arrAttachLoader);
-				}
-			}
-
-			m_nSkinItem = npcInfo.m_nNpcSkin;
-		}
-		else
-		{
-			AddDefaultBody(false, ref arrAttachLoader);
-		}
 	}
 
 	bool AddRoleBody(ItemCloth_Type Part, RoleBodyLoader bodyLoader, ref RoleBodyLoader[] attachList)
@@ -2498,28 +1520,7 @@ public class NewPlayer : PlayerBase
 			}
 		}
 	}
-
-	public override IEnumerator LoadBodyPartAsync(uint itemType, ItemCloth_Type partType, string partResName, ItemCloth_Type[] arExcludeType, bool bShowLoading)
-	{
-		if (ItemCloth_Type.ItemCloth_Type_Skin == partType)
-		{
-			_LoadBodySkinSync(itemType);
-		}
-		else
-		{
-			IEnumerator itor = _LoadBodyPartAsync(partType, partResName, arExcludeType, bShowLoading);
-			while (itor.MoveNext())
-			{
-				yield return null;
-			}
-		}
-
-		if (m_RoleStyle != null && m_RoleStyle.OwnerPlayer != null)
-		{
-			m_RoleStyle.ChangeMoveAnimation(itemType, partType);
-		}
-	}
-
+    
 	void _LoadBodySkinSync(uint itemType)
 	{
 		m_nSkinItem = itemType;
@@ -2638,10 +1639,10 @@ public class NewPlayer : PlayerBase
 
 	IEnumerator _LoadBodyPartAsync(ItemCloth_Type partType, string partResName, ItemCloth_Type[] arExcludeType, bool bShowLoading)
 	{
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(true);
-		}
+        //if (bShowLoading)
+        //{
+        //    LoadingMgr.ShowLoading(true);
+        //}
 
 		while (!BeginHandling())
 		{
@@ -2663,15 +1664,15 @@ public class NewPlayer : PlayerBase
 				//开始本地加载流程;
 				if (attachLoaderList.Count != 0 || CheckHasBodyChange(releaseTypeList))
 				{
-					if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
-					{
-						Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-					}
-					else
-					{
-						//可能出现 网络服饰切换到本地服饰.帘子应该关掉;
-						Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-					}
+                    //if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
+                    //{
+                    //    Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
+                    //}
+                    //else
+                    //{
+                    //    //可能出现 网络服饰切换到本地服饰.帘子应该关掉;
+                    //    Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
+                    //}
 
 					ReleaseAsyncBodyLoader(releaseTypeList);//下载队列正好有删除的部位,立即停止下载;
 
@@ -2697,40 +1698,19 @@ public class NewPlayer : PlayerBase
 
 		EndHandling();
 
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(false);
-		}
+        //if (bShowLoading)
+        //{
+        //    LoadingMgr.ShowLoading(false);
+        //}
 	}
 
-	public override IEnumerator UnloadBodyPartAsync(ItemCloth_Type clothType, bool bReinit, bool bShowLoading)
-	{
-		if (ItemCloth_Type.ItemCloth_Type_Skin == clothType)
-		{
-			_UnloadBodySkinSync(bReinit);
-		}
-		else
-		{
-			IEnumerator itor = _UnloadBodyPartAsync(clothType, bReinit, bShowLoading);
-			while (itor.MoveNext())
-			{
-				yield return null;
-			}
-		}
-
-		if (m_RoleStyle != null && m_RoleStyle.OwnerPlayer != null && m_RoleStyle.OwnerPlayer.RoleItem != null)
-		{
-			CEquipItem itemInfo = m_RoleStyle.OwnerPlayer.RoleItem.GetCurrentEquip(clothType);
-			m_RoleStyle.ChangeMoveAnimation(clothType, itemInfo);
-		}
-	}
 
 	private IEnumerator _UnloadBodyPartAsync(ItemCloth_Type clothType, bool bReinit, bool bShowLoading)
 	{
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(true);
-		}
+        //if (bShowLoading)
+        //{
+        //    LoadingMgr.ShowLoading(true);
+        //}
 
 		while (!BeginHandling())
 		{
@@ -2804,15 +1784,15 @@ public class NewPlayer : PlayerBase
 			//开始本地加载流程;
 			if (attachLoaderList.Count != 0 || CheckHasBodyChange(releaseTypeList))
 			{
-				if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
-				{
-					Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-				}
-				else
-				{
-					//可能出现 网络服饰切换到本地服饰.帘子应该关掉;
-					Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-				}
+                //if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
+                //{
+                //    Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
+                //}
+                //else
+                //{
+                //    //可能出现 网络服饰切换到本地服饰.帘子应该关掉;
+                //    Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
+                //}
 
 				IEnumerator itor = LoadAttachRoleBody(attachLoaderList);
 				while (itor.MoveNext())
@@ -2829,11 +1809,6 @@ public class NewPlayer : PlayerBase
 		}
 
 		EndHandling();
-
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(false);
-		}
 	}
 
 	void _UnloadBodySkinSync(bool bReinit)
@@ -2850,113 +1825,41 @@ public class NewPlayer : PlayerBase
 		ChangeBodySkin(skinItem);
 	}
 
-	public override IEnumerator RevertBodyAsync(bool bShowLoading)
-	{
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(true);
-		}
 
-		while (!BeginHandling())
-		{
-			yield return null;
-		}
+    void ProcessBody(List<RoleBodyLoader> attachList, List<ItemCloth_Type> releaseList)
+    {
+        if (releaseList != null)
+        {
+            int releaseCount = releaseList.Count;
+            for (int i = 0; i < releaseCount; ++i)
+            {
+                ItemCloth_Type clothType = releaseList[i];
+                DettachFromBone(clothType);
+                ReleaseBodyLoader(clothType);
+            }
+        }
 
-		for (int i = 0; i < (int)ItemCloth_Type.ItemCloth_Type_MaxNumber; i++)
-		{
-			ReleaseAsyncBodyLoader((ItemCloth_Type)i);
-		}
+        if (attachList != null)
+        {
+            int listCount = attachList.Count;
+            for (int i = 0; i < listCount; ++i)
+            {
+                RoleBodyLoader bodyLoader = attachList[i];
+                if (bodyLoader != null)
+                {
+                    DettachFromBone(bodyLoader.ClothType);
+                    ReleaseBodyLoader(bodyLoader.ClothType);
 
-		List<ItemCloth_Type> releaseTypeList = new List<ItemCloth_Type>();
-		List<RoleBodyLoader> attachLoaderList = new List<RoleBodyLoader>();
-
-		for (ItemCloth_Type clothType = ItemCloth_Type.ItemCloth_Type_Hair; clothType < ItemCloth_Type.ItemCloth_Type_MaxNumber; ++clothType)
-		{
-			if (ItemCloth_Type.ItemCloth_Type_Skin == clothType)
-			{
-				m_nSkinItem = 0;
-				_LoadBodySkinSync(m_nSkinItem);
-			}
-			else
-			{
-				//qiangxing charu daima
-				if (clothType != ItemCloth_Type.ItemCloth_Type_Transform)
-				{
-					RoleBodyLoader relatedLoader = GetRelatedBodyLoader(ItemCloth_Type.ItemCloth_Type_Transform);
-					if (relatedLoader != null)
-					{
-						releaseTypeList.Add(clothType);
-						continue;
-					}
-				}
-
-				if (clothType == ItemCloth_Type.ItemCloth_Type_Body || clothType == ItemCloth_Type.ItemCloth_Type_Leg)
-				{
-					RoleBodyLoader relatedLoader = GetRelatedBodyLoader(ItemCloth_Type.ItemCloth_Type_Suit);
-					if (relatedLoader != null)
-					{
-						releaseTypeList.Add(clothType);
-						continue;
-					}
-				}
-
-				RoleBodyLoader bodyLoader = GetRelatedBodyLoader(clothType);
-				if (bodyLoader != null)
-				{
-					if (LoaderNeedProc(bodyLoader))
-					{
-						attachLoaderList.Add(bodyLoader);
-					}
-				}
-				else
-				{
-					releaseTypeList.Add(clothType);
-				}
-			}
-		}
-
-		//区分 是加载or下载 队列;
-		attachLoaderList = GetAttachRoleBodyLoaderList(attachLoaderList);
-
-		//开始本地加载流程;
-		if (attachLoaderList.Count != 0 || CheckHasBodyChange(releaseTypeList))
-		{
-			if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
-			{
-				Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-			}
-			else
-			{
-				//可能出现 网络服饰切换到本地服饰.帘子应该关掉;
-				Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-			}
-
-			ReleaseAsyncBodyLoader(releaseTypeList);
-
-			IEnumerator itor = LoadAttachRoleBody(attachLoaderList);
-			while (itor.MoveNext())
-			{
-				yield return null;
-			}
-			ProcessBody(attachLoaderList, releaseTypeList);
-
-			ChangeBodySkin(m_nSkinItem);
-		}
-
-		StartDownLoadCloth();
-
-		if (m_RoleStyle != null)
-		{
-			m_RoleStyle.ChangeMoveAnimation();
-		}
-
-		EndHandling();
-
-		if (bShowLoading)
-		{
-			LoadingMgr.ShowLoading(false);
-		}
-	}
+                    AttachToBone(bodyLoader);
+                    m_arBodyLoader[(int)bodyLoader.ClothType] = bodyLoader;
+                }
+                else
+                {
+                    Debug.LogError("NewPlayer ProcessBody failed.RoleBodyLoader can not be null.");
+                }
+            }
+        }
+    }
 
 	public override void SetBodyPartState(ItemCloth_Type clothType, bool show)
 	{
@@ -3224,8 +2127,8 @@ public class NewPlayer : PlayerBase
 
 		m_LastStyle = PlayerStyleType.None;
 
-		DestroyUIRoleCamera();
-		DestroyUIFaceCamera();
+        //DestroyUIRoleCamera();
+        //DestroyUIFaceCamera();
 
 		PlayerStyle[] playerStyles = cachedGameObject.GetComponents<PlayerStyle>();
 		if (playerStyles != null)
@@ -3246,36 +2149,6 @@ public class NewPlayer : PlayerBase
 		}
 	}
 
-	public override void AttachDefaultEffectForStage()
-	{
-		//m_DefaultFootEffectm_arBodyEffect
-		if (m_arBodyEffect[(int)EffectPart.Foot] == null)
-		{
-			if (m_DefaultFootEffectGo == null)
-			{
-				GameObject effectAsset = EffectLoader.DefaultFootEffect;
-				if (effectAsset != null)
-				{
-					m_DefaultFootEffectGo = (GameObject)Instantiate(effectAsset);
-				}
-			}
-			if (m_DefaultFootEffectGo != null)
-			{
-				mTempTrans = m_DefaultFootEffectGo.transform;
-				mTempTrans.parent = RolePivot.PivotFixed;
-				mTempTrans.localPosition = Vector3.zero;
-				CommonFunc.SetLayer(m_DefaultFootEffectGo, m_CurrentPlayerLayer, true, GameLayer.Player);
-			}
-		}
-	}
-	public override void DettachDefaultEffectForStage()
-	{
-		if (m_DefaultFootEffectGo != null && m_arBodyEffect[(int)EffectPart.Foot] == null)
-		{
-			m_DefaultFootEffectGo.SetActive(false);
-			m_DefaultFootEffectGo.transform.parent = null;
-		}
-	}
 
 	public override GameObject GetBodyExtra(ItemCloth_Type itemClothType)
 	{
@@ -3286,153 +2159,12 @@ public class NewPlayer : PlayerBase
 		return null;
 	}
 
-	public override void LoadVIPEnterRoomEffect()
-	{
-		StartCoroutine(LoadVIPEnterRoomEffectAsync());
-	}
-
-	public override IEnumerator LoadVIPEnterRoomEffectAsync()
-	{
-		if (RoleAttr != null)
-		{
-			if (RoleAttr.IsVIP)
-			{
-				CVIPPrivilegeInfo infoPrivilege = VIPData.Instance.GetVIPPrivilegeInfoByLevel(RoleAttr.VIPLevel);
-				if (infoPrivilege != null)
-				{
-					// Add enter room effect 
-					if (!string.IsNullOrEmpty(infoPrivilege.m_strEnterRoomViewEffe))
-					{
-						IEnumerator itor = ReplaceVIPEffect(infoPrivilege.m_strEnterRoomViewEffe, EffectPart.Foot);
-						while (itor.MoveNext())
-						{
-							yield return null;
-						}
-					}
-				}
-			}
-		}
-		else
-		{
-			Debug.Log("Load VIP Enter Room Effect Error: RoleAttr is null");
-		}
-	}
-
-	public override void UnloadVIPEnterRoomEffect()
-	{
-		// Remove the enter room effect 
-		StartCoroutine(ReplaceVIPEffect(null, EffectPart.None));
-	}
-
-	private void UnloadPlayerTitleEffect()
-	{
-		if (RoleTitle != null)
-		{
-			RoleTitle.UnloadPlayerTitleEffect();
-		}
-	}
-
-	public override void RefreshVIPAnimation()
-	{
-		PlayerStyle style = cachedGameObject.GetComponent<PlayerStyle>();
-		if (style != null)
-		{
-			style.RefreshVIPAnimation();
-		}
-	}
-
-	public override void RefreshShiningAnimation()
-	{
-		if (RoleStyle != null)
-		{
-			RoleStyle.RefreshShiningJewelryAnimation();
-		}
-	}
-
+    
 	public override void SetBodyScale(float scale)
 	{
 		cachedTransform.localScale = Vector3.one * m_InitScale * scale;
 	}
 
-	public override void ChangeUIFaceCameraPosY()
-	{
-		if (m_UIFaceCamera != null && m_RoleStyle != null)
-		{
-			Vector3 pos = m_UIFaceCamera.transform.localPosition;
-			if (m_RoleStyle.RealMoveType == PlayerMoveType.Fly)
-			{
-				pos.y = 1.7f;
-			}
-			else
-			{
-				pos.y = 1.55f;
-			}
-			m_UIFaceCamera.transform.localPosition = pos;
-		}
-	}
-
-	private void ChangeUIHalfBodyCameraPosY()
-	{
-		if (m_UIHalfBodyCamera != null && m_RoleStyle != null)
-		{
-			Vector3 pos = m_UIHalfBodyCamera.transform.localPosition;
-			if (m_RoleStyle.RealMoveType == PlayerMoveType.Fly)
-			{
-				pos.y = 1.55f;
-			}
-			else
-			{
-				pos.y = 1.4f;
-			}
-			m_UIHalfBodyCamera.transform.localPosition = pos;
-		}
-	}
-
-	public override void OnRefreshTransformID(int newTransformID)
-	{
-		if (RoleAttr != null)
-		{
-			int oldTransformID = RoleAttr.TransformID;
-
-			RoleAttr.OnRefreshTransformID(newTransformID);
-
-			if (oldTransformID != newTransformID && !UIMgr.IsUIShowing(UIFlag.ui_mall))
-			{
-				RevertBodySync(false);
-			}
-
-			if (CommonLogicData.IsMainPlayer(RoleAttr.RoleID))
-			{
-				SyncTransformId();
-			}
-
-			RefreshVIPAnimation();
-		}
-	}
-
-	public override void ChangeClothToTransform(bool transform)
-	{
-		int transformID = 0;
-		if (RoleAttr != null)
-		{
-			transformID = RoleAttr.TransformID;
-		}
-
-		if (transform)
-		{
-			if (transformID != 0)
-			{
-				OnRefreshTransformID(0);
-			}
-		}
-		else
-		{
-			if (transformID != 0)
-			{
-				StartCoroutine(ReverBodyToNormalImageAsync());
-			}
-		}
-	}
 
 	private List<RoleBodyLoader> GetAttachRoleBodyLoaderList(RoleBodyLoader[] tempLoaderList)
 	{
@@ -3507,115 +2239,6 @@ public class NewPlayer : PlayerBase
 		return attachLoaderList;
 	}
 
-	public override IEnumerator ReverBodyToNormalImageAsync()
-	{
-		while (!BeginHandling())
-		{
-			yield return null;
-		}
-
-		List<ItemCloth_Type> releaseTypeList = new List<ItemCloth_Type>();
-		List<RoleBodyLoader> attachLoaderList = new List<RoleBodyLoader>();
-
-		for (ItemCloth_Type clothType = ItemCloth_Type.ItemCloth_Type_Hair; clothType < ItemCloth_Type.ItemCloth_Type_MaxNumber; ++clothType)
-		{
-			if (ItemCloth_Type.ItemCloth_Type_Skin == clothType)
-			{
-				m_nSkinItem = 0;
-				_LoadBodySkinSync(m_nSkinItem);
-			}
-			else
-			{
-				if (clothType != ItemCloth_Type.ItemCloth_Type_Transform)
-				{
-					RoleBodyLoader relatedLoader = GetNormalRelatedBodyLoader(ItemCloth_Type.ItemCloth_Type_Transform);
-					if (relatedLoader != null)
-					{
-						releaseTypeList.Add(clothType);
-						continue;
-					}
-				}
-
-				if (clothType == ItemCloth_Type.ItemCloth_Type_Body || clothType == ItemCloth_Type.ItemCloth_Type_Leg)
-				{
-					RoleBodyLoader relatedLoader = GetNormalRelatedBodyLoader(ItemCloth_Type.ItemCloth_Type_Suit);
-					if (relatedLoader != null)
-					{
-						releaseTypeList.Add(clothType);
-						continue;
-					}
-				}
-
-				RoleBodyLoader bodyLoader = GetNormalRelatedBodyLoader(clothType);
-				if (bodyLoader != null)
-				{
-					if (LoaderNeedProc(bodyLoader))
-					{
-						attachLoaderList.Add(bodyLoader);
-					}
-				}
-				else
-				{
-					releaseTypeList.Add(clothType);
-				}
-			}
-		}
-
-		IEnumerator itor = null;
-
-		//区分 是加载or下载 队列;
-		attachLoaderList = GetAttachRoleBodyLoaderList(attachLoaderList);
-
-		//开始本地加载流程;
-		if (attachLoaderList.Count != 0 || CheckHasBodyChange(releaseTypeList))
-		{
-			if (CheckDownLoadNeedBrocastDown())//是否需要帘子;
-			{
-				Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_START, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-			}
-			else
-			{
-				//可能出现 网络服饰切换到本地服饰.帘子应该关掉;
-				Messenger<object>.Broadcast(MessangerEventDef.DOWNROLERES_END, RoleAttr.RoleID, MessengerMode.DONT_REQUIRE_LISTENER);
-			}
-
-			ReleaseAsyncBodyLoader(releaseTypeList);
-
-			itor = LoadAttachRoleBody(attachLoaderList);
-			while (itor.MoveNext())
-			{
-				yield return null;
-			}
-			ProcessBody(attachLoaderList, releaseTypeList);
-
-			ChangeBodySkin(m_nSkinItem);
-		}
-		
-		StartDownLoadCloth();
-
-		if (RoleItem != null)
-		{
-			for (ItemCloth_Type clothType = ItemCloth_Type.ItemCloth_Type_Hair; clothType < ItemCloth_Type.ItemCloth_Type_MaxNumber; ++clothType)
-			{
-				CEquipItem equipItem = RoleItem.GetNormalRelatedEquip(clothType);
-				if (equipItem != null)
-				{
-					itor = LoadClothEffect(equipItem.m_EffectId, clothType, equipItem.ItemInfo.m_ClothColor);
-					while (itor.MoveNext())
-					{
-						yield return null;
-					}
-				}
-			}
-		}
-
-		if (m_RoleStyle != null)
-		{
-			m_RoleStyle.ChangeMoveAnimation();
-		}
-
-		EndHandling();
-	}
 
 	RoleBodyLoader GetNormalRelatedBodyLoader(ItemCloth_Type clothType)
 	{
@@ -3641,20 +2264,6 @@ public class NewPlayer : PlayerBase
 		return bodyLoader;
 	}
 
-	private void SyncTransformId()
-	{
-		GameMsg_C2S_PlayerMotion msg = new GameMsg_C2S_PlayerMotion();
-		if (RoleAttr != null)
-		{
-			msg.TransformId = (ushort)RoleAttr.TransformID;
-		}
-		else
-		{
-			Debug.Log("Player Motion Error: RoleAttr is null");
-		}
-		NetworkMgr.SendMsg(msg);
-	}
-
 	void ChangeBodySize()
 	{
 		if (RoleAttr != null)
@@ -3665,41 +2274,17 @@ public class NewPlayer : PlayerBase
 				cachedTransform.localScale = scale;
 			}
 			
-			if (RoleTitle != null)
-			{
-				RoleTitle.RefreshPos_TransformTitle();
-			}
+            //if (RoleTitle != null)
+            //{
+            //    RoleTitle.RefreshPos_TransformTitle();
+            //}
 		}
 		else
 		{
 			Debug.Log("Change Body Size Error: RoleAttr is null");
 		}
 	}
-
-	public override void PlayTransitionAni()
-	{
-		GameObject extra = null;
-		for (int i = 0; i < m_arBodyExtra.Length; ++i)
-		{
-			if (CheckTransitionPart((ItemCloth_Type)i))
-			{
-				extra = m_arBodyExtra[i];
-				if (extra != null)
-				{
-					Vector3 scale = m_arBodyExtraScale[i];
-					//Vector3 scale = extra.transform.localScale;
-					extra.transform.localScale = new Vector3(0.001f, scale.y, scale.z);
-
-					Hashtable hash = new Hashtable();
-					hash.Add("time", 1.67f);
-					hash.Add("scale", scale);
-
-					iTween.ScaleTo(extra, hash);
-				}
-			}
-		}
-	}
-
+    
 	private bool CheckTransitionPart(ItemCloth_Type clothType)
 	{
 		if (clothType == ItemCloth_Type.ItemCloth_Type_Wing
@@ -3708,50 +2293,7 @@ public class NewPlayer : PlayerBase
 
 		return false;
 	}
-
-
-	public override void AddLookAt()
-	{
-		if (mLookAt == null)
-		{
-			mLookAt = cachedGameObject.AddComponent<XQLookAtForward>();
-		}
-
-		if (CSceneBehaviour.Current != null)
-		{
-			if (mLookAt != null)
-			{
-				mLookAt.LookTarget = CSceneBehaviour.Current.CameraControl.TargetCamera.transform;
-			}
-		}
-	}
-
-	public override void RemoveLookAt()
-	{
-		if (mLookAt != null)
-		{
-			Component.Destroy(mLookAt);
-		}
-
-		mLookAt = null;
-	}
-
-	private bool CheckDownLoadNeedBrocastDown()
-	{
-		foreach (KeyValuePair<ItemCloth_Type, RoleBodyLoader> kv in m_dicAsyncBodyLoader)
-		{
-			if (kv.Value != null)
-			{
-				if (CheckNeedBrocastDown(kv.Value.ClothType))
-				{
-					return true;
-				}
-			}
-		}
-
-		return false;
-	}
-
+    
 	private bool CheckNeedBrocastDown(List<RoleBodyLoader> listLoader)
 	{
 		RoleBodyLoader bodyLoader = null;

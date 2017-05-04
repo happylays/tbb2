@@ -39,7 +39,19 @@ namespace LoveDance.Client.Logic.Ress
         /// </summary>
         public static void InitGameLoader()
         {
-            
+            AnimationLoader.InitAniLoader(
+                CommonValue.AniDir,
+                CommonValue.AniWWWDir,
+                CommonValue.InAniDir,
+                CommonValue.InAniWWWDir,
+                CommonValue.NetAniDir);
+
+            BoneLoader.InitPlayerBone(
+                CommonValue.BoneDir,
+                CommonValue.BoneWWWDir,
+                CommonValue.InBoneDir,
+                CommonValue.InBoneWWWDir,
+                CommonValue.NetBoneDir);
 
             UIWndLoader.InitUIWndLoader(
                 CommonValue.UIDir,
@@ -80,11 +92,11 @@ namespace LoveDance.Client.Logic.Ress
             //    yield return null;
             //}
 
-            //itor = LoadRemainResource();
-            //while (itor.MoveNext())
-            //{
-            //    yield return null;
-            //}
+            itor = LoadRemainResource();
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
         }
 
         //TODO
@@ -192,6 +204,40 @@ namespace LoveDance.Client.Logic.Ress
             else
             {
                 while (s_IsInitingCommUIRes)
+                {
+                    yield return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 加载非关键性资源
+        /// </summary>
+        static IEnumerator LoadRemainResource()
+        {
+            if (!s_IsInitRemainRes)
+            {
+                s_IsInitingRemainRes = true;
+                s_IsInitRemainRes = true;
+
+                IEnumerator itor = SkinnLoader.LoaddefaultSkins();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
+
+                itor = BoneLoader.LoadPlayerBone();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
+
+
+                s_IsInitingRemainRes = false;
+            }
+            else
+            {
+                while (s_IsInitingRemainRes)
                 {
                     yield return null;
                 }

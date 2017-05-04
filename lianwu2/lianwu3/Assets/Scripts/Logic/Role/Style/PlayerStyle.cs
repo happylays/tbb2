@@ -122,8 +122,8 @@ public class PlayerStyle : MonoBehaviour
         m_OwnerAni = new AnimationCell(m_OwnerPlayer.RoleBody.gameObject);
 
         AddMovingScript();
-        ChangeMoveAnimation();
-        ChangeVehicleAnimation();
+        //ChangeMoveAnimation();
+        //ChangeVehicleAnimation();
 
         InitAnimation();
     }
@@ -134,7 +134,7 @@ public class PlayerStyle : MonoBehaviour
         {
             if (HasVehicle)
             {
-                UpdateVehicleAnimation();
+                //dateVehicleAnimation();
             }
             else
             {
@@ -173,8 +173,8 @@ public class PlayerStyle : MonoBehaviour
 
     public virtual void BeRemoved()
     {
-		RemoveVehicleAnimation();
-        RemoveFlyAnimation();
+        //RemoveVehicleAnimation();
+        //RemoveFlyAnimation();
         RemoveWalkAnimation();
         RemoveTransformWalkAni();
         RemoveMovingScript();
@@ -278,7 +278,10 @@ public class PlayerStyle : MonoBehaviour
         }
     }
 
-
+    protected AnimationClip GetAniClipBySex(string clipName)
+    {
+        return AnimationLoader.GetAnimationClip(getLoaderClipNameBySex(clipName));
+    }
 
 	private string getLoaderClipNameBySex(string clipName)
     {

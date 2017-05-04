@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using LoveDance.Client.Common;
 using LoveDance.Client.Network;
-using LoveDance.Client.Network.SystemSetting;
-using LoveDance.Client.Network.Player;
+//using LoveDance.Client.Network.SystemSetting;
+//using LoveDance.Client.Network.Player;
 using LoveDance.Client.Network.Item;
 using LoveDance.Client.Data.Item;
 using LoveDance.Client.Data;
@@ -11,125 +11,123 @@ using LoveDance.Client.Data;
 
 namespace LoveDance.Client.Logic.Role
 {
-    public class PlayerItem : ICloneable
+    public class PlayerItem
     {
         internal List<CItemBase>[] m_AllItem = new List<CItemBase>[(int)Item_Column.ItemColumn_MaxNumber];
         internal CEquipItem[] m_DefaultEquip = new CEquipItem[(int)ItemCloth_Type.ItemCloth_Type_MaxNumber];
-        internal List<ClothEffectHandbookProgress> m_ListClothEffectHandbookProgress = new List<ClothEffectHandbookProgress>();
-        internal List<ClothEffectSevenColorProgress> m_ListSevenColorInfo = new List<ClothEffectSevenColorProgress>();
 		internal List<uint> m_ListVehicleItemID = new List<uint>();
 		internal bool m_bNeedArrange = false;
 		
 		/// <summary>
 		/// 克隆一个深拷贝对象
 		/// </summary>
-		public virtual object Clone()
-		{
-			PlayerItem res = new PlayerItem();
+        //public virtual object Clone()
+        //{
+        //    PlayerItem res = new PlayerItem();
 			
-			this.CopyTo(res);
+        //    this.CopyTo(res);
 
-			return res;
-		}
+        //    return res;
+        //}
 
 		/// <summary>
 		/// 将当前对象的所有元素深拷贝到toObj对象中。
 		/// </summary>
-		protected virtual void CopyTo(object toObj)
-		{
-			PlayerItem to = toObj as PlayerItem;
+        //protected virtual void CopyTo(object toObj)
+        //{
+        //    PlayerItem to = toObj as PlayerItem;
 
-			if (to != null)
-			{
-				to.m_AllItem = new List<CItemBase>[this.m_AllItem.Length];
-				for (int i = 0; i < this.m_AllItem.Length; i++)
-				{
-					to.m_AllItem[i] = new List<CItemBase>();
+        //    if (to != null)
+        //    {
+        //        to.m_AllItem = new List<CItemBase>[this.m_AllItem.Length];
+        //        for (int i = 0; i < this.m_AllItem.Length; i++)
+        //        {
+        //            to.m_AllItem[i] = new List<CItemBase>();
 
-					List<CItemBase> list = this.m_AllItem[i];
-					for (int j = 0; j < list.Count; j++)
-					{
-						CItemBase itemBase = null;
-						if (list[j] != null)
-						{
-							itemBase = (CItemBase)(list[j].Clone());
-						}
-						to.m_AllItem[i].Add(itemBase);
-					}
-				}
+        //            List<CItemBase> list = this.m_AllItem[i];
+        //            for (int j = 0; j < list.Count; j++)
+        //            {
+        //                CItemBase itemBase = null;
+        //                if (list[j] != null)
+        //                {
+        //                    itemBase = (CItemBase)(list[j].Clone());
+        //                }
+        //                to.m_AllItem[i].Add(itemBase);
+        //            }
+        //        }
 
-				for (int i = 0; i < this.m_DefaultEquip.Length; i++)
-				{
-					if (m_DefaultEquip[i] != null)
-					{
-						to.m_DefaultEquip[i] = (CEquipItem)(m_DefaultEquip[i].Clone());
-					}
-				}
+        //        for (int i = 0; i < this.m_DefaultEquip.Length; i++)
+        //        {
+        //            if (m_DefaultEquip[i] != null)
+        //            {
+        //                to.m_DefaultEquip[i] = (CEquipItem)(m_DefaultEquip[i].Clone());
+        //            }
+        //        }
 
-				for (int i = 0; i < this.m_ListClothEffectHandbookProgress.Count; i++)
-				{
-					ClothEffectHandbookProgress progress = m_ListClothEffectHandbookProgress[i];
-					ClothEffectHandbookProgress clone = null;
-					if (progress != null)
-					{
-						clone = (ClothEffectHandbookProgress)(progress.Clone());
-					}
-					to.m_ListClothEffectHandbookProgress.Add(clone);
-				}
+        //        for (int i = 0; i < this.m_ListClothEffectHandbookProgress.Count; i++)
+        //        {
+        //            ClothEffectHandbookProgress progress = m_ListClothEffectHandbookProgress[i];
+        //            ClothEffectHandbookProgress clone = null;
+        //            if (progress != null)
+        //            {
+        //                clone = (ClothEffectHandbookProgress)(progress.Clone());
+        //            }
+        //            to.m_ListClothEffectHandbookProgress.Add(clone);
+        //        }
 
-				for (int i = 0; i < this.m_ListSevenColorInfo.Count; i++)
-				{
-					ClothEffectSevenColorProgress progress = this.m_ListSevenColorInfo[i];
-					ClothEffectSevenColorProgress clone = null;
-					if (progress != null)
-					{
-						clone = (ClothEffectSevenColorProgress)(progress.Clone());
-					}
-					to.m_ListSevenColorInfo.Add(clone);
-				}
-			}
-		}
+        //        for (int i = 0; i < this.m_ListSevenColorInfo.Count; i++)
+        //        {
+        //            ClothEffectSevenColorProgress progress = this.m_ListSevenColorInfo[i];
+        //            ClothEffectSevenColorProgress clone = null;
+        //            if (progress != null)
+        //            {
+        //                clone = (ClothEffectSevenColorProgress)(progress.Clone());
+        //            }
+        //            to.m_ListSevenColorInfo.Add(clone);
+        //        }
+        //    }
+        //}
 
-        public virtual void SerializeItem(NetReadBuffer DataIn)
-        {
-            ushort itemCount = DataIn.GetUShort();
-            if (itemCount > 0)
-            {
-                for (ushort i = 0; i < itemCount; ++i)
-                {
-                    uint nItemType = DataIn.GetUInt();
-                    ushort nColumn = DataIn.GetUShort();
-                    ushort nGrid = DataIn.GetUShort();
+        //public virtual void SerializeItem(NetReadBuffer DataIn)
+        //{
+        //    ushort itemCount = DataIn.GetUShort();
+        //    if (itemCount > 0)
+        //    {
+        //        for (ushort i = 0; i < itemCount; ++i)
+        //        {
+        //            uint nItemType = DataIn.GetUInt();
+        //            ushort nColumn = DataIn.GetUShort();
+        //            ushort nGrid = DataIn.GetUShort();
 
-                    byte size = 0;
-                    size = DataIn.GetByte();
-                    CItemInfo itemInfo = StaticData.ItemDataMgr.GetByID(nItemType);
-                    CItemBase itemBase = CItemBase.CreateItem(itemInfo);
-                    if (itemBase != null)
-                    {
-                        itemBase.doDecode(DataIn);
-                        itemBase.m_nColumn = nColumn;
-                        itemBase.m_nIndex = nGrid;
+        //            byte size = 0;
+        //            size = DataIn.GetByte();
+        //            CItemInfo itemInfo = StaticData.ItemDataMgr.GetByID(nItemType);
+        //            CItemBase itemBase = CItemBase.CreateItem(itemInfo);
+        //            if (itemBase != null)
+        //            {
+        //                itemBase.doDecode(DataIn);
+        //                itemBase.m_nColumn = nColumn;
+        //                itemBase.m_nIndex = nGrid;
 
-                        PrepareGrid((Item_Column)nColumn, nGrid);
-                        UpdateItem((Item_Column)nColumn, nGrid, itemBase);
-                    }
-                    else
-                    {
-                        string s = "PlayerItem Docode Error_" + "ItemType: " + nItemType + " Not Exist in iteminfo";
-                        int curPos = DataIn.getPostion();
-                        curPos += size;
-                        DataIn.setMaxDataPostion(curPos);
-                        DataIn.setPostion(curPos);
-                        GameMsg_C2S_Msg_BugReport msg = new GameMsg_C2S_Msg_BugReport();
-                        msg.m_BugList = s;
-                        NetworkMgr.SendMsg(msg);
-                    }
-                }
+        //                PrepareGrid((Item_Column)nColumn, nGrid);
+        //                UpdateItem((Item_Column)nColumn, nGrid, itemBase);
+        //            }
+        //            else
+        //            {
+        //                string s = "PlayerItem Docode Error_" + "ItemType: " + nItemType + " Not Exist in iteminfo";
+        //                int curPos = DataIn.getPostion();
+        //                curPos += size;
+        //                DataIn.setMaxDataPostion(curPos);
+        //                DataIn.setPostion(curPos);
+        //                GameMsg_C2S_Msg_BugReport msg = new GameMsg_C2S_Msg_BugReport();
+        //                msg.m_BugList = s;
+        //                NetworkMgr.SendMsg(msg);
+        //            }
+        //        }
 				
-				CheckNeedArrangeItem();
-            }
-        }
+        //        CheckNeedArrangeItem();
+        //    }
+        //}
 
         public void InitItemList(ushort nBadgeGridNum)
         {
@@ -467,62 +465,6 @@ namespace LoveDance.Client.Logic.Role
             return slot;
         }
 
-        public ClothEffectSevenColorProgress GetClothEffectSevenColorProgress(uint suitId)
-        {
-            for (int i = 0; i < m_ListSevenColorInfo.Count; ++i)
-            {
-                if (m_ListSevenColorInfo[i].m_SuitId == suitId)
-                    return m_ListSevenColorInfo[i];
-            }
-
-            return null;
-        }
-
-        public void UpdateClothEffectHandbookProgress(ClothEffectSevenColorProgress nProcess)
-        {
-			ClothEffectSevenColorProgress progress = GetClothEffectSevenColorProgress(nProcess.m_SuitId);
-			if (progress != null)
-			{
-				foreach (ClothEffectSevenColorType v in nProcess.mDicColorProcess.Keys)
-				{
-					progress.mDicColorProcess[v] = nProcess.mDicColorProcess[v];
-				}
-			}
-			else
-			{
-				if (m_ListSevenColorInfo != null)
-				{
-					m_ListSevenColorInfo.Add(nProcess);
-				}
-			}
-        }
-
-        public ClothEffectHandbookProgress GetClothEffectHandbookcProgress(uint suitId)
-        {
-            for (int i = 0; i < m_ListClothEffectHandbookProgress.Count; ++i)
-            {
-                if (m_ListClothEffectHandbookProgress[i].m_SuitID == suitId)
-                    return m_ListClothEffectHandbookProgress[i];
-            }
-
-            return null;
-        }
-
-        public void UpdateClothEffectHandbookProgress(ClothEffectHandbookProgress nProcess)
-        {
-			ClothEffectHandbookProgress progress = GetClothEffectHandbookcProgress(nProcess.m_SuitID);
-			if (progress != null)
-			{
-				progress.m_CompleteProgress = nProcess.m_CompleteProgress;
-			}
-			else
-			{
-				if (m_ListClothEffectHandbookProgress != null)
-				{
-					m_ListClothEffectHandbookProgress.Add(nProcess);
-				}
-			}
-        }
 
         public virtual void UpdateEx()
         {

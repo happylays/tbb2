@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace LoveDance.Client.Logic.Role
 {
-	public class PlayerTransform : ICloneable
+	public class PlayerTransform
 	{
 		public uint TransformID
 		{

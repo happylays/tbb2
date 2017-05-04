@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using LoveDance.Client.Common;
 using LoveDance.Client.Network;
-using LoveDance.Client.Network.Player;
+//using LoveDance.Client.Network.Player;
 using LoveDance.Client.Network.Item;
 
 namespace LoveDance.Client.Logic.Role
 {
-    public class MainPlayerItem : PlayerItem , ICloneable
+    public class MainPlayerItem : PlayerItem
     {
         float m_fElapseTime = 0f;
 		private int mIntervalcount = 0;
@@ -46,66 +46,66 @@ namespace LoveDance.Client.Logic.Role
 		/// <summary>
 		/// 克隆一个深拷贝对象
 		/// </summary>
-		public override object Clone()
-		{
-			MainPlayerItem res = new MainPlayerItem();
+        //public override object Clone()
+        //{
+        //    MainPlayerItem res = new MainPlayerItem();
 
-			this.CopyTo(res);
+        //    this.CopyTo(res);
 
-			return res;
-		}
+        //    return res;
+        //}
 
 		/// <summary>
 		/// 将当前对象的所有元素深拷贝到toObj对象中。
 		/// </summary>
-		protected override void CopyTo(object toObj)
-		{
-			MainPlayerItem to = toObj as MainPlayerItem;
+        //protected override void CopyTo(object toObj)
+        //{
+        //    MainPlayerItem to = toObj as MainPlayerItem;
 
-			if (to != null)
-			{
-				base.CopyTo(toObj);
+        //    if (to != null)
+        //    {
+        //        base.CopyTo(toObj);
 
-				to.m_fElapseTime = this.m_fElapseTime;
-			}
-		}
+        //        to.m_fElapseTime = this.m_fElapseTime;
+        //    }
+        //}
 
-        public override void SerializeItem(NetReadBuffer DataIn)
-        {
-            base.SerializeItem(DataIn);
+        //public override void SerializeItem(NetReadBuffer DataIn)
+        //{
+        //    base.SerializeItem(DataIn);
 
-            ushort defaultClothCount = DataIn.GetUShort();
-            for (int i = 0; i < defaultClothCount; ++i)
-            {
-                ushort column = DataIn.GetUShort();
-                ushort grid = DataIn.GetUShort();
+        //    ushort defaultClothCount = DataIn.GetUShort();
+        //    for (int i = 0; i < defaultClothCount; ++i)
+        //    {
+        //        ushort column = DataIn.GetUShort();
+        //        ushort grid = DataIn.GetUShort();
 
-                CItemBase itembase = GetItemByPos((Item_Column)column, grid);
-                if (itembase != null)
-                {
-                    m_DefaultEquip[itembase.ItemInfo.GetClothPos()] = (CEquipItem)itembase;
-                }
-            }
+        //        CItemBase itembase = GetItemByPos((Item_Column)column, grid);
+        //        if (itembase != null)
+        //        {
+        //            m_DefaultEquip[itembase.ItemInfo.GetClothPos()] = (CEquipItem)itembase;
+        //        }
+        //    }
 
-            ushort itemCount = DataIn.GetUShort();
-            for (int i = 0; i < itemCount; ++i)
-            {
-                ClothEffectHandbookProgress info = new ClothEffectHandbookProgress();
-                info.doDecode(DataIn);
-                m_ListClothEffectHandbookProgress.Add(info);
-            }
+        //    ushort itemCount = DataIn.GetUShort();
+        //    for (int i = 0; i < itemCount; ++i)
+        //    {
+        //        ClothEffectHandbookProgress info = new ClothEffectHandbookProgress();
+        //        info.doDecode(DataIn);
+        //        m_ListClothEffectHandbookProgress.Add(info);
+        //    }
 
-            itemCount = DataIn.GetUShort();
-            for (int i = 0; i < itemCount; ++i)
-            {
-                ClothEffectSevenColorProgress info = new ClothEffectSevenColorProgress();
-                info.doDecode(DataIn);
-                m_ListSevenColorInfo.Add(info);
-            }
+        //    itemCount = DataIn.GetUShort();
+        //    for (int i = 0; i < itemCount; ++i)
+        //    {
+        //        ClothEffectSevenColorProgress info = new ClothEffectSevenColorProgress();
+        //        info.doDecode(DataIn);
+        //        m_ListSevenColorInfo.Add(info);
+        //    }
 
-            m_nCollectCount = DataIn.GetUInt();
-            m_nBrilliantCount = DataIn.GetUInt();
-        }
+        //    m_nCollectCount = DataIn.GetUInt();
+        //    m_nBrilliantCount = DataIn.GetUInt();
+        //}
 
         public override void UpdateEx()
         {

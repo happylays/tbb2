@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using LoveDance.Client.Common;
-//using LoveDance.Client.Data.Tips;
+using LoveDance.Client.Data.Tips;
 using System.Collections.Generic;
 
 namespace LoveDance.Client.Data.Item
@@ -41,6 +41,56 @@ namespace LoveDance.Client.Data.Item
 			}
 		}
 
+        private CItemInfo CreateNumericalItemInfo(ItemNumerical_Type numType)
+        {
+            string strPic = "";
+            string strName = "";
+            switch (numType)
+            {
+                case ItemNumerical_Type.Money:
+                    strPic = GOLDTICKET_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Goods_Gold");
+                    break;
+                case ItemNumerical_Type.MCoin:
+                    strPic = MCOINTICKET_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Goods_Mcoin");
+                    break;
+                case ItemNumerical_Type.MBCoin:
+                    strPic = MBINDTICKET_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Goods_MbindCoin");
+                    break;
+                case ItemNumerical_Type.EXP:
+                    strPic = EXP_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Quest_Exp");
+                    break;
+                case ItemNumerical_Type.Honor:
+                    strPic = HONOR_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Quest_Honor");
+                    break;
+                case ItemNumerical_Type.Contribution:
+                    strPic = CONTRIBUTION_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("DanceGroup_ShopContribution");
+                    break;
+                case ItemNumerical_Type.VipValue:
+                    strPic = VIPVALUE_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Quest_VipValue");
+                    break;
+                case ItemNumerical_Type.Intimacy:
+                    strPic = INTIMACY_SPRITE_NAME;
+                    strName = SystemTips.GetTipsContent("Quest_Intimacy");
+                    break;
+                default:
+                    return null;
+            }
+
+            CItemInfo itemInfo = new CItemInfo();
+            itemInfo.m_strIcon = strPic;
+            itemInfo.m_strName = strName;
+            itemInfo.m_anType[0] = (byte)ItemClass_Type.ItemClassType_Numerical;
+            itemInfo.m_anType[1] = (byte)numType;
+
+            return itemInfo;
+        }
 
 		public bool Load(XQFileStream file)
 		{
@@ -191,73 +241,73 @@ namespace LoveDance.Client.Data.Item
 			return null;
 		}
 		
-		public string GetItemNameAndCount(uint itemid, ushort count, int matune)
-		{
-			StringBuilder info = new StringBuilder();
+        //public string GetItemNameAndCount(uint itemid, ushort count, int matune)
+        //{
+        //    StringBuilder info = new StringBuilder();
 			
-			bool needcount = true;
-			if(count == 0 && matune == 0)
-			{
-				needcount = false;
-			}
+        //    bool needcount = true;
+        //    if(count == 0 && matune == 0)
+        //    {
+        //        needcount = false;
+        //    }
 			
-			CItemInfo itemInfo = GetByID(itemid);
-			if(itemInfo != null)
-			{
-				if(needcount)
-				{
-					StringBuilder tempStr = new StringBuilder();
+        //    CItemInfo itemInfo = GetByID(itemid);
+        //    if(itemInfo != null)
+        //    {
+        //        if(needcount)
+        //        {
+        //            StringBuilder tempStr = new StringBuilder();
 					
-					if(itemInfo.IsExpandable())
-					{
-						tempStr.Append(count.ToString());
-						tempStr.Append(SystemTips.GetTipsContent("ItemBag_Unit"));
+        //            if(itemInfo.IsExpandable())
+        //            {
+        //                tempStr.Append(count.ToString());
+        //                tempStr.Append(SystemTips.GetTipsContent("ItemBag_Unit"));
 						
-						info.Append(SystemTips.GetTipsContent("SpecialMall_ItemInfo", new string[]{"", itemInfo.m_strName, tempStr.ToString()}));
-					}
-					else
-					{
-						if(matune >= 0)
-						{
-							if(matune == 0)
-							{
-								matune = itemInfo.m_nMatune;
-							}
+        //                info.Append(SystemTips.GetTipsContent("SpecialMall_ItemInfo", new string[]{"", itemInfo.m_strName, tempStr.ToString()}));
+        //            }
+        //            else
+        //            {
+        //                if(matune >= 0)
+        //                {
+        //                    if(matune == 0)
+        //                    {
+        //                        matune = itemInfo.m_nMatune;
+        //                    }
 							
-                            GameTime gt = new GameTime(matune);
+        //                    GameTime gt = new GameTime(matune);
 
-                            if (gt.Day > 0)
-							{
-                                tempStr.Append(gt.Day.ToString());
-								tempStr.Append(SystemTips.GetTipsContent("ItemBag_Day"));
-							}
-                            if (gt.Hour > 0)
-							{
-                                tempStr.Append(gt.Hour.ToString());
-								tempStr.Append(SystemTips.GetTipsContent("ItemBag_Hour"));
-							}
-                            if (gt.Minute > 0)
-							{
-                                tempStr.Append(gt.Minute.ToString());
-								tempStr.Append(SystemTips.GetTipsContent("ItemBag_Minute"));
-							}
-						}
-						else if(matune == -1)
-						{
-							tempStr.Append(SystemTips.GetTipsContent("ItemBag_Forever"));
-						}
+        //                    if (gt.Day > 0)
+        //                    {
+        //                        tempStr.Append(gt.Day.ToString());
+        //                        tempStr.Append(SystemTips.GetTipsContent("ItemBag_Day"));
+        //                    }
+        //                    if (gt.Hour > 0)
+        //                    {
+        //                        tempStr.Append(gt.Hour.ToString());
+        //                        tempStr.Append(SystemTips.GetTipsContent("ItemBag_Hour"));
+        //                    }
+        //                    if (gt.Minute > 0)
+        //                    {
+        //                        tempStr.Append(gt.Minute.ToString());
+        //                        tempStr.Append(SystemTips.GetTipsContent("ItemBag_Minute"));
+        //                    }
+        //                }
+        //                else if(matune == -1)
+        //                {
+        //                    tempStr.Append(SystemTips.GetTipsContent("ItemBag_Forever"));
+        //                }
 						
-						info.Append(SystemTips.GetTipsContent("SpecialMall_ItemInfo", new string[]{"", itemInfo.m_strName, tempStr.ToString()}));
-					}
-				}
-				else
-				{
-					info.Append(itemInfo.m_strName);
-				}
-			}
+        //                info.Append(SystemTips.GetTipsContent("SpecialMall_ItemInfo", new string[]{"", itemInfo.m_strName, tempStr.ToString()}));
+        //            }
+        //        }
+        //        else
+        //        {
+        //            info.Append(itemInfo.m_strName);
+        //        }
+        //    }
 			
-			return info.ToString();
-		}
+        //    return info.ToString();
+        //}
 
 		/// <summary>
 		/// 获取特效等级
@@ -300,18 +350,18 @@ namespace LoveDance.Client.Data.Item
 		/// </summary>
 		/// <param name="nType">物品ID</param>
 		/// <returns></returns>
-		public ClothAttributeInfo GetClothAttrById(uint nType)
-		{
-			ClothAttributeInfo res = null;
-			CItemInfo info = GetByID(nType);
+        //public ClothAttributeInfo GetClothAttrById(uint nType)
+        //{
+        //    ClothAttributeInfo res = null;
+        //    CItemInfo info = GetByID(nType);
 
-			if (info != null)
-			{
-				res = info.m_ClothAttr;
-			}
+        //    if (info != null)
+        //    {
+        //        res = info.m_ClothAttr;
+        //    }
 
-			return res;
-		}
+        //    return res;
+        //}
 
 		/// <summary>
 		/// 获取光效石对属性的加成值
