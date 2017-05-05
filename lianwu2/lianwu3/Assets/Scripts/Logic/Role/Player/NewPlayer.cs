@@ -684,7 +684,7 @@ public class NewPlayer : PlayerBase
 		
 		ProcessBody(attachLoaderList);
 
-		ChangeBodySkin(m_nSkinItem);
+		//ChangeBodySkin(m_nSkinItem);
 		ChangeBodySize();
 
 		m_bBodyCreated = true;

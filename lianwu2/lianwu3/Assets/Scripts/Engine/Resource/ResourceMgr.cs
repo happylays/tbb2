@@ -53,6 +53,20 @@ namespace LoveDance.Client.Logic.Ress
                 CommonValue.InBoneWWWDir,
                 CommonValue.NetBoneDir);
 
+            ModelLoader.InitModelLoader(
+                CommonValue.MaterialDir,
+                CommonValue.MaterialWWWDir,
+                CommonValue.InMaterialDir,
+                CommonValue.InMaterialWWWDir,
+                CommonValue.NetMaterialDir);
+
+            SkinnLoader.InitSkinLoader(
+                CommonValue.MaterialDir,
+                CommonValue.MaterialWWWDir,
+                CommonValue.InMaterialDir,
+                CommonValue.InMaterialWWWDir,
+                CommonValue.NetMaterialDir);
+
             UIWndLoader.InitUIWndLoader(
                 CommonValue.UIDir,
                 CommonValue.UIWWWDir,

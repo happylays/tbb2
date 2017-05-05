@@ -72,7 +72,9 @@ public class PlayerManager
 
             newPlayer.IsToShow = bVisible;
             //newPlayer.PlayerMoveType = SystemManager.SysMgr.m_DefPlayerMoveType;
-
+            
+            newPlayer.RoleAttr = new PlayerAttr();
+            newPlayer.RoleAttr.Serialize(briefAttr);            
         }
         else
         {

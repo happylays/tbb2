@@ -426,7 +426,7 @@ Transform:
   m_PrefabInternal: {fileID: 883906855}
   m_GameObject: {fileID: 463104573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.869565189, y: 0, z: -3.81469727e-05}
+  m_LocalPosition: {x: -.776698947, y: -.77659601, z: -3.81469727e-05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408136085}
@@ -493,7 +493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9082c0ca4fcba6a48953277bd054af11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
 --- !u!114 &474134339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,8 +774,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMat: {fileID: 0}
-  mTex: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 9322fa3b6b91c1243a0ca559b0a3367f, type: 2}
+  mTex: {fileID: 2800000, guid: 6323774f07540f0419f3db12662ef009, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 20
@@ -841,8 +840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMat: {fileID: 0}
-  mTex: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 9322fa3b6b91c1243a0ca559b0a3367f, type: 2}
+  mTex: {fileID: 2800000, guid: 6323774f07540f0419f3db12662ef009, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 4
@@ -947,11 +946,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: 804ea5f15a186e14f94ae6e0db8df4b0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.869565189
+      value: -.776698947
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: 804ea5f15a186e14f94ae6e0db8df4b0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -.77659601
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 804ea5f15a186e14f94ae6e0db8df4b0, type: 2}

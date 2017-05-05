@@ -307,7 +307,7 @@ public class PlayerStyle : MonoBehaviour
                 case "DressBehind":
                     return AnimationLoader.DressBehind;
                 case "Stand":
-                    if (StyleType == PlayerStyleType.Create || StyleType == PlayerStyleType.World)
+                    if (StyleType == PlayerStyleType.World)
                         return AnimationLoader.StandWorldBoy;
                     else 
                         return AnimationLoader.StandRoomBoy_A;
@@ -344,7 +344,7 @@ public class PlayerStyle : MonoBehaviour
                 case "DressBehind":
                     return AnimationLoader.DressBehind;
                 case "Stand":
-                    if (StyleType == PlayerStyleType.Create || StyleType == PlayerStyleType.World)
+                    if (StyleType == PlayerStyleType.World)
                         return AnimationLoader.StandWorldGirl;
                     else
                         return AnimationLoader.StandRoomGirl_A;
