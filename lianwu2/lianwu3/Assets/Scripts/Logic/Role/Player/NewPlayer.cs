@@ -2342,4 +2342,72 @@ public class NewPlayer : PlayerBase
 
 		return false;
 	}
+
+    public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca)
+    {
+        CreateUIRoleCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default));
+    }
+
+    public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel)
+    {
+        CreateUIRoleCamera(topLeft, bottomRight, ca, camLevel, GameLayer.Player_UI);
+    }
+
+    public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, GameLayer targetLayer)
+    {
+        CreateUIRoleCamera(topLeft, bottomRight, ca, new CameraLevel(CameraLevel.Default), targetLayer);
+    }
+
+    public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer)
+    {
+        CreateUIRoleCamera(topLeft, bottomRight, ca, camLevel, targetLayer, 15);
+    }
+
+    public override void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer, float fieldOfView)
+    {
+        if (m_UIRoleCamera == null)
+        {
+            if (ca == null)
+            {
+                ca = Camera.main;
+            }
+
+            IsToShow = true;
+
+            m_UIRoleCamera = new GameObject("UIRoleCamera");
+
+            mTempTrans = m_UIRoleCamera.transform;
+            Quaternion q = mTempTrans.localRotation;
+            q.eulerAngles = new Vector3(172.5f, 0f, 180f);
+
+            mTempTrans.parent = cachedTransform;
+            mTempTrans.localPosition = new Vector3(0f, 1.9f, 7.6f);
+            mTempTrans.localRotation = q;
+            mTempTrans.localScale = Vector3.zero;
+
+            Camera cr = m_UIRoleCamera.AddComponent<Camera>();
+            cr.clearFlags = CameraClearFlags.Nothing;
+            cr.depth = ca.depth;
+            cr.cullingMask = 1 << (int)targetLayer;
+            cr.fieldOfView = fieldOfView;
+            cr.nearClipPlane = camLevel.Level.x;
+            cr.farClipPlane = camLevel.Level.y;
+
+            Vector3 tl = ca.WorldToScreenPoint(topLeft);
+            Vector3 br = ca.WorldToScreenPoint(bottomRight);
+            Rect rect = new Rect(tl.x / Screen.width, br.y / Screen.height, (br.x - tl.x) / Screen.width, (tl.y - br.y) / Screen.height);
+            if (rect != cr.rect)
+            {
+                cr.rect = rect;
+            }
+
+            m_LastStyle = CurrentStyle;
+            CurrentStyle = PlayerStyleType.World;
+
+            CommonFunc.SetLayer(cachedGameObject, targetLayer, true, GameLayer.Player);
+            m_CurrentPlayerLayer = targetLayer;
+            
+        }
+    }
+
 }

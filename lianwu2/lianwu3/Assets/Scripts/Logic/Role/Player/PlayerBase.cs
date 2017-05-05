@@ -149,6 +149,15 @@ public abstract class PlayerBase : NetMonoBehaviour
     public abstract IEnumerator DestroyPlayerDelay(float seconds);
 	
     public abstract void SetBodyPartState(ItemCloth_Type clothType, bool show);
-	    
+    
+    public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca);
+
+    public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel);
+
+    public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, GameLayer targetLayer);
+
+    public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer);
+
+    public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer, float fieldOfView);
 
 }

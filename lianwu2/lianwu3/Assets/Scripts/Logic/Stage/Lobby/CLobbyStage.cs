@@ -51,8 +51,8 @@ public class cLobbyStage : cBaseStage
 
         //cResourceManager.Instance.LoadInitSData();
 
-        //UICoroutine.uiCoroutine.StartCoroutine(Load());
-        UICoroutine.uiCoroutine.StartCoroutine(LoadRole());
+        UICoroutine.uiCoroutine.StartCoroutine(Load());
+        //UICoroutine.uiCoroutine.StartCoroutine(LoadRole());
 
         // coroutine        
         //LoadMusic();
@@ -65,7 +65,7 @@ public class cLobbyStage : cBaseStage
         yield return UICoroutine.uiCoroutine.StartCoroutine(ClientResourcesMgr.LoadClientResource());
 
         //2. 
-        UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_activity, null));
+        UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_createrole, null));
     }
 
     IEnumerator LoadRole()
@@ -114,6 +114,9 @@ public class cLobbyStage : cBaseStage
             {
                 yield return null;
             }
+
+            //player.CreateUIRoleCamera(roleCreate.m_ShowRectTL.position, roleCreate.m_ShowRectBR.position, m_ShowCamera, roleCreate.m_Layer);
+			
 
             player.CurrentStyle = PlayerStyleType.Create;
         }
