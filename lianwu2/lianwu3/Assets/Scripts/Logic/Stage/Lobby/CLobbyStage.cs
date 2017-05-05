@@ -10,18 +10,6 @@ public class cLobbyStage : cBaseStage
 
     cLobbyUIManager mLobbyUIManager;
 
-    private PlayerBase m_Male = null;
-    
-    enum SkinType : byte
-    {
-        None,
-
-        White,
-        Yellow,
-        Dark,
-    }
-    private SkinType m_SkinType = SkinType.White;
-
     protected override string Level
     {
         get { return "scene_lobby"; }
@@ -67,61 +55,7 @@ public class cLobbyStage : cBaseStage
         //2. 
         UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_createrole, null));
     }
-
-    IEnumerator LoadRole()
-    {
-        yield return UICoroutine.uiCoroutine.StartCoroutine(ClientResourcesMgr.LoadClientResource());
-
-        //yield return UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_activity, null));
-
-        yield return UICoroutine.uiCoroutine.StartCoroutine(AnimationLoader.LoadRoleCreateAnimation());
-
-        UICoroutine.uiCoroutine.StartCoroutine(PreparePlayerModel());
-    }
-
-    IEnumerator PreparePlayerModel()
-    {
-        IEnumerator itor = null;
-        if (m_Male == null)
-        {
-            m_Male = CreateRoleModel("Boy", true, (byte)m_SkinType);
-            itor = CreateRolePhysics(m_Male);
-            while (itor.MoveNext())
-            {
-                yield return null;
-            }
-        }
-    }
-
-    PlayerBase CreateRoleModel(string modelName, bool isBoy, byte skin)
-    {
-        BriefAttr attr = new BriefAttr();
-        attr.m_strRoleName = modelName;
-        attr.m_bIsBoy = isBoy;
-        attr.m_nSkinColor = skin;
-
-        PlayerBase player = PlayerManager.CreateLogic(attr, true, null, null);
-
-        return player;
-    }
-
-    IEnumerator CreateRolePhysics(PlayerBase player)
-    {
-        if (player != null)
-        {
-            IEnumerator itor = player.CreatePhysics(false, PhysicsType.Player);
-            while (itor.MoveNext())
-            {
-                yield return null;
-            }
-
-            //player.CreateUIRoleCamera(roleCreate.m_ShowRectTL.position, roleCreate.m_ShowRectBR.position, m_ShowCamera, roleCreate.m_Layer);
-			
-
-            player.CurrentStyle = PlayerStyleType.Create;
-        }
-    }
-
+    
     public override void Process()
     {
         //cResourceManager.eDATA_STAGE stage = cResourceManager.Instance.CheckInitData();
