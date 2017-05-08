@@ -128,9 +128,7 @@ public abstract class PlayerBase : NetMonoBehaviour
     public abstract IEnumerator CreateMainPlayerPhysics(PlayerStyleType curStyle);
 
     public abstract IEnumerator CreatePhysics(bool bTitled, PhysicsType pType);
-
-    public abstract IEnumerator CreatePhysics(bool bTitled, PhysicsType pType, byte npcID);
-
+    
     public abstract IEnumerator CreatePhysics(bool bTitled, Dictionary<ItemCloth_Type, string> cloths);
 
     public abstract void InitBodySize(float scale);

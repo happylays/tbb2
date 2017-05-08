@@ -493,22 +493,8 @@ public class NewPlayer : PlayerBase
 
 	}
 
-	public override IEnumerator CreatePhysics(bool bTitled, PhysicsType pType, byte npcID)
-	{
-		
-		IEnumerator itor = null;
-		itor = CreateBody(pType);
-		while (itor.MoveNext())
-		{
-			yield return null;
-		}
-
-
-	}
-
 	public override IEnumerator CreatePhysics(bool bTitled, Dictionary<ItemCloth_Type, string> cloths)
 	{
-
 		RoleBodyLoader[] arrAttachLoader = new RoleBodyLoader[(int)ItemCloth_Type.ItemCloth_Type_MaxNumber];
 		if (cloths != null && cloths.Count > 0)
 		{
