@@ -46,9 +46,9 @@ public class cStageManager : cSingleton<cStageManager> {
         mStages[(int)mCurStage].Close();
         
         mStages[(int)stage].InitStage();
-        mStages[(int)stage].Open();
+        mStages[(int)stage].Open();// down,load,create,show
 
-        ManagedStageMap(mCurStage, stage);
+        //ManagedStageMap(mCurStage, stage);
 
         mCurStage = stage;
     

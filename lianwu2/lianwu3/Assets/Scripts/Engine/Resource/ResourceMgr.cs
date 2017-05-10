@@ -81,6 +81,14 @@ namespace LoveDance.Client.Logic.Ress
                 CommonValue.InUIAtlasWWWDir,
                 CommonValue.NetUIAtlasDir);
 
+            SceneLoader.InitSceneLoader(
+                CommonValue.StageWWWDir,
+                CommonValue.StageDir,
+                CommonValue.InStageWWWDir,
+                CommonValue.InStageDir,
+                CommonValue.NetStageDir
+                );
+
         }
 
         /// <summary>

@@ -5,6 +5,6 @@ public class cSceneManager : cSingleton<cSceneManager> {
 
     public void LoadLevel(string level)
     {
-        cSceneLoader.Instance.LoadLevel(level);
+        //cSceneLoader.Instance.LoadLevel(level);
     }
 }

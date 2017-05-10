@@ -768,6 +768,282 @@ namespace LoveDance.Client.Loader
             }
 		}
 
+
+        public static IEnumerator DownLoadStageSceneAnimation(string musicName, SongMode mode)
+        {
+            List<AnimationLoader> loaderList = GetStageSceneAnimation(mode);
+
+            IEnumerator itor = null;
+            foreach (AnimationLoader aniLoader in loaderList)
+            {
+                if (aniLoader != null)
+                {
+                    itor = aniLoader.DownLoadAnimationSync();
+                    while (itor.MoveNext())
+                    {
+                        yield return null;
+                    }
+                    ReleaseAnimationOnDownLoad(aniLoader.ResName);
+                }
+            }
+
+            itor = LoadDanceAniConfig(musicName, mode);
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
+
+            List<AnimationLoader> listAni = (List<AnimationLoader>)itor.Current;
+            for (int i = 0; i < listAni.Count; i++)
+            {
+                if (listAni[i] != null)
+                {
+                    itor = listAni[i].DownLoadAnimationSync();
+                    while (itor.MoveNext())
+                    {
+                        yield return null;
+                    }
+                    ReleaseAnimationOnDownLoad(listAni[i].ResName);
+                }
+            }
+        }
+
+
+        public static IEnumerator LoadStageSceneAnimation(string musicName, SongMode mode)
+        {
+            m_StageAniExist = true;
+
+            List<AnimationLoader> loaderList = GetStageSceneAnimation(mode);
+
+            IEnumerator itor = null;
+            foreach (AnimationLoader aniLoader in loaderList)
+            {
+                if (aniLoader != null)
+                {
+                    itor = aniLoader.LoadAnimationSync();
+                    while (itor.MoveNext())
+                    {
+                        yield return null;
+                    }
+                }
+            }
+
+            itor = LoadDanceAniConfig(musicName, mode);
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
+
+            List<AnimationLoader> listAni = (List<AnimationLoader>)itor.Current;
+            for (int i = 0; i < listAni.Count; i++)
+            {
+                if (listAni[i] != null)
+                {
+                    itor = listAni[i].LoadAnimationSync();
+                    while (itor.MoveNext())
+                    {
+                        yield return null;
+                    }
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// 获取所有动作Loader
+        /// </summary>
+        private static List<AnimationLoader> GetStageSceneAnimation(SongMode mode)
+        {
+            List<AnimationLoader> loaderList = new List<AnimationLoader>();
+            loaderList.Add(GetAnimationLoader(AnimationLoader.BoyPrepareDance));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.GirlPrepareDance));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.StartDance));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.HB_StartDance_Boy));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.HB_StartDance_Girl));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.MissBoy));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.MissGirl));
+
+            loaderList.Add(GetAnimationLoader(AnimationLoader.LoseBoy));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.LoseGirl));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.WinBoy));
+            loaderList.Add(GetAnimationLoader(AnimationLoader.WinGirl));
+           
+            return loaderList;
+        }
+
+
+        static IEnumerator LoadDanceAniConfig(string musicName, SongMode mode)
+        {
+            s_DanceAniUnique.Clear();
+            s_DanceAniSequence.Clear();
+            s_DanceAniSequenceBoy.Clear();
+            s_AniStates.Clear();
+
+            List<AnimationLoader> listAni = new List<AnimationLoader>();
+            string strResPath = m_netAssetDir + "Controller/" + musicName + "/Dance.txt";
+            string strName = musicName + "_Dance.txt";
+            if (WWWDownLoaderConfig.CheckResNeedUpdate(strName))
+            {
+                DownLoadPack downloadPack = WWWDownLoader.InsertDownLoad(strName, strResPath, DownLoadAssetType.Text, null, null, DownLoadOrderType.AfterRunning);
+                if (downloadPack != null)
+                {
+                    while (!downloadPack.AssetReady)
+                    {
+                        yield return null;
+                    }
+
+                    using (StreamReader sr = new StreamReader(new MemoryStream(downloadPack.DataBytes), CommonFunc.GetCharsetEncoding()))
+                    {
+                        listAni = ParseDanceTxt(sr);
+                        sr.Close();
+                    }
+                }
+                WWWDownLoader.RemoveDownLoad(strName, null);
+            }
+            else
+            {
+                string strFilePath = mAssetDir + "Controller/" + musicName + "/Dance.txt";
+                string strInFilePath = mInAssetDir + "Controller/" + musicName + "/Dance.txt";
+
+                string assetWWWPath = CommonFunc.GetCorrectWWWDir(strFilePath, strInFilePath);
+
+                WWW www = null;
+                using (www = new WWW(assetWWWPath))
+                {
+                    while (!www.isDone)
+                    {
+                        yield return null;
+                    }
+
+                    if (www.error != null)
+                    {
+                        Debug.LogError(www.error);
+                        Debug.LogError("AniLoad Error! AssetName : " + assetWWWPath);
+                    }
+                    else
+                    {
+                        using (StreamReader sr = new StreamReader(new MemoryStream(www.bytes), CommonFunc.GetCharsetEncoding()))
+                        {
+                            listAni = ParseDanceTxt(sr);
+                            sr.Close();
+                        }
+                    }
+
+                    www.Dispose();
+                    www = null;
+                }
+            }
+            Messenger.Broadcast(MessangerEventDef.LOAD_ONEASSET_FINISH, MessengerMode.DONT_REQUIRE_LISTENER);
+            yield return listAni;
+        }
+
+
+        static List<AnimationLoader> ParseDanceTxt(StreamReader sr)
+        {
+            string k = "";
+            string v = "";
+
+            AniState aniState = null;
+            TranState tranState = null;
+            string strStartState = "";
+
+            string strLine = "";
+            while ((strLine = sr.ReadLine()) != null)
+            {
+                strLine = strLine.Trim();
+                if (strLine.StartsWith("DefaultState"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    //TODO
+                }
+
+                if (strLine.StartsWith("["))
+                {
+                    if (aniState != null)
+                    {
+                        if (s_AniStates.ContainsKey(aniState.Name))
+                        {
+                            s_AniStates.Remove(aniState.Name);
+                        }
+
+                        s_AniStates.Add(aniState.Name, aniState);
+                    }
+
+                    aniState = new AniState();
+                    aniState.Name = strLine.Substring(1, strLine.Length - 2).Trim();
+
+                    if (aniState.Name.ToUpper() == "DANCE START")
+                    {
+                        strStartState = aniState.Name;
+                    }
+                }
+                else if (strLine.StartsWith("Speed"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    aniState.Speed = Convert.ToSingle(v);
+                }
+                else if (strLine.StartsWith("Motion"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    aniState.Motion = v;
+                }
+                else if (strLine.StartsWith("Transition:"))
+                {
+                    tranState = new TranState();
+                    aniState.Trans.Add(tranState);
+                }
+                else if (strLine.StartsWith("SrcState"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.SrcState = v;
+                }
+                else if (strLine.StartsWith("DestState"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.DestState = v;
+                }
+                else if (strLine.StartsWith("TransitionOffset"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.TranOffset = Convert.ToSingle(v);
+                }
+                else if (strLine.StartsWith("TransitionDuration"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.TranDuration = Convert.ToSingle(v);
+                }
+                else if (strLine.StartsWith("ExitTime"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.ExitTime = Convert.ToSingle(v);
+                }
+                else if (strLine.StartsWith("IsBoy"))
+                {
+                    StringHelp.DepartString(strLine, ref k, ref v, ":");
+                    tranState.IsBoy = Convert.ToInt32(v) == 1 ? true : false;
+                }
+            }
+
+            sr.Close();
+
+            if (s_AniStates.ContainsKey(aniState.Name))
+            {
+                s_AniStates.Remove(aniState.Name);
+            }
+
+            s_AniStates.Add(aniState.Name, aniState);
+
+            //Girl
+            string currState = strStartState;
+            List<AnimationLoader> loaderList = BuildAniList(currState, false);
+            //Boy
+            currState = strStartState;
+            List<AnimationLoader> boyLoaderList = BuildAniList(currState, true);
+            loaderList.AddRange(boyLoaderList);
+
+            return loaderList;
+        }
+
 		public void Release()
 		{
 			if (m_AniWWW != null)
