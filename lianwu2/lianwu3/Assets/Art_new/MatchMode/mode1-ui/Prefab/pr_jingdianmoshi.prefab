@@ -1,0 +1,544 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: pr_jingdianmoshi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 689d0e664c9e1d24ebf086e42e72c7b4, type: 2}
+  sprites:
+  - name: big_blue
+    outer:
+      serializedVersion: 2
+      x: 188
+      y: 300
+      width: 91
+      height: 92
+    inner:
+      serializedVersion: 2
+      x: 188
+      y: 300
+      width: 91
+      height: 92
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: .0219780225
+    paddingTop: 0
+    paddingBottom: .0434782617
+  - name: big_blue_1
+    outer:
+      serializedVersion: 2
+      x: 188
+      y: 206
+      width: 91
+      height: 92
+    inner:
+      serializedVersion: 2
+      x: 188
+      y: 206
+      width: 91
+      height: 92
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: .0219780225
+    paddingTop: .0217391308
+    paddingBottom: .0217391308
+  - name: big_red
+    outer:
+      serializedVersion: 2
+      x: 95
+      y: 210
+      width: 91
+      height: 92
+    inner:
+      serializedVersion: 2
+      x: 95
+      y: 210
+      width: 91
+      height: 92
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: .0219780225
+    paddingTop: 0
+    paddingBottom: .0434782617
+  - name: big_red_1
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 210
+      width: 91
+      height: 92
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 210
+      width: 91
+      height: 92
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: .0219780225
+    paddingTop: .0217391308
+    paddingBottom: .0217391308
+  - name: cj_jd_aj_h
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 407
+      width: 100
+      height: 100
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 407
+      width: 100
+      height: 100
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_aj_h_1
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 305
+      width: 100
+      height: 100
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 305
+      width: 100
+      height: 100
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_aj_l
+    outer:
+      serializedVersion: 2
+      x: 407
+      y: 101
+      width: 101
+      height: 100
+    inner:
+      serializedVersion: 2
+      x: 407
+      y: 101
+      width: 101
+      height: 100
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_aj_l_1
+    outer:
+      serializedVersion: 2
+      x: 399
+      y: 203
+      width: 100
+      height: 100
+    inner:
+      serializedVersion: 2
+      x: 399
+      y: 203
+      width: 100
+      height: 100
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_di
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 409
+      height: 49
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 409
+      height: 49
+    rotated: 0
+    paddingLeft: .00977995154
+    paddingRight: 0
+    paddingTop: .10204082
+    paddingBottom: .0612244904
+  - name: cj_jd_di_1
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 155
+      width: 330
+      height: 49
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 155
+      width: 330
+      height: 49
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_hong
+    outer:
+      serializedVersion: 2
+      x: 334
+      y: 155
+      width: 52
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 334
+      y: 155
+      width: 52
+      height: 52
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_huang
+    outer:
+      serializedVersion: 2
+      x: 334
+      y: 209
+      width: 51
+      height: 51
+    inner:
+      serializedVersion: 2
+      x: 334
+      y: 209
+      width: 51
+      height: 51
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_huang_1
+    outer:
+      serializedVersion: 2
+      x: 388
+      y: 173
+      width: 9
+      height: 35
+    inner:
+      serializedVersion: 2
+      x: 391
+      y: 173
+      width: 3
+      height: 35
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_huang_2
+    outer:
+      serializedVersion: 2
+      x: 388
+      y: 155
+      width: 15
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 388
+      y: 155
+      width: 15
+      height: 16
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_lan
+    outer:
+      serializedVersion: 2
+      x: 281
+      y: 206
+      width: 51
+      height: 51
+    inner:
+      serializedVersion: 2
+      x: 281
+      y: 206
+      width: 51
+      height: 51
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_pandingquan
+    outer:
+      serializedVersion: 2
+      x: 413
+      y: 2
+      width: 95
+      height: 97
+    inner:
+      serializedVersion: 2
+      x: 413
+      y: 2
+      width: 95
+      height: 97
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: cj_jd_zi
+    outer:
+      serializedVersion: 2
+      x: 281
+      y: 259
+      width: 50
+      height: 50
+    inner:
+      serializedVersion: 2
+      x: 281
+      y: 259
+      width: 50
+      height: 50
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: pandingqu
+    outer:
+      serializedVersion: 2
+      x: 104
+      y: 304
+      width: 73
+      height: 72
+    inner:
+      serializedVersion: 2
+      x: 104
+      y: 304
+      width: 73
+      height: 72
+    rotated: 0
+    paddingLeft: .01369863
+    paddingRight: .0410958901
+    paddingTop: .0416666679
+    paddingBottom: .0416666679
+  - name: shuxian
+    outer:
+      serializedVersion: 2
+      x: 407
+      y: 53
+      width: 3
+      height: 38
+    inner:
+      serializedVersion: 2
+      x: 407
+      y: 53
+      width: 3
+      height: 38
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: small_blue
+    outer:
+      serializedVersion: 2
+      x: 149
+      y: 438
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 149
+      y: 438
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: small_blue_1
+    outer:
+      serializedVersion: 2
+      x: 149
+      y: 394
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 149
+      y: 394
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: small_mix
+    outer:
+      serializedVersion: 2
+      x: 104
+      y: 466
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 104
+      y: 466
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: small_mix_1
+    outer:
+      serializedVersion: 2
+      x: 104
+      y: 422
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 104
+      y: 422
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: small_red
+    outer:
+      serializedVersion: 2
+      x: 104
+      y: 378
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 104
+      y: 378
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: small_red_1
+    outer:
+      serializedVersion: 2
+      x: 333
+      y: 262
+      width: 43
+      height: 42
+    inner:
+      serializedVersion: 2
+      x: 333
+      y: 262
+      width: 43
+      height: 42
+    rotated: 0
+    paddingLeft: .0232558139
+    paddingRight: .0697674453
+    paddingTop: .0476190485
+    paddingBottom: .0476190485
+  - name: tiao
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 53
+      width: 403
+      height: 49
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 53
+      width: 1
+      height: 49
+    rotated: 0
+    paddingLeft: .00992555823
+    paddingRight: .0148883378
+    paddingTop: .10204082
+    paddingBottom: .0612244904
+  - name: tiao_1
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 104
+      width: 399
+      height: 49
+    inner:
+      serializedVersion: 2
+      x: 400
+      y: 104
+      width: 1
+      height: 49
+    rotated: 0
+    paddingLeft: .012531328
+    paddingRight: .00751879718
+    paddingTop: .0816326514
+    paddingBottom: .0816326514
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

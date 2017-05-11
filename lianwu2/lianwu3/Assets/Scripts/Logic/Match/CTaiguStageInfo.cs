@@ -30,6 +30,10 @@ public class CTaiguStageInfo : CMatchStageInfo
 
     public override void LoadStageInfo(byte[] stageInfo)
     {
+        SetMatchValue();
+
+        return;
+
         using (MemoryStream memStream = new MemoryStream(stageInfo))
         {
             using (StreamReader sr = new StreamReader(memStream, CommonFunc.GetCharsetEncoding()))

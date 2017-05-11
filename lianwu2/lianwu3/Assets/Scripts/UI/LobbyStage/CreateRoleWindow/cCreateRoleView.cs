@@ -176,7 +176,9 @@ public class cCreateRoleView : View
 
         yield return UICoroutine.uiCoroutine.StartCoroutine(AnimationLoader.LoadRoleCreateAnimation());
 
-        UICoroutine.uiCoroutine.StartCoroutine(PreparePlayerModel());
+        yield return UICoroutine.uiCoroutine.StartCoroutine(PreparePlayerModel());
+
+        cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Game);
     }
 
     IEnumerator PreparePlayerModel()
@@ -200,7 +202,8 @@ public class cCreateRoleView : View
         attr.m_bIsBoy = isBoy;
         attr.m_nSkinColor = skin;
 
-        PlayerBase player = PlayerManager.CreateLogic(attr, true, null, null);
+        //PlayerBase player = PlayerManager.CreateLogic(attr, true, null, null);
+        PlayerBase player = PlayerManager.CreateMainPlayerLogic(attr);
 
         return player;
     }

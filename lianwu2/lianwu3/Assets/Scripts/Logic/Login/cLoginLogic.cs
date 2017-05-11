@@ -33,7 +33,7 @@ namespace LoveDance.Client.Logic.Login
             GameMsg_LoginResult resMsg = msg as GameMsg_LoginResult;
             //if (resMsg != null && resMsg.nResult == 0)
             //{
-            cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Game);
+            cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Lobby);
             //}
         }
 

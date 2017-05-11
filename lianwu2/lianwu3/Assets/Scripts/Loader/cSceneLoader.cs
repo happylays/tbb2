@@ -46,11 +46,11 @@ public class SceneLoader
             yield return null;	//Waiting two frame
             yield return null;
 
-            IEnumerator itor = LoadEmpty();
-            while (itor.MoveNext())
-            {
-                yield return null;
-            }
+            //IEnumerator itor = LoadEmpty();
+            //while (itor.MoveNext())
+            //{
+            //    yield return null;
+            //}
 
             if (CommonValue.ClearFontCB != null)
             {
@@ -63,6 +63,7 @@ public class SceneLoader
                 yield return null;
             }
 
+            IEnumerator itor = null;
             itor = m_sceneAssetLoader.LoadAssetSync(stageName, false, false, DownLoadOrderType.AfterRunning, true);
             while (itor.MoveNext())
             {

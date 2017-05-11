@@ -52,7 +52,7 @@ public class StageScene : IScenceType
                 IStandPlayerPosition standPosition = m_StandPlayerPosition[tmpIndex];
 
                 int curCount = 0;
-                for (int dancerPos = 0; dancerPos < CommonDef.MAX_ROOM_PLAYER; ++dancerPos)
+                for (int dancerPos = 0; dancerPos < 1; ++dancerPos) //CommonDef.MAX_ROOM_PLAYER
                 {
                     PlayerBase dancerPlayer = RoomData.GetRoomPlayerByPos(dancerPos);
                     if (dancerPlayer != null)

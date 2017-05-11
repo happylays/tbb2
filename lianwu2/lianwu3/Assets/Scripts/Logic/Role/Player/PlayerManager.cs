@@ -6,7 +6,7 @@ using LoveDance.Client.Network;
 //using LoveDance.Client.Network.SystemSetting;
 //using LoveDance.Client.Logic.VIP;
 using LoveDance.Client.Logic.Role;
-//using LoveDance.Client.Logic;
+using LoveDance.Client.Logic;
 //using LoveDance.Client.Data.Setting;
 
 public class PlayerManager
@@ -14,23 +14,25 @@ public class PlayerManager
 	//游戏中的玩家集合 ,暂时用于控制人物的特效显示与隐藏
 	private static List<NewPlayer> m_PlayerList = new List<NewPlayer>();
 	
-    public static PlayerBase CreateMainPlayerLogic(GameMsg_S2C_CreateRoleSuc createMsg)
+    public static PlayerBase CreateMainPlayerLogic(BriefAttr briefAttr)//GameMsg_S2C_CreateRoleSuc createMsg)
     {
         GameObject go = new GameObject("MainPlayer");
         GameObject.DontDestroyOnLoad(go);
         NewPlayer newPlayer = go.AddComponent<NewPlayer>();
         if (newPlayer != null)
         {
-            //CommonLogicData.MainPlayer = newPlayer;
-            
-//             newPlayer.RoleAttr = new PlayerAttr();
-//             newPlayer.RoleAttr.SerializeAttr(createMsg.GetPacketBuffer("Attribute"));
+            newPlayer.IsToShow = true;
+            newPlayer.RoleAttr = new PlayerAttr();
+            newPlayer.RoleAttr.Serialize(briefAttr);
 
-            //CommonLogicData.MainPlayerID = newPlayer.RoleAttr.RoleID;
+            CommonLogicData.MainPlayer = newPlayer;
 
-            MainPlayerItem roleItem = new MainPlayerItem();
-            roleItem.InitItemList(9);//newPlayer.RoleAttr.BadgeGridNum);
-            newPlayer.RoleItem = roleItem;
+            CommonLogicData.MainPlayerID = newPlayer.RoleAttr.RoleID;
+
+
+            //MainPlayerItem roleItem = new MainPlayerItem();
+            //roleItem.InitItemList(9);//newPlayer.RoleAttr.BadgeGridNum);
+            //newPlayer.RoleItem = roleItem;
 
         }
         else
@@ -64,11 +66,11 @@ public class PlayerManager
 		newPlayer = targetObject.AddComponent<NewPlayer>();
         if (newPlayer != null)
         {
-			newPlayer.RoleBone = targetObject.GetComponentInChildren<PlayerBone>();
-			if (newPlayer.RoleBone != null)
-			{
-				newPlayer.RoleBody = targetObject;
-			}
+            //newPlayer.RoleBone = targetObject.GetComponentInChildren<PlayerBone>();
+            //if (newPlayer.RoleBone != null)
+            //{
+            //    newPlayer.RoleBody = targetObject;
+            //}
 
             newPlayer.IsToShow = bVisible;
             //newPlayer.PlayerMoveType = SystemManager.SysMgr.m_DefPlayerMoveType;

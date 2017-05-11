@@ -223,25 +223,33 @@ public class NewPlayer : PlayerBase
 		}
 		set
 		{
-			if (m_CurStyle != value)
-			{
+            if (m_CurStyle != value)
+            {
+                PlayerStyle[] arPlayerStyle = cachedGameObject.GetComponents<PlayerStyle>();
+                if (arPlayerStyle != null)
+                {
+                    for (int i = 0; i < arPlayerStyle.Length; ++i)
+                    {
+                        if (arPlayerStyle[i] != null)
+                        {
+                            arPlayerStyle[i].BeRemoved();
+                            Destroy(arPlayerStyle[i]);
+                        }
+                    }
+                }
 
-				m_CurStyle = value;
-				switch (m_CurStyle)
-				{
-					
-					case PlayerStyleType.Create:
-						m_RoleStyle = cachedGameObject.AddComponent<PlayerCreateStyle>();
-						break;
-					
-				}
+                m_CurStyle = value;
+                switch (m_CurStyle)
+                {
+                    case PlayerStyleType.Stage:
+                        m_RoleStyle = cachedGameObject.AddComponent<PlayerStageStyle>();
+                        break;
 
-                if (m_RoleStyle != null)
-				{
-					m_RoleStyle.ReAwake();
-				}
-				
-			}
+                    case PlayerStyleType.Create:
+                        m_RoleStyle = cachedGameObject.AddComponent<PlayerCreateStyle>();
+                        break;
+                }
+            }
 		}
 	}
 

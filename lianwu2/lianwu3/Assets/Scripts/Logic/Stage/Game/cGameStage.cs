@@ -18,9 +18,9 @@ public class cGameStage : cBaseStage
 
     public override void InitStage()
     {
-        ClientResourcesMgr.InitGameLoader();
+        //ClientResourcesMgr.InitGameLoader();
         
-        UICoroutine.InitUICoroutine();
+        //UICoroutine.InitUICoroutine();
         
         //cMainApp.Instance.InitGMTool();
     }
@@ -32,7 +32,19 @@ public class cGameStage : cBaseStage
 
         cWorldManager.Instance.Close();
 
-        UICoroutine.uiCoroutine.StartCoroutine(Load());        
+        //GameMsg_S2C_PrepareRoom msg = new GameMsg_S2C_PrepareRoom();
+        //res.m_nScene = 27;
+        //res.m_nMusic = 2246;
+        //res.m_nMode = 1;
+        //res.m_nLevel = 1;
+        //res.m_strCheckKey = ;
+        //res.m_szStage = null;
+        //res.m_CountDownTime = 0;
+
+        
+        
+
+        UICoroutine.uiCoroutine.StartCoroutine(DownLoadMatch());        
 
         // coroutine        
         //LoadMusic();
@@ -51,6 +63,10 @@ public class cGameStage : cBaseStage
 
     public static IEnumerator DownLoadMatch()
     {
+        //yield return UICoroutine.uiCoroutine.StartCoroutine(ClientResourcesMgr.LoadClientResource());
+
+        RoomData.PrepareRoom(false, 27, 2246, SongMode.Taiko, "", null, 0);
+
         IEnumerator itor = null;
         itor = AnimationLoader.DownLoadStageSceneAnimation(RoomData.PlayMusciInfo.m_strMusicSource, RoomData.PlaySongMode);
         while (itor.MoveNext())
@@ -75,6 +91,11 @@ public class cGameStage : cBaseStage
             yield return null;
         }
 
+        itor = LoadMatch(null);
+        while (itor.MoveNext())
+        {
+            yield return null;
+        }
     }
 
     public static IEnumerator LoadMatch(byte[] stageInfo)
@@ -132,4 +153,6 @@ public class cGameStage : cBaseStage
         //cResourceManager.Instance.LoadEnd();
         mStageManager = null;
     }
+
+
 }

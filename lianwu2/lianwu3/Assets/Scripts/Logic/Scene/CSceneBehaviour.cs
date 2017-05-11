@@ -69,7 +69,7 @@ public class CSceneBehaviour : SceneBehaviourBase
 
     //[SerializeField]
     //CSceneCamera m_SceneCamera = null;
-    //[SerializeField]
+    [SerializeField]
     StandPlayerPosition[] m_StandPlayerPosition = null;
     [SerializeField]
     Color m_GlobalColor = new Color(1f, 1f, 1f, 1f);    

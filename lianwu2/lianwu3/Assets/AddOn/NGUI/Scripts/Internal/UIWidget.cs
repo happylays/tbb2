@@ -265,10 +265,10 @@ public abstract class UIWidget : MonoBehaviour
 		{
 			mPanel.AddWidget(this);
 			CheckLayer();
-#if UNITY_EDITOR
-			// Mark the panel as dirty so it gets updated
-			UnityEditor.EditorUtility.SetDirty(mPanel.gameObject);
-#endif
+//#if UNITY_EDITOR
+//            // Mark the panel as dirty so it gets updated
+//            UnityEditor.EditorUtility.SetDirty(mPanel.gameObject);
+//#endif
 		}
 	}
 

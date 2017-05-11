@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: 15ba39a833fd8a342946b7f806abf607
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: sm_dancestage_gs0027_1
+    100002: sm_dancestage_gs0027_2
+    100004: //RootNode
+    100006: sm_dancestage_gs0027_2 1
+    100008: sm_dancestage_gs0027_2 2
+    100010: sm_dancestage_gs0027_2 3
+    100012: sm_dancestage_gs0027_3
+    100014: sm_dancestage_gs0027_11
+    100016: sm_dancestage_gs0027_13
+    100018: sm_dancestage_gs0027_12
+    100020: sm_dancestage_gs0027_21
+    100022: sm_dancestage_gs0027_22
+    100024: sm_dancestage_gs0027_23
+    100026: chuanglian_1
+    100028: chuanglian_2
+    100030: chuanglian_3
+    100032: chuanglian_4
+    100034: chuanglian_5
+    100036: changfu_1
+    100038: changfu_2
+    100040: changfu_3
+    100042: changfu_4
+    100044: sm_dancestage_gs0027_2 4
+    100046: sm_dancestage_gs0027_2 5
+    400000: sm_dancestage_gs0027_1
+    400002: sm_dancestage_gs0027_2
+    400004: //RootNode
+    400006: sm_dancestage_gs0027_2 1
+    400008: sm_dancestage_gs0027_2 2
+    400010: sm_dancestage_gs0027_2 3
+    400012: sm_dancestage_gs0027_3
+    400014: sm_dancestage_gs0027_11
+    400016: sm_dancestage_gs0027_13
+    400018: sm_dancestage_gs0027_12
+    400020: sm_dancestage_gs0027_21
+    400022: sm_dancestage_gs0027_22
+    400024: sm_dancestage_gs0027_23
+    400026: chuanglian_1
+    400028: chuanglian_2
+    400030: chuanglian_3
+    400032: chuanglian_4
+    400034: chuanglian_5
+    400036: changfu_1
+    400038: changfu_2
+    400040: changfu_3
+    400042: changfu_4
+    400044: sm_dancestage_gs0027_2 4
+    400046: sm_dancestage_gs0027_2 5
+    2300000: sm_dancestage_gs0027_1
+    2300002: sm_dancestage_gs0027_2
+    2300004: sm_dancestage_gs0027_2 1
+    2300006: sm_dancestage_gs0027_2 2
+    2300008: sm_dancestage_gs0027_2 3
+    2300010: sm_dancestage_gs0027_3
+    2300012: sm_dancestage_gs0027_11
+    2300014: sm_dancestage_gs0027_13
+    2300016: sm_dancestage_gs0027_12
+    2300018: sm_dancestage_gs0027_21
+    2300020: sm_dancestage_gs0027_22
+    2300022: sm_dancestage_gs0027_23
+    2300024: chuanglian_1
+    2300026: chuanglian_2
+    2300028: chuanglian_3
+    2300030: chuanglian_4
+    2300032: chuanglian_5
+    2300034: changfu_1
+    2300036: changfu_2
+    2300038: changfu_3
+    2300040: changfu_4
+    2300042: sm_dancestage_gs0027_2 4
+    2300044: sm_dancestage_gs0027_2 5
+    3300000: sm_dancestage_gs0027_1
+    3300002: sm_dancestage_gs0027_2
+    3300004: sm_dancestage_gs0027_2 1
+    3300006: sm_dancestage_gs0027_2 2
+    3300008: sm_dancestage_gs0027_2 3
+    3300010: sm_dancestage_gs0027_3
+    3300012: sm_dancestage_gs0027_11
+    3300014: sm_dancestage_gs0027_13
+    3300016: sm_dancestage_gs0027_12
+    3300018: sm_dancestage_gs0027_21
+    3300020: sm_dancestage_gs0027_22
+    3300022: sm_dancestage_gs0027_23
+    3300024: chuanglian_1
+    3300026: chuanglian_2
+    3300028: chuanglian_3
+    3300030: chuanglian_4
+    3300032: chuanglian_5
+    3300034: changfu_1
+    3300036: changfu_2
+    3300038: changfu_3
+    3300040: changfu_4
+    3300042: sm_dancestage_gs0027_2 4
+    3300044: sm_dancestage_gs0027_2 5
+    4300000: sm_dancestage_gs0027_2
+    4300002: sm_dancestage_gs0027_1
+    4300004: sm_dancestage_gs0027_2
+    4300006: sm_dancestage_gs0027_2
+    4300008: sm_dancestage_gs0027_2
+    4300010: sm_dancestage_gs0027_3
+    4300012: sm_dancestage_gs0027_11
+    4300014: sm_dancestage_gs0027_13
+    4300016: sm_dancestage_gs0027_12
+    4300018: sm_dancestage_gs0027_21
+    4300020: sm_dancestage_gs0027_23
+    4300022: sm_dancestage_gs0027_22
+    4300024: chuanglian_1
+    4300026: chuanglian_2
+    4300028: chuanglian_3
+    4300030: chuanglian_4
+    4300032: chuanglian_5
+    4300034: changfu_1
+    4300036: changfu_2
+    4300038: changfu_3
+    4300040: changfu_4
+    4300042: sm_dancestage_gs0027_2
+    4300044: sm_dancestage_gs0027_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 

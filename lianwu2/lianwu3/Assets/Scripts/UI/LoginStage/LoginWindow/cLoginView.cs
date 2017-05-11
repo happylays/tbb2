@@ -5,6 +5,11 @@ using LoveDance.Client.Network.Login;
 
 public class cLoginView : View
 {
+    public override UIFlag UIID
+    {
+        get { return UIFlag.ui_taigu; }
+    }
+
     //mvc
     private cLoginClip _uiClip;    
 

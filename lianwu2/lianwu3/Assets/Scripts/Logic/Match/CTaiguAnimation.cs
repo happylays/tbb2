@@ -77,8 +77,8 @@ public class CTaiguAnimation : MonoBehaviour
         }
     }
     void OnBlendAnimation(TimeLineElement tle)
-    {
-        for (int i = 0; i < CommonDef.MAX_ROOM_PLAYER; i++)
+    {        
+        for (int i = 0; i < 1; i++) //CommonDef.MAX_ROOM_PLAYER
         {
             PlayerBase player = RoomData.GetRoomPlayerByPos(i);
             if (player != null)

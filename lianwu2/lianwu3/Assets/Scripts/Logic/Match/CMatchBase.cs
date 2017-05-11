@@ -196,7 +196,8 @@ public class CMatchBase : NetMonoBehaviour
 
     
     public void BeginMatch()
-    {        
+    {
+        mIsStart = true;
         SendMessage("OnMatchBegin", SendMessageOptions.DontRequireReceiver);
     }
 

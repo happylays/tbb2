@@ -75,14 +75,16 @@ namespace LoveDance.Client.Logic.Room
 
         public static PlayerBase GetRoomPlayerByPos(int nPos)
         {
-            int MaxCount = CommonDef.MAX_ROOM_PLAYER + CommonDef.MAX_ROOM_AUDIENCE;
+            return CommonLogicData.MainPlayer;
 
-            if (nPos >= 0 && nPos < MaxCount && nPos < mRoomPlayer.Length)
-            {
-                return mRoomPlayer[nPos];
-            }
+            //int MaxCount = CommonDef.MAX_ROOM_PLAYER + CommonDef.MAX_ROOM_AUDIENCE;
 
-            return null;
+            //if (nPos >= 0 && nPos < MaxCount && nPos < mRoomPlayer.Length)
+            //{
+            //    return mRoomPlayer[nPos];
+            //}
+
+            //return null;
         }
     }
 }

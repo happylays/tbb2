@@ -182,13 +182,13 @@ namespace LoveDance.Client.Logic.Ress
                 //    yield return null;
                 //}
 
-                //IEnumerator itor = LoadStaticData();
-                //while (itor.MoveNext())
-                //{
-                //    yield return null;
-                //}
+                IEnumerator itor = LoadStaticData();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
 
-                IEnumerator itor = UIWndLoader.LoadUIConfig(CommonValue.UIDir, CommonValue.InUIDir, CommonValue.NetUIDir);
+                itor = UIWndLoader.LoadUIConfig(CommonValue.UIDir, CommonValue.InUIDir, CommonValue.NetUIDir);
                 while (itor.MoveNext())
                 {
                     yield return null;
@@ -271,6 +271,13 @@ namespace LoveDance.Client.Logic.Ress
         /// </summary>
         static IEnumerator LoadStaticData()
         {
+            IEnumerator itor = null;
+            itor = (new CMusicDataLoader()).Load(CommonDef.SD_MUSIC_INFO);
+            while (itor.MoveNext())
+            {
+                yield return null;
+            }
+
             yield return null;            
         }
     }

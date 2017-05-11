@@ -49,6 +49,22 @@ public abstract class CMatchStageInfo
     public float mDanceTime = 0f;
     public List<int[]> mShowRounds = new List<int[]>();
 
+    public void SetMatchValue()
+    {
+        mMusicFile = "song2246";
+
+        mBPM = 128;
+
+        mOffset = 9.615f;
+
+        mKSpeed = 0.9f;
+
+        mMatchTime = 102;
+
+        mDanceTime = 9.625f;
+       
+    }
+
     public void SetMatchValue(string key, string value)
     {
         if (string.Compare(key, "TITLE") == 0)
