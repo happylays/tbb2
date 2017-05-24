@@ -300,7 +300,10 @@ public class PlayerStyle : MonoBehaviour
                     return AnimationLoader.MissBoy;
                 case "DanceStart_HB":
                     return AnimationLoader.HB_StartDance_Boy;
-                
+                case "Win":                    
+                    return AnimationLoader.WinBoy;                    
+                case "Lose":                    
+                    return AnimationLoader.LoseBoy;                    
                 case "Dress":
                 case "DressCurtain":
                     return AnimationLoader.DressBoy;
@@ -337,7 +340,10 @@ public class PlayerStyle : MonoBehaviour
                     return AnimationLoader.MissGirl;
                 case "DanceStart_HB":
                     return AnimationLoader.HB_StartDance_Girl;
-               
+                case "Win":
+                    return AnimationLoader.WinGirl;
+                case "Lose":
+                    return AnimationLoader.LoseGirl;  
                 case "Dress":
                 case "DressCurtain":
                     return AnimationLoader.DressGirl;

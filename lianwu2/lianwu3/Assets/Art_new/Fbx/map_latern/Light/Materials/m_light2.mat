@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: m_light2
+  m_Shader: {fileID: 4800000, guid: 224c2e44f7a80294f886581f68a597a3, type: 3}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 03fa7be48fd94a845bbec265a3496408, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Mask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 772b6def6445aa84c8cfdc23770ce74f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AphlaTex
+        second:
+          m_Texture: {fileID: 2800000, guid: f3f54f30ccbbd864ca313c2bde565f3a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _ScrollX
+        second: .800000012
+      data:
+        first:
+          name: _ScrollY
+        second: 0
+      data:
+        first:
+          name: _Scroll2X
+        second: -1
+      data:
+        first:
+          name: _Scroll2Y
+        second: 0
+      data:
+        first:
+          name: _SineAmplX
+        second: 0
+      data:
+        first:
+          name: _SineAmplY
+        second: 0
+      data:
+        first:
+          name: _SineFreqX
+        second: 0
+      data:
+        first:
+          name: _SineFreqY
+        second: 0
+      data:
+        first:
+          name: _SineAmplX2
+        second: 0
+      data:
+        first:
+          name: _SineAmplY2
+        second: 0
+      data:
+        first:
+          name: _SineFreqX2
+        second: 0
+      data:
+        first:
+          name: _SineFreqY2
+        second: 0
+      data:
+        first:
+          name: _MMultiplier
+        second: 3
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .291044772, g: .291044772, b: .291044772, a: .635294139}

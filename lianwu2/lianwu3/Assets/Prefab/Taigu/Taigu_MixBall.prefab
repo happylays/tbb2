@@ -44,6 +44,7 @@ Transform:
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -55,6 +56,7 @@ Transform:
   m_LocalScale: {x: 43, y: 42, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
+  m_RootOrder: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,9 +65,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9997601f0288b734397bd83c370980f1, type: 3}
+  m_Script: {fileID: 11500000, guid: f81e47b1c71f6d343b16f4d5b3dd663c, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   m_BallType: 3
+  m_LineTrans: {fileID: 0}
+  m_EndBall: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,6 +81,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   mMat: {fileID: 2100000, guid: 689d0e664c9e1d24ebf086e42e72c7b4, type: 2}
   mTex: {fileID: 2800000, guid: 1de1d4446c17d97439f53be83961885b, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}

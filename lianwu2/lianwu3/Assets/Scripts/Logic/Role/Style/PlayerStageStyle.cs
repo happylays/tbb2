@@ -263,6 +263,10 @@ public class PlayerStageStyle : PlayerStyle
                 OwnerAni.Play(stateName, PlayMode.StopSameLayer);
             }
         }
+        
+        bool isPlay = OwnerAni.IsPlaying(stateName);
+        bool isPlay2 = OwnerAni.IsPlaying("Stand");
+
     }
 
     void OnRemoveAnimation(TimeLineElement tle)
@@ -323,6 +327,9 @@ public class PlayerStageStyle : PlayerStyle
                 OwnerAni.CrossFade(stateName, duration);
             }
         }
+
+        bool isPlay = OwnerAni.IsPlaying(stateName);
+        bool isPlay2 = OwnerAni.IsPlaying("Stand");
     }
 
     string getPreNameBySex()
@@ -346,5 +353,15 @@ public class PlayerStageStyle : PlayerStyle
                 return WrapMode.Once;
         }
         return WrapMode.Default;
+    }
+
+    void OnShowTimeBegin(bool bFirst)
+    {
+        
+    }
+
+    void OnEndShowTime()
+    {
+        
     }
 }

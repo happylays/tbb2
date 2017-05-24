@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Collections.Generic;
 using LoveDance.Client.Common;
+using LoveDance.Client.Loader;
+using UnityEngine;
 
 public class CTaiguShowTime
 {
@@ -28,11 +31,61 @@ public class CTaiguStageInfo : CMatchStageInfo
     public List<TaiguRoundInfo> RoundInfoList = new List<TaiguRoundInfo>();
     public List<CTaiguShowTime> ShowTimeList = new List<CTaiguShowTime>();
 
+    public override IEnumerator Load(string strFileName)
+    {
+        byte[] gtBytes = null;
+
+        if (!string.IsNullOrEmpty(strFileName))
+        {
+            string assetWWWPath = CommonValue.StaDataWWWDir + strFileName;
+            string assetPath = CommonValue.StaDataDir + strFileName;
+            if (!File.Exists(assetPath))
+            {
+                assetWWWPath = CommonValue.InStaDataWWWDir + strFileName;
+                assetPath = CommonValue.InStaDataDir + strFileName;
+            }
+
+            WWW www = null;
+            using (www = new WWW(assetWWWPath))
+            {
+                while (!www.isDone)
+                {
+                    yield return null;
+                }
+
+                if (www.error != null)
+                {
+                    Debug.LogError(www.error);
+                    Debug.LogError("StaticData Load Error! AssetName : " + strFileName);
+                }
+                else
+                {
+                    gtBytes = www.bytes;
+                }
+
+                www.Dispose();
+                www = null;
+            }
+        }
+        else
+        {
+            Debug.LogError("StaticData load error, FileName can not be null.");
+        }
+        
+
+        if (gtBytes != null)
+        {
+            LoadStageInfo(gtBytes);
+        }
+        gtBytes = null;
+        //Messenger.Broadcast(MessangerEventDef.LOAD_ONEASSET_FINISH, MessengerMode.DONT_REQUIRE_LISTENER);
+    }
+
     public override void LoadStageInfo(byte[] stageInfo)
     {
-        SetMatchValue();
+        //SetMatchValue();
 
-        return;
+        //return;
 
         using (MemoryStream memStream = new MemoryStream(stageInfo))
         {

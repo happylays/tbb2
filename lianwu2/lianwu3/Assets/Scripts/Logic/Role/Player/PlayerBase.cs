@@ -158,4 +158,5 @@ public abstract class PlayerBase : NetMonoBehaviour
 
     public abstract void CreateUIRoleCamera(Vector3 topLeft, Vector3 bottomRight, Camera ca, CameraLevel camLevel, GameLayer targetLayer, float fieldOfView);
 
+    public abstract void DestroyUIRoleCamera();
 }

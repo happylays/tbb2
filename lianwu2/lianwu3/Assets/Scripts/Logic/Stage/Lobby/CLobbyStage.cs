@@ -3,6 +3,7 @@ using System.Collections;
 using LoveDance.Client.Common;
 using LoveDance.Client.Logic.Ress;
 using LoveDance.Client.Loader;
+using LoveDance.Client.Logic;
 
 public class cLobbyStage : cBaseStage
 {
@@ -17,14 +18,11 @@ public class cLobbyStage : cBaseStage
 
     public override void InitStage()
     {
-        ClientResourcesMgr.InitGameLoader();
+        //ClientResourcesMgr.InitGameLoader();
 
         mLobbyUIManager = new cLobbyUIManager();
         mLobbyUIManager.Init();
 
-        UICoroutine.InitUICoroutine();
-
-        
         //cMainApp.Instance.InitGMTool();
     }
 
@@ -73,6 +71,12 @@ public class cLobbyStage : cBaseStage
     public override void Close()
     {
         mLobbyUIManager.Close();
+
+        PlayerBase mainPlayer = CommonLogicData.MainPlayer;
+        if (mainPlayer != null)
+        {
+            mainPlayer.DestroyUIRoleCamera();
+        }
     }
 
     public override void Exit()

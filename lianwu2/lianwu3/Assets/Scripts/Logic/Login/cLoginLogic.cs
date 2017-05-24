@@ -24,7 +24,7 @@ namespace LoveDance.Client.Logic.Login
             base.RegistNetMessage();
             
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_LoginResult, OnRoleLoginRes);
-            //NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_RequireCreateRole, this.OnSelectRole);
+            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_RequireCreateRole, this.OnSelectRole);
             //NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_CheckActivateResult, this.OnCheckActiveResult);
         }
         

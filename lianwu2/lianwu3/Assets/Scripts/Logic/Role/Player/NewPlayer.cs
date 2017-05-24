@@ -2404,4 +2404,19 @@ public class NewPlayer : PlayerBase
         }
     }
 
+    public override void DestroyUIRoleCamera()
+    {
+        if (m_UIRoleCamera != null)
+        {
+            Destroy(m_UIRoleCamera);
+            m_UIRoleCamera = null;
+
+            CurrentStyle = m_LastStyle;
+            m_LastStyle = PlayerStyleType.None;
+            m_CurrentPlayerLayer = GameLayer.Player;
+            CommonFunc.SetLayer(cachedGameObject, GameLayer.Player, true, GameLayer.Player_UI);
+            //EnableLightProb(true);
+        }
+    }
+
 }

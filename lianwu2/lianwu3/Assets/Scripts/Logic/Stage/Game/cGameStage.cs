@@ -96,6 +96,8 @@ public class cGameStage : cBaseStage
         {
             yield return null;
         }
+
+        SwitchingControl.HideSwitching();
     }
 
     public static IEnumerator LoadMatch(byte[] stageInfo)
@@ -129,7 +131,11 @@ public class cGameStage : cBaseStage
             yield return null;
         }
 
-        CMatchBase.CurrentMatch.PrepareMatch(true, true, stageInfo);
+        itor = CMatchBase.CurrentMatch.PrepareMatch(true, true, stageInfo);
+        while (itor.MoveNext())
+        {
+            yield return null;
+        }
 
         if (stageScene != null)
         {

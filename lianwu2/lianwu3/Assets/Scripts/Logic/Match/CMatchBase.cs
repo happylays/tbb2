@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using LoveDance.Client.Loader;
 using LoveDance.Client.Common;
 using LoveDance.Client.Logic.Room;
+using LoveDance.Client.Data.Setting;
 
 
 public class CMatchBase : NetMonoBehaviour
@@ -12,6 +13,8 @@ public class CMatchBase : NetMonoBehaviour
     bool mIsStart = false;
     float mCurrentTime = 0f;
     float mDeltaTime = 0f;
+    protected bool m_bIsDancer = false;
+    bool mbAdjustTime = false;
 
     public static CMatchBase CurrentMatch
     {
@@ -25,6 +28,14 @@ public class CMatchBase : NetMonoBehaviour
     {
         get;
         private set;
+    }
+
+    public bool IsDancer
+    {
+        get
+        {
+            return m_bIsDancer;
+        }
     }
 
     public bool IsStart
@@ -57,9 +68,19 @@ public class CMatchBase : NetMonoBehaviour
 
     CTimeLineQueue m_TimeLineEventQueue = new CTimeLineQueue();
 
+    protected bool mMatchOpen = false;
+
     private int audioTime = 0;
     private int min = 0;
     private int sec = 0;
+
+    public bool MatchOpen
+    {
+        get
+        {
+            return mMatchOpen;
+        }
+    }
 
     void Awake()
     {
@@ -182,19 +203,27 @@ public class CMatchBase : NetMonoBehaviour
         AddEvent(tle);
     }
 
-    public void PrepareMatch(bool isDancer, bool isAutoWithAudioTime, byte[] stageInfo)
+    public void AdjustTimeFromAudioSourceTimeNextFrame()
+    {
+        mbAdjustTime = true;
+    }
+
+    public IEnumerator PrepareMatch(bool isDancer, bool isAutoWithAudioTime, byte[] stageInfo)
     {
         if (StageInfo != null)
-        {            
-            StageInfo.LoadStageInfo(stageInfo);
+        {
+            IEnumerator it = StageInfo.Load("song2246.tge");
+            while (it.MoveNext())
+            {
+                yield return null;
+            }
+
+            //StageInfo.LoadStageInfo(stageInfo);
         }
 
         SendMessage("OnMatchPrepare", isDancer, SendMessageOptions.DontRequireReceiver);
     }
-
-
-
-    
+        
     public void BeginMatch()
     {
         mIsStart = true;
@@ -340,6 +369,21 @@ public class CMatchBase : NetMonoBehaviour
     public IEnumerator InitMatch(UIFlag uiFlag)
     {
         yield return null;
+    }
+
+    public void AddShowTimeEnd(float fbegin)
+    {
+        TimeLineElement tle = new TimeLineElement();
+        tle.m_functionName = "OnShowTimeEnd";
+        tle.m_Time = fbegin;
+        AddEvent(tle);
+    }
+    public void AddShowTimeBegin(float fbegin)
+    {
+        TimeLineElement tle = new TimeLineElement();
+        tle.m_functionName = "OnShowTimeBegin";
+        tle.m_Time = fbegin;
+        AddEvent(tle);
     }
 }
 

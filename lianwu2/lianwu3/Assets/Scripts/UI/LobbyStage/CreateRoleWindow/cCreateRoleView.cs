@@ -6,6 +6,7 @@ using LoveDance.Client.Network;
 using LoveDance.Client.Network.Login;
 using LoveDance.Client.Logic.Ress;
 using LoveDance.Client.Loader;
+using LoveDance.Client.Logic;
 
 public class cCreateRoleView : View
 {
@@ -100,7 +101,7 @@ public class cCreateRoleView : View
     {
         //UIEventListener.Get(_uiClip.btnOk).onClick = onEvent;
 
-        //UIEventListener.Get(_uiClip.m_btnOk.gameObject).onClick = OnClickOk;
+        UIEventListener.Get(_uiClip.m_btnOk.gameObject).onClick = OnClickOk;
     }
 
     public void removeEvent() 
@@ -117,10 +118,12 @@ public class cCreateRoleView : View
 
     public void OnClickOk(GameObject go)
     {
-        //GameMsg_C2S_Login msg = new GameMsg_C2S_Login();        
-        //NetworkMgr.SendMsg(msg);
+        GameMsg_C2S_CreateRole msg = new GameMsg_C2S_CreateRole();
+        NetworkMgr.SendMsg(msg);
 
-        //NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
+        NetworkMgr.DoMessage(GameMsgType.MSG_S2C_RequireCreateRole);
+
+        UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
     }
     
     // receive msg
@@ -149,6 +152,9 @@ public class cCreateRoleView : View
             _uiClip.destroy();            
         }
         _uiClip = null;
+
+        
+
     }
 
     //old
@@ -178,7 +184,8 @@ public class cCreateRoleView : View
 
         yield return UICoroutine.uiCoroutine.StartCoroutine(PreparePlayerModel());
 
-        cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Game);
+        SwitchingControl.HideSwitching();
+        ///cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Game);
     }
 
     IEnumerator PreparePlayerModel()

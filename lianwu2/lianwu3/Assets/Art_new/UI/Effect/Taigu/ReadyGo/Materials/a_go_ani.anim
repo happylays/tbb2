@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: a_go_ani
+  serializedVersion: 3
+  m_AnimationType: 1
+  m_Compressed: 0
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 1.875, y: 1.875, z: 1.875}
+        outSlope: {x: 1.875, y: 1.875, z: 1.875}
+        tangentMode: -559038737
+      - time: .800000012
+        value: {x: 1.5, y: 1.5, z: 1.5}
+        inSlope: {x: .9375, y: .9375, z: .9375}
+        outSlope: {x: .9375, y: .9375, z: .9375}
+        tangentMode: -559038737
+      - time: .833333313
+        value: {x: 1.5, y: 1.5, z: 1.5}
+        inSlope: {x: Infinity, y: Infinity, z: Infinity}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: -559038737
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    path: taigu_go
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: .666666687
+        value: .969072163
+        inSlope: -2.90721655
+        outSlope: -2.90721655
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -2.90721655
+        outSlope: -2.90721655
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: _Color.a
+    path: taigu_go
+    classID: 21
+    script: {fileID: 0}
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MuscleClipInfo:
+    m_StartTime: 0
+    m_StopTime: 1
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1.875
+        outSlope: 1.875
+        tangentMode: 10
+      - time: .800000012
+        value: 1.5
+        inSlope: .9375
+        outSlope: .9375
+        tangentMode: 10
+      - time: .833333313
+        value: 1.5
+        inSlope: Infinity
+        outSlope: 0
+        tangentMode: 7
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.x
+    path: taigu_go
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1.875
+        outSlope: 1.875
+        tangentMode: 10
+      - time: .800000012
+        value: 1.5
+        inSlope: .9375
+        outSlope: .9375
+        tangentMode: 10
+      - time: .833333313
+        value: 1.5
+        inSlope: Infinity
+        outSlope: 0
+        tangentMode: 7
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.y
+    path: taigu_go
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1.875
+        outSlope: 1.875
+        tangentMode: 10
+      - time: .800000012
+        value: 1.5
+        inSlope: .9375
+        outSlope: .9375
+        tangentMode: 10
+      - time: .833333313
+        value: 1.5
+        inSlope: Infinity
+        outSlope: 0
+        tangentMode: 7
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: m_LocalScale.z
+    path: taigu_go
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: .666666687
+        value: .969072163
+        inSlope: -2.90721655
+        outSlope: -2.90721655
+        tangentMode: 10
+      - time: 1
+        value: 0
+        inSlope: -2.90721655
+        outSlope: -2.90721655
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    attribute: _Color.a
+    path: taigu_go
+    classID: 21
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_Events: []

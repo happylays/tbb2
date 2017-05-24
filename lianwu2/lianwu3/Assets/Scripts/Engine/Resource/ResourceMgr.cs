@@ -81,6 +81,13 @@ namespace LoveDance.Client.Logic.Ress
                 CommonValue.InUIAtlasWWWDir,
                 CommonValue.NetUIAtlasDir);
 
+            ExtraLoader.InitExtraLoader(
+                CommonValue.UITextureDir,
+                CommonValue.UITextureWWWDir,
+                CommonValue.InUITextureDir,
+                CommonValue.InUITextureWWWDir,
+                CommonValue.NetUITextureDir);
+
             SceneLoader.InitSceneLoader(
                 CommonValue.StageWWWDir,
                 CommonValue.StageDir,
@@ -242,13 +249,13 @@ namespace LoveDance.Client.Logic.Ress
                 s_IsInitingRemainRes = true;
                 s_IsInitRemainRes = true;
 
-                //IEnumerator itor = SkinnLoader.LoaddefaultSkins();
-                //while (itor.MoveNext())
-                //{
-                //    yield return null;
-                //}
+                IEnumerator itor = SkinnLoader.LoaddefaultSkins();
+                while (itor.MoveNext())
+                {
+                    yield return null;
+                }
 
-                IEnumerator itor = BoneLoader.LoadPlayerBone();
+                itor = BoneLoader.LoadPlayerBone();
                 while (itor.MoveNext())
                 {
                     yield return null;

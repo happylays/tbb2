@@ -71,11 +71,16 @@ public class cLoginView : View
 
     public void OnClickOk(GameObject go)
     {
+
         GameMsg_C2S_Login msg = new GameMsg_C2S_Login();        
         NetworkMgr.SendMsg(msg);
 
         NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
         //NetworkMgr.DoMessage(GameMsgType.MSG_S2C_CreateRoleSuc);
+
+
+        UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
+        
     }
     
     // receive msg

@@ -8,7 +8,7 @@ public class cCreateRoleClip : UIClip
     {
         //btnOk = getGameObject("medal.btnOk");
 
-        //m_btnOk = getGameObject("Camera.UserAgreementUI.Acher_center.BtnConfirm");
+        m_btnOk = getGameObject("Camera.Anchor.BtnCreateRole");
     }
 
     public void SetMethod() 

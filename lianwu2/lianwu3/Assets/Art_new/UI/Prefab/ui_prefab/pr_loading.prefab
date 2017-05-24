@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: pr_loading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: fb2c49e80b77ce44ab445748c7872f53, type: 2}
+  sprites:
+  - name: loading1
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 55
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 55
+      height: 56
+    rotated: 0
+    paddingLeft: .0181818176
+    paddingRight: .0545454547
+    paddingTop: 0
+    paddingBottom: 0
+  - name: loading10
+    outer:
+      serializedVersion: 2
+      x: 111
+      y: 111
+      width: 19
+      height: 51
+    inner:
+      serializedVersion: 2
+      x: 111
+      y: 111
+      width: 19
+      height: 51
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0196078438
+    paddingBottom: .0196078438
+  - name: loading11
+    outer:
+      serializedVersion: 2
+      x: 108
+      y: 57
+      width: 45
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 108
+      y: 57
+      width: 45
+      height: 52
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0192307699
+    paddingBottom: .0192307699
+  - name: loading12
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 175
+      width: 50
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 175
+      width: 50
+      height: 52
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0192307699
+    paddingBottom: .0192307699
+  - name: loading13
+    outer:
+      serializedVersion: 2
+      x: 52
+      y: 60
+      width: 54
+      height: 55
+    inner:
+      serializedVersion: 2
+      x: 52
+      y: 60
+      width: 54
+      height: 55
+    rotated: 0
+    paddingLeft: .0185185187
+    paddingRight: .0185185187
+    paddingTop: 0
+    paddingBottom: 0
+  - name: loading14
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 118
+      width: 55
+      height: 55
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 118
+      width: 55
+      height: 55
+    rotated: 0
+    paddingLeft: .0181818176
+    paddingRight: .0181818176
+    paddingTop: .0181818176
+    paddingBottom: .0181818176
+  - name: loading3
+    outer:
+      serializedVersion: 2
+      x: 59
+      y: 2
+      width: 54
+      height: 53
+    inner:
+      serializedVersion: 2
+      x: 59
+      y: 2
+      width: 54
+      height: 53
+    rotated: 0
+    paddingLeft: .055555556
+    paddingRight: .0185185187
+    paddingTop: .0188679248
+    paddingBottom: .0188679248
+  - name: loading4
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 60
+      width: 48
+      height: 56
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 60
+      width: 48
+      height: 56
+    rotated: 0
+    paddingLeft: .020833334
+    paddingRight: .020833334
+    paddingTop: 0
+    paddingBottom: 0
+  - name: loading5
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 229
+      width: 24
+      height: 23
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 229
+      width: 24
+      height: 23
+    rotated: 0
+    paddingLeft: .0416666679
+    paddingRight: .0416666679
+    paddingTop: .0434782617
+    paddingBottom: .0434782617
+  - name: loading6
+    outer:
+      serializedVersion: 2
+      x: 115
+      y: 2
+      width: 39
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 115
+      y: 2
+      width: 39
+      height: 52
+    rotated: 0
+    paddingLeft: .025641026
+    paddingRight: .0769230798
+    paddingTop: .0192307699
+    paddingBottom: .0192307699
+  - name: loading7
+    outer:
+      serializedVersion: 2
+      x: 59
+      y: 117
+      width: 50
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 59
+      y: 117
+      width: 50
+      height: 52
+    rotated: 0
+    paddingLeft: .0199999996
+    paddingRight: .0199999996
+    paddingTop: .0192307699
+    paddingBottom: .0192307699
+  - name: loading8
+    outer:
+      serializedVersion: 2
+      x: 54
+      y: 175
+      width: 50
+      height: 52
+    inner:
+      serializedVersion: 2
+      x: 54
+      y: 175
+      width: 50
+      height: 52
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0192307699
+    paddingBottom: .0192307699
+  - name: loading9
+    outer:
+      serializedVersion: 2
+      x: 106
+      y: 171
+      width: 47
+      height: 51
+    inner:
+      serializedVersion: 2
+      x: 106
+      y: 171
+      width: 47
+      height: 51
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .0196078438
+    paddingBottom: .0196078438
+  - name: mengdi
+    outer:
+      serializedVersion: 2
+      x: 48
+      y: 242
+      width: 13
+      height: 11
+    inner:
+      serializedVersion: 2
+      x: 53
+      y: 246
+      width: 3
+      height: 4
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: xiazai_jindu
+    outer:
+      serializedVersion: 2
+      x: 48
+      y: 229
+      width: 24
+      height: 11
+    inner:
+      serializedVersion: 2
+      x: 60
+      y: 229
+      width: 1
+      height: 11
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: xiazai_jindu_di
+    outer:
+      serializedVersion: 2
+      x: 28
+      y: 229
+      width: 18
+      height: 15
+    inner:
+      serializedVersion: 2
+      x: 37
+      y: 229
+      width: 1
+      height: 15
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

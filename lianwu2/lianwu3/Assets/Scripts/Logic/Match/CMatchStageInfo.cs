@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 
 public abstract class CMatchStageInfo
 {
+    public abstract IEnumerator Load(string strFileName);
     public abstract void LoadStageInfo(byte[] stageInfo);
 
     public virtual void ResetStageInfoData()

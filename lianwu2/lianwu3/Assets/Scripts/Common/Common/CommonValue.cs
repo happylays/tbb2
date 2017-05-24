@@ -168,7 +168,8 @@ namespace LoveDance.Client.Common
 					}
 					else if (Application.platform == RuntimePlatform.Android)
 					{
-						strDir = StorageDir + "/xuanqu/lwts/";
+						//strDir = StorageDir + "/xuanqu/lwts/";
+                        strDir = Application.persistentDataPath + "/";
 					}
 					else
 					{

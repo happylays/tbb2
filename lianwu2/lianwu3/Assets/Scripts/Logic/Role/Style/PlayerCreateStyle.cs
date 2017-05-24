@@ -76,6 +76,7 @@ public class PlayerCreateStyle : PlayerStyle
     {
         base.OnBodyCreated();
 
+        OnUpdate();
         m_Interval = UnityEngine.Random.Range(0, 80000) / (float)10000;
     }
 
@@ -84,7 +85,7 @@ public class PlayerCreateStyle : PlayerStyle
         if (AnimationLoader.RoleCreateAniExist && OwnerAni != null)
         {
 			OwnerAni.AddClip(GetAniClipBySex(Hello), Hello, WrapMode.Once, 3);
-			OwnerAni.AddClip(GetAniClipBySex(AniMoveState.Stand.ToString()), AniMoveState.Stand.ToString(), WrapMode.Loop, 1, 1f);
+            OwnerAni.AddClip(GetAniClipBySex(AniMoveState.Stand.ToString()), AniMoveState.Stand.ToString(), WrapMode.Once, 1, 1f);
 			OwnerAni.AddClip(GetAniClipBySex(Stand_B), Stand_B, WrapMode.Once, 2, 0f);
 			OwnerAni.AddClip(GetAniClipBySex(Stand_C), Stand_C, WrapMode.Once, 2, 0f);
 			OwnerAni.AddClip(GetAniClipBySex(Stand_D), Stand_D, WrapMode.Once, 2, 0f);            

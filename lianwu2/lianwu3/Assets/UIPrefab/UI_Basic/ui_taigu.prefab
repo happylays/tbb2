@@ -660,7 +660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100080
 GameObject:
   m_ObjectHideFlags: 1
@@ -1882,8 +1882,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -198.399994, y: -65.5, z: 0}
-  m_LocalScale: {x: 399, y: 49, z: 1}
+  m_LocalPosition: {x: -198, y: -66, z: 0}
+  m_LocalScale: {x: 400, y: 48, z: 1}
   m_Children: []
   m_Father: {fileID: 400056}
   m_RootOrder: 12
@@ -2023,8 +2023,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -272.700012, y: -174.100006, z: 0}
-  m_LocalScale: {x: 91, y: 92, z: 1}
+  m_LocalPosition: {x: -273, y: -174, z: 0}
+  m_LocalScale: {x: 90, y: 92, z: 1}
   m_Children: []
   m_Father: {fileID: 400030}
   m_RootOrder: 1
@@ -2071,7 +2071,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 324.037842, y: 239.999985, z: 0}
+  m_LocalPosition: {x: 452.744446, y: 239.999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400132}
@@ -2109,7 +2109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 324.037842, y: -239.999985, z: 0}
+  m_LocalPosition: {x: 452.744446, y: -239.999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400110}
@@ -2161,8 +2161,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 270, y: -173.300003, z: 0}
-  m_LocalScale: {x: 91, y: 92, z: 1}
+  m_LocalPosition: {x: 270, y: -174, z: 0}
+  m_LocalScale: {x: 90, y: 92, z: 1}
   m_Children: []
   m_Father: {fileID: 400072}
   m_RootOrder: 0
@@ -2199,7 +2199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -324.037842, y: 239.999985, z: 0}
+  m_LocalPosition: {x: -452.744446, y: 239.999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400054}
@@ -2281,7 +2281,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2301,7 +2301,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7449ba84e75041c4586649a8dbd28a1b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2321,7 +2321,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f9b8569b60942d14490a4c2b0b0285f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2341,7 +2341,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f9b8569b60942d14490a4c2b0b0285f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2381,7 +2381,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 58600a0977c544f4bbe55c071292965a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2421,7 +2421,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2441,7 +2441,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2461,7 +2461,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 84dcff60c69eb4245b2d68203519f7ad, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2481,7 +2481,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2521,7 +2521,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f9b8569b60942d14490a4c2b0b0285f0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2541,7 +2541,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2561,7 +2561,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: fc7184ab1338cdd4abe8005becdde98c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2581,7 +2581,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2601,7 +2601,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2621,7 +2621,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2641,7 +2641,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5156bfec28db4e1449767882d4a7ee15, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2819,9 +2819,10 @@ Animation:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2834,9 +2835,10 @@ Animation:
   m_GameObject: {fileID: 100022}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2879,9 +2881,10 @@ Animation:
   m_GameObject: {fileID: 100058}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2894,9 +2897,10 @@ Animation:
   m_GameObject: {fileID: 100068}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2909,11 +2913,12 @@ Animation:
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!111 &11100014
@@ -2924,9 +2929,10 @@ Animation:
   m_GameObject: {fileID: 100082}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2939,9 +2945,10 @@ Animation:
   m_GameObject: {fileID: 100096}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: a7db4bf61f0f2a94a84f1a58a81b1d2b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2954,9 +2961,10 @@ Animation:
   m_GameObject: {fileID: 100116}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2969,9 +2977,10 @@ Animation:
   m_GameObject: {fileID: 100130}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_Animations:
   - {fileID: 0}
+  - {fileID: 7400000, guid: 8f4c758271b9bee44ac8cd6b44941809, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -3061,7 +3070,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c7a0a09c92309418ec8cf496a353d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ef00b7774f46eb459342c76c1a9ad13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 100052}
@@ -3447,7 +3456,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45c7a0a09c92309418ec8cf496a353d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ef00b7774f46eb459342c76c1a9ad13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 100052}
@@ -3524,6 +3533,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOpeartor: {fileID: 2000000}
   m_Match: {fileID: 11400024}
+  m_ThresholdTime: .100000001
+  m_BeginPos: {fileID: 400124}
+  m_CheckPos: {fileID: 400108}
+  m_CheckEdgeRight: {fileID: 400112}
+  m_BallCaptain: {fileID: 100060}
+  m_BallCache: {fileID: 100126}
+  m_BeatCombo: {fileID: 11400036}
+  m_RedDrumUp: {fileID: 100010}
+  m_RedDrumDown: {fileID: 100120}
+  m_RedEffect: {fileID: 0}
+  m_BlueDrumUp: {fileID: 100140}
+  m_BlueDrumDown: {fileID: 100142}
+  m_BlueEffect: {fileID: 0}
+  m_RoundBarPreb: {fileID: 100000, guid: 6b426a19ca507a84cac6f79d56bd79ff, type: 2}
+  m_RedBallPreb: {fileID: 100000, guid: f2ce302e3a6e2814dae2c7877692a6b7, type: 2}
+  m_BlueBallPreb: {fileID: 100000, guid: 5b7fcee115243d845af78968eaae48fb, type: 2}
+  m_MixBallPreb: {fileID: 100000, guid: 41bbc8bd5e6c5634ab848e94b6bc99d8, type: 2}
+  m_HoldBallPreb: {fileID: 0}
+  m_psRed: {fileID: 0}
+  m_psBlue: {fileID: 0}
+  m_psMix: {fileID: 0}
+  m_psYellow: {fileID: 0}
+  m_psMiss: {fileID: 0}
+  m_HitRedAni: {fileID: 11100010}
+  m_HitBlueAni: {fileID: 11100016}
+  m_HitMixAni: {fileID: 11100008}
+  m_BeatRankAni:
+  - {fileID: 11100020}
+  - {fileID: 11100002}
+  - {fileID: 11100018}
+  - {fileID: 11100000}
+  - {fileID: 11100014}
+  m_ReadyAni: {fileID: 0}
+  m_GoAni: {fileID: 0}
+  m_SpecialParticleNormal: {fileID: 0}
+  m_SpecialParticle1: {fileID: 0}
+  m_SpecialParticle2: {fileID: 0}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3600,7 +3646,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb383a7a0bd8e74f897d22ad3c05739, type: 3}
+  m_Script: {fileID: 11500000, guid: e03a509e67ac3724688d557e55a13344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComboSize: 55
@@ -3708,12 +3754,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMat: {fileID: 0}
-  mTex: {fileID: 0}
+  mMat: {fileID: 2100000, guid: 689d0e664c9e1d24ebf086e42e72c7b4, type: 2}
+  mTex: {fileID: 2800000, guid: 4f6aae150dab18c449e5e9dbade55770, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 0
-  mAtlas: {fileID: 0}
+  mAtlas: {fileID: 11400000, guid: 90c7f2a0d3e8d39408e22d0eb5354849, type: 2}
   mSpriteName: tiao_1
   mFillCenter: 0
   mType: 1
@@ -3808,11 +3854,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMat: {fileID: 2100000, guid: 689d0e664c9e1d24ebf086e42e72c7b4, type: 2}
-  mTex: {fileID: 2800000, guid: 1de1d4446c17d97439f53be83961885b, type: 3}
+  mTex: {fileID: 2800000, guid: 4f6aae150dab18c449e5e9dbade55770, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 0
-  mAtlas: {fileID: 0}
+  mAtlas: {fileID: 11400000, guid: 90c7f2a0d3e8d39408e22d0eb5354849, type: 2}
   mSpriteName: big_red_1
   mFillCenter: 1
   mType: 0
@@ -3911,11 +3957,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mMat: {fileID: 2100000, guid: 689d0e664c9e1d24ebf086e42e72c7b4, type: 2}
-  mTex: {fileID: 2800000, guid: 1de1d4446c17d97439f53be83961885b, type: 3}
+  mTex: {fileID: 2800000, guid: 4f6aae150dab18c449e5e9dbade55770, type: 3}
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mDepth: 0
-  mAtlas: {fileID: 0}
+  mAtlas: {fileID: 11400000, guid: 90c7f2a0d3e8d39408e22d0eb5354849, type: 2}
   mSpriteName: big_blue_1
   mFillCenter: 1
   mType: 0
@@ -13316,7 +13362,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 478eb3c85d23c2645b4e4c4c708ea3fb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13476,7 +13522,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 4fce35896a08ebe419e9e6a8a9bf1321, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13540,7 +13586,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5db2336bd72e057449e4ce3a371614c5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

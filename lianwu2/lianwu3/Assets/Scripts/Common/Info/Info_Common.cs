@@ -220,4 +220,5 @@ namespace LoveDance.Client.Common
 		public ViewGuideType m_GuideType;	// 引导类型
 		public object m_Data;				// 引导数据
 	}
+
 }

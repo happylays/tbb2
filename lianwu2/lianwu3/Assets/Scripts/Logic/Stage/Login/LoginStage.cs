@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using LoveDance.Client.Logic.Login;
+using LoveDance.Client.Common;
+using LoveDance.Client.Logic.Ress;
 
 public class cLoginStage : cBaseStage {
 
     bool mLoadComplete = false;
     cLoginUIManager mLoginUIManager;
+
+    GameObject mLoginUI;
+
     protected override string Level
     {
         get { return "scene_login"; }
@@ -14,11 +19,16 @@ public class cLoginStage : cBaseStage {
     public override void InitStage() {
         
         //cResourceManager.Instance.InitLogin();
-        
+        ClientResourcesMgr.InitGameLoader();
+
         mLoginUIManager = new cLoginUIManager();
         mLoginUIManager.Init();
 
+        mLoginUI = GameObject.FindObjectOfType<cLoginView>().gameObject;
         //cMainApp.Instance.InitGMTool();
+        //UICoroutine.uiCoroutine.StartCoroutine(UIMgr.ShowUIAsync(UIFlag.ui_lobby, null));
+
+        UICoroutine.InitUICoroutine();
 
         cLoginLogic.CreateLogic(NetObserver).RegistNetMessage();
     }
@@ -51,7 +61,10 @@ public class cLoginStage : cBaseStage {
     }
 
     public override void Close() {
+        
         mLoginUIManager.Close();
+
+        mLoginUI.SetActive(false);
     }
 
     public override void Exit() {

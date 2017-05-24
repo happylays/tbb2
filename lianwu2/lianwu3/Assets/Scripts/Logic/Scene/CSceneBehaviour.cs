@@ -26,13 +26,13 @@ public class CSceneBehaviour : SceneBehaviourBase
         }
     }
 
-    //public override ISceneCamera CameraControl
-    //{
-    //    get
-    //    {
-    //        return m_SceneCamera;
-    //    }
-    //}
+    public override ISceneCamera CameraControl
+    {
+        get
+        {
+            return m_SceneCamera;
+        }
+    }
 
     public override IStandPlayerPosition[] StandPlayerPosition
     {
@@ -67,12 +67,10 @@ public class CSceneBehaviour : SceneBehaviourBase
         }
     }
 
-    //[SerializeField]
-    //CSceneCamera m_SceneCamera = null;
-    [SerializeField]
-    StandPlayerPosition[] m_StandPlayerPosition = null;
-    [SerializeField]
-    Color m_GlobalColor = new Color(1f, 1f, 1f, 1f);    
+
+    [SerializeField] CSceneCamera m_SceneCamera = null;
+    [SerializeField] StandPlayerPosition[] m_StandPlayerPosition = null;
+    [SerializeField] Color m_GlobalColor = new Color(1f, 1f, 1f, 1f);    
 
     static CSceneBehaviour s_Current = null;
 
@@ -100,10 +98,10 @@ public class CSceneBehaviour : SceneBehaviourBase
     void Start()
     {
         int uiLayerScope = (1 << (int)GameLayer.UI);
-        //if (m_SceneCamera != null)
-        //{
-        //    m_SceneCamera.TargetCamera.cullingMask &= ~uiLayerScope;
-        //}
+        if (m_SceneCamera != null)
+        {
+            m_SceneCamera.TargetCamera.cullingMask &= ~uiLayerScope;
+        }
         Shader.SetGlobalColor("_DDL_Global_Add_Color", m_GlobalColor);
     }
 
@@ -165,5 +163,91 @@ public class CSceneBehaviour : SceneBehaviourBase
     public override Dictionary<int, ISceneItem> GetSceneItemMap()
     {
         return m_mapAllSceneItem;
+    }
+
+    void OnBeginShowTime()
+    {
+        //PlayMakerFSM fsm = GetComponent<PlayMakerFSM>();
+        //if (fsm != null)
+        //{
+        //    fsm.SendEvent("OnShowTimeBegin");
+        //}
+
+        CameraShowTime();
+    }
+
+    void OnEndShowTime()
+    {
+        //PlayMakerFSM fsm = GetComponent<PlayMakerFSM>();
+        //if (fsm != null)
+        //{
+        //    fsm.SendEvent("OnShowTimeEnd");
+        //}
+
+        CameraNoFocus();
+    }
+
+    public override void CameraFixed(bool bFix)
+    {
+        if (m_SceneCamera != null)
+        {
+            if (bFix)
+            {
+                m_SceneCamera.ToFixCamera();
+            }
+            else
+            {
+                m_SceneCamera.ToRandomCamera(true);
+            }
+        }
+    }
+
+    public override void CameraInFocus(Transform focusTo)
+    {
+        if (m_SceneCamera != null)
+        {
+            m_SceneCamera.ToInFocusCamera(focusTo);
+        }
+    }
+
+    public override void CameraSequence(bool bAuto)
+    {
+        if (m_SceneCamera != null)
+        {
+            m_SceneCamera.ToSequenceCamera(bAuto);
+        }
+    }
+
+    public override void CameraShowTime()
+    {
+        if (m_SceneCamera != null)
+        {
+            m_SceneCamera.ToShowTimeCamera();
+        }
+    }
+
+    public override void CameraNoFocus()
+    {
+        if (m_SceneCamera != null)
+        {
+            m_SceneCamera.ToNoFocusCamera();
+        }
+    }
+
+    public override void EmptyScene(bool bEmpty)
+    {
+        if (m_SceneCamera != null)
+        {
+            int sceneLayer = 1 << (int)GameLayer.Scene;
+
+            if (bEmpty)
+            {
+                m_SceneCamera.TargetCamera.cullingMask &= ~sceneLayer;
+            }
+            else
+            {
+                m_SceneCamera.TargetCamera.cullingMask |= sceneLayer;
+            }
+        }
     }
 }
