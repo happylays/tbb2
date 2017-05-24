@@ -75,7 +75,35 @@ class UIPanel : MonoBehaviour
             FillAllDrawCall();
         }
     }
-    void UpdateWidgets { }
+    void UpdateWidgets() 
+    {
+        for (int i = 0, imax = widgets.size; i < imax; ++i)
+        {
+            UIWidget w = widgets.buffer[i];
+
+            if (w.panel == this && w.enabled)
+            {
+                int frame = Time.frameCount;
+
+                if (w.UpdateTransform(frame)) { }
+
+                if (w.UpdateGeometry(frame))
+                {
+                    if (!mRebuild)
+                    {
+                        if (w.drawCall != null)
+                        {
+                            w.drawCall.isDirty = true;
+                        }
+                        else
+                        {
+                            FindDrawCall(w);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     // method-drawcall:
     void FillAllDrawCall() {
@@ -237,5 +265,18 @@ class UIPanel : MonoBehaviour
     void RemoveWidget(UIWidget w) { }
 
     // other
-    UIPanel Find(Transform trans) { }
+    static public UIPanel Find(Transform trans, bool createIfMissing, int layer) {
+        
+        UIPanel panel = null;
+
+        while (panel == null && trans != null)
+        {
+            panel = trans.GetComponent<UIPanel>();
+            if (panel != null) return panel;
+            if (trans.parent == null) break;
+            trans = trans.parent;
+        }
+
+        return null;
+    }
 }
