@@ -121,7 +121,7 @@ public class cCreateRoleView : View
         GameMsg_C2S_CreateRole msg = new GameMsg_C2S_CreateRole();
         NetworkMgr.SendMsg(msg);
 
-        NetworkMgr.DoMessage(GameMsgType.MSG_S2C_RequireCreateRole);
+        ///NetworkMgr.DoMessage(GameMsgType.MSG_S2C_RequireCreateRole);
 
         UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
     }

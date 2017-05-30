@@ -184,7 +184,7 @@ public class PlayerBone : MonoBehaviour
 	public Transform m_CalfLeft;
 	public Transform m_CalfRight;
 	
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 	void Update()
 	{
 		if( !Application.isPlaying )
@@ -238,5 +238,5 @@ public class PlayerBone : MonoBehaviour
 			m_CalfRightOffsetRot = m_CalfRight.rotation.eulerAngles;
 		}
 	}
-#endif
+//#endif
 }

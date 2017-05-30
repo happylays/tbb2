@@ -72,15 +72,21 @@ public class cLoginView : View
     public void OnClickOk(GameObject go)
     {
 
-        GameMsg_C2S_Login msg = new GameMsg_C2S_Login();        
-        NetworkMgr.SendMsg(msg);
+        //GameMsg_C2S_Login msg = new GameMsg_C2S_Login();        
+        //NetworkMgr.SendMsg(msg);
 
-        NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
+        //NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
         //NetworkMgr.DoMessage(GameMsgType.MSG_S2C_CreateRoleSuc);
 
 
-        UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
-        
+        //UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
+
+        GameMsg_C2S_CreateAccount msg = new GameMsg_C2S_CreateAccount();
+        msg.m_PackageType = (byte)Package_Type.All;
+        msg.m_nVID = (byte)Version_Type.Free;
+        msg.m_strAccount = "qq8";
+        msg.m_arPwd = XQMD5.getMd5Hash("111111");
+        NetworkMgr.SendMsg(msg);
     }
     
     // receive msg

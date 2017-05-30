@@ -140,8 +140,8 @@ namespace LoveDance.Client.Network
 					ReinitSocket();
 				}
 
-				////INetWorkMessage msg = new GAMEMSG_SYSTEM_connect(m_CliSocket.Connected);
-				////m_ReadMsgQueue.Enqueue(msg);
+                INetWorkMessage msg = new GAMEMSG_SYSTEM_connect(m_CliSocket.Connected);
+                m_ReadMsgQueue.Enqueue(msg);
 
 				if (m_CliSocket.Connected)
 				{
@@ -386,8 +386,8 @@ namespace LoveDance.Client.Network
 
 		void PostDisconnectMsg()
 		{
-			////INetWorkMessage msg = new GAMEMSG_SYSTEM_disconnect();
-			////m_ReadMsgQueue.Enqueue(msg);
+            INetWorkMessage msg = new GAMEMSG_SYSTEM_disconnect();
+            m_ReadMsgQueue.Enqueue(msg);
 		}
 	}
 }

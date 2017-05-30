@@ -54,7 +54,7 @@ namespace LoveDance.Client.Network
 					OnProcessMsg(mInstance.mTempMsg);
 				}
 
-				///mInstance.m_NetConn.TrySendMsg();
+				mInstance.m_NetConn.TrySendMsg();
 			}
 		}
 
@@ -79,21 +79,21 @@ namespace LoveDance.Client.Network
 		public static void SendMsg(GameMsgBase msg)
 		{
 
-            //if (mInstance.m_NetConn != null)
-            //{
-            //    if (mInstance.m_NetConn.IsConnected)
-            //    {
-            //        mInstance.m_NetConn.SendMessage(msg);
-            //    }
-            //    else
-            //    {
-            //        if (msg.getMsgType() == GameMsgType.MSG_ACCOUNT_Login || msg.getMsgType() == GameMsgType.MSG_ACCOUNT_CreateAccount)
-            //        {
-            //            ///mInstance.m_NetConn.Connect(ServerSetting.ServerIP, ServerSetting.ServerPort);
-            //            mInstance.m_LoginMsg = msg;
-            //        }
-            //    }
-            //}
+            if (mInstance.m_NetConn != null)
+            {
+                if (mInstance.m_NetConn.IsConnected)
+                {
+                    mInstance.m_NetConn.SendMessage(msg);
+                }
+                else
+                {
+                    if (msg.getMsgType() == GameMsgType.MSG_ACCOUNT_Login || msg.getMsgType() == GameMsgType.MSG_ACCOUNT_CreateAccount)
+                    {
+                        mInstance.m_NetConn.Connect("127.0.0.1", 7750);
+                        mInstance.m_LoginMsg = msg;
+                    }
+                }
+            }
 		}
 
 		/// <summary>
