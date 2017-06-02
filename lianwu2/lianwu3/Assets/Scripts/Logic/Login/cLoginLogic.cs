@@ -25,11 +25,13 @@ namespace LoveDance.Client.Logic.Login
             base.RegistNetMessage();
 
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_HeartBeatRequest, this.OnHeartBeatRequest);
-            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_LoginResult, OnRoleLoginRes);
+            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_LoginResult, OnRequireRole);
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_RequireCreateRole, this.OnRequireRole);
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_SYSTEM_Connect, this.OnConnected);
 
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_CreateAccountResult, this.OnCreateAccountRes);
+
+            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_StartRoomSuc, this.OnSelectRole);
         }
         
         void OnRoleLoginRes(GameMsgBase msg)

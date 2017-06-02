@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using LoveDance.Client.Network;
+using LoveDance.Client.Logic;
 
 public class cStageManager : cSingleton<cStageManager> {
 
@@ -18,6 +19,8 @@ public class cStageManager : cSingleton<cStageManager> {
         NetworkMgr.InitNetwork();
         UIMgr.Init();
 
+        MainCoroutine.InitMainCoroutine();		//初始化Coroutine		
+
         mCurStage = cBaseStage.eSTAGE.eStage_Login;
         //mStages = new cBaseStage[(int)cBaseStage.eSTAGE.eStage_Max];
         mStages[(int)cBaseStage.eSTAGE.eStage_Login] = new cLoginStage();
@@ -33,6 +36,8 @@ public class cStageManager : cSingleton<cStageManager> {
         /// stage open
         mStages[(int)mCurStage].InitStage();
         mStages[(int)mCurStage].Open();
+
+        CommonLogicData.RegisteredUnityLogic(new UnityLogic());
     }
 
     public void Process() {  }

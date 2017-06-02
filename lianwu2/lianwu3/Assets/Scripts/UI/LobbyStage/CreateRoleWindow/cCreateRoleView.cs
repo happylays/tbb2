@@ -118,10 +118,10 @@ public class cCreateRoleView : View
 
     public void OnClickOk(GameObject go)
     {
-        GameMsg_C2S_CreateRole msg = new GameMsg_C2S_CreateRole();
-        NetworkMgr.SendMsg(msg);
+        //GameMsg_C2S_CreateRole msg = new GameMsg_C2S_CreateRole();
+        //NetworkMgr.SendMsg(msg);
 
-        ///NetworkMgr.DoMessage(GameMsgType.MSG_S2C_RequireCreateRole);
+        NetworkMgr.DoMessage(GameMsgType.MSG_S2C_StartRoomSuc);
 
         UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
     }

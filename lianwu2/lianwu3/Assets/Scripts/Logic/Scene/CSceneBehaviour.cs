@@ -86,7 +86,7 @@ public class CSceneBehaviour : SceneBehaviourBase
         //    CommonLogicData.CurrentSceneCamera = m_SceneCamera.TargetCamera;
         //}
 
-        //CommonLogicData.CurrentSceneBehaviour = this;
+        CommonLogicData.CurrentSceneBehaviour = this;
     }
 
     void OnDestroy()

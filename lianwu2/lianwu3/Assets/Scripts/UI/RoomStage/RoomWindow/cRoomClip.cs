@@ -3,7 +3,7 @@ using LoveDance.Client.Common;
 using LoveDance.Client.Network;
 using LoveDance.Client.Network.Login;
 
-public class cLoginView : View
+public class cRoomiew : View
 {
     public override UIFlag UIID
     {

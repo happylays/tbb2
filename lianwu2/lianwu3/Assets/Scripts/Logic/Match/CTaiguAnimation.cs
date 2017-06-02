@@ -201,10 +201,10 @@ public class CTaiguAnimation : MonoBehaviour
 
     void OnMatchPrepare(bool isDancer)
     {
-        //float checkRange = Mathf.Abs(m_CheckEdgeRight.position.x - m_CheckPos.position.x);
-        //mBeatResult.InitResult(checkRange);
+        float checkRange = Mathf.Abs(m_CheckEdgeRight.position.x - m_CheckPos.position.x);
+        mBeatResult.InitResult(checkRange);
 
-        //mRoundIndex = 1;
+        mRoundIndex = 1;
     }
 
     void OnMatchBegin()
@@ -421,7 +421,7 @@ public class CTaiguAnimation : MonoBehaviour
                 float checkOffset = drumBall.transform.position.x - m_CheckPos.position.x;
                 if (drumBall.BallType != TaiguBallType.HoldBegin)
                 {
-                    HandleBeat(false, checkOffset, m_headRank, true);
+                    HandleBeat(true, checkOffset, m_headRank, true);
                 }
                 else
                 {

@@ -17,6 +17,8 @@ namespace LoveDance.Client.Logic
         private static SceneBehaviourBase s_CurrentSceneBehaviour = null;
         private static bool s_IsAppPause = false;	//游戏后台暂停，仅WindowPhone用
 
+        public static UnityLogic UnityLogic { get; private set; }
+
         public static PlayerBase MainPlayer
         {
             get
@@ -39,6 +41,35 @@ namespace LoveDance.Client.Logic
             {
                 m_nMainPlayerID = value;
             }
+        }
+
+        public static SceneBehaviourBase CurrentSceneBehaviour
+        {
+            get
+            {
+                return s_CurrentSceneBehaviour;
+            }
+            set
+            {
+                s_CurrentSceneBehaviour = value;
+            }
+        }
+
+        public static bool IsMainPlayer(uint roleId)
+        {
+            if (roleId == m_nMainPlayerID)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static void RegisteredUnityLogic(UnityLogic unityLogic)
+        {
+            UnityLogic = unityLogic;
         }
     }
 }
