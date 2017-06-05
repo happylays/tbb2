@@ -40,11 +40,11 @@ namespace LoveDance.Client.Logic.Scene
                                 yield return null;
                             }
 
-                            itor = sceneSwitcher.PrepareSwitch();
-                            while (itor.MoveNext())
-                            {
-                                yield return null;
-                            }
+                            //itor = sceneSwitcher.PrepareSwitch();
+                            //while (itor.MoveNext())
+                            //{
+                            //    yield return null;
+                            //}
 
                             sceneSwitcher.IsCreatingScene = true;
                                                     
@@ -54,11 +54,11 @@ namespace LoveDance.Client.Logic.Scene
                                 yield return null;
                             }
 
-                            itor = sceneSwitcher.BeginSwitch();
-                            while (itor.MoveNext())
-                            {
-                                yield return null;
-                            }
+                            //itor = sceneSwitcher.BeginSwitch();
+                            //while (itor.MoveNext())
+                            //{
+                            //    yield return null;
+                            //}
 
                             //itor = unityLogic.DestoryAllUIAsync();
                             //while (itor.MoveNext())
@@ -87,11 +87,11 @@ namespace LoveDance.Client.Logic.Scene
 
                             IScenceType curScene = sceneSwitcher.AddComponent();
 
-                            itor = sceneSwitcher.CreateScenePlayer();
-                            while (itor.MoveNext())
-                            {
-                                yield return null;
-                            }
+                            //itor = sceneSwitcher.CreateScenePlayer();
+                            //while (itor.MoveNext())
+                            //{
+                            //    yield return null;
+                            //}
 
                             if (curScene != null)
                             {

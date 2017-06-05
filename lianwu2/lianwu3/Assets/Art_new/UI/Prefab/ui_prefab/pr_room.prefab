@@ -1,0 +1,794 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: pr_room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  material: {fileID: 2100000, guid: 531f44b24b760de4cbcedb8d8c186540, type: 2}
+  sprites:
+  - name: fj_caidan_1
+    outer:
+      serializedVersion: 2
+      x: 81
+      y: 243
+      width: 17
+      height: 81
+    inner:
+      serializedVersion: 2
+      x: 87
+      y: 243
+      width: 3
+      height: 81
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_caidan_button
+    outer:
+      serializedVersion: 2
+      x: 430
+      y: 347
+      width: 80
+      height: 32
+    inner:
+      serializedVersion: 2
+      x: 430
+      y: 347
+      width: 80
+      height: 32
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_caidan_button_a
+    outer:
+      serializedVersion: 2
+      x: 126
+      y: 209
+      width: 80
+      height: 32
+    inner:
+      serializedVersion: 2
+      x: 126
+      y: 209
+      width: 80
+      height: 32
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_chakandi
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 122
+      height: 239
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 2
+      width: 122
+      height: 239
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_fz
+    outer:
+      serializedVersion: 2
+      x: 354
+      y: 2
+      width: 39
+      height: 16
+    inner:
+      serializedVersion: 2
+      x: 354
+      y: 2
+      width: 39
+      height: 16
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_guanzhan
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 209
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 209
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_guanzhan_1
+    outer:
+      serializedVersion: 2
+      x: 272
+      y: 67
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 272
+      y: 67
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_guanzhan_1_a
+    outer:
+      serializedVersion: 2
+      x: 430
+      y: 381
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 430
+      y: 381
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_jiaru_1
+    outer:
+      serializedVersion: 2
+      x: 272
+      y: 2
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 272
+      y: 2
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_jiaru_1_a
+    outer:
+      serializedVersion: 2
+      x: 316
+      y: 390
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 316
+      y: 390
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_ks
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 140
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 140
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_ks_1
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 2
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 2
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_ks_di
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 415
+      width: 142
+      height: 83
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 415
+      width: 142
+      height: 83
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_mubiaozhi
+    outer:
+      serializedVersion: 2
+      x: 126
+      y: 132
+      width: 70
+      height: 22
+    inner:
+      serializedVersion: 2
+      x: 126
+      y: 132
+      width: 70
+      height: 22
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_mubiaozhi_di
+    outer:
+      serializedVersion: 2
+      x: 395
+      y: 416
+      width: 20
+      height: 18
+    inner:
+      serializedVersion: 2
+      x: 404
+      y: 416
+      width: 2
+      height: 18
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_qx
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 71
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 71
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_qx_1
+    outer:
+      serializedVersion: 2
+      x: 209
+      y: 395
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 209
+      y: 395
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_taitou
+    outer:
+      serializedVersion: 2
+      x: 395
+      y: 386
+      width: 29
+      height: 28
+    inner:
+      serializedVersion: 2
+      x: 409
+      y: 386
+      width: 0
+      height: 28
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_cakan
+    outer:
+      serializedVersion: 2
+      x: 146
+      y: 490
+      width: 69
+      height: 20
+    inner:
+      serializedVersion: 2
+      x: 146
+      y: 490
+      width: 69
+      height: 20
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_di
+    outer:
+      serializedVersion: 2
+      x: 482
+      y: 446
+      width: 28
+      height: 32
+    inner:
+      serializedVersion: 2
+      x: 495
+      y: 446
+      width: 1
+      height: 32
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_di_1
+    outer:
+      serializedVersion: 2
+      x: 482
+      y: 480
+      width: 26
+      height: 21
+    inner:
+      serializedVersion: 2
+      x: 494
+      y: 480
+      width: 1
+      height: 21
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_genghuan
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 329
+      width: 77
+      height: 84
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 329
+      width: 77
+      height: 84
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_genghuan_a
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 243
+      width: 77
+      height: 84
+    inner:
+      serializedVersion: 2
+      x: 2
+      y: 243
+      width: 77
+      height: 84
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_xg_genghuan_di
+    outer:
+      serializedVersion: 2
+      x: 146
+      y: 408
+      width: 61
+      height: 80
+    inner:
+      serializedVersion: 2
+      x: 150
+      y: 408
+      width: 1
+      height: 80
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_yaoqing_1
+    outer:
+      serializedVersion: 2
+      x: 171
+      y: 243
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 171
+      y: 243
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_yaoqing_1_a
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 446
+      width: 77
+      height: 63
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 446
+      width: 77
+      height: 63
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_yq_di
+    outer:
+      serializedVersion: 2
+      x: 308
+      y: 464
+      width: 93
+      height: 44
+    inner:
+      serializedVersion: 2
+      x: 308
+      y: 464
+      width: 93
+      height: 44
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_yq_di_1
+    outer:
+      serializedVersion: 2
+      x: 234
+      y: 308
+      width: 36
+      height: 32
+    inner:
+      serializedVersion: 2
+      x: 251
+      y: 308
+      width: 1
+      height: 32
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zb
+    outer:
+      serializedVersion: 2
+      x: 403
+      y: 278
+      width: 105
+      height: 67
+    inner:
+      serializedVersion: 2
+      x: 403
+      y: 278
+      width: 105
+      height: 67
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zhuangshi
+    outer:
+      serializedVersion: 2
+      x: 351
+      y: 20
+      width: 37
+      height: 31
+    inner:
+      serializedVersion: 2
+      x: 351
+      y: 20
+      width: 37
+      height: 31
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zudui
+    outer:
+      serializedVersion: 2
+      x: 394
+      y: 347
+      width: 34
+      height: 37
+    inner:
+      serializedVersion: 2
+      x: 394
+      y: 347
+      width: 34
+      height: 37
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zudui_blue
+    outer:
+      serializedVersion: 2
+      x: 354
+      y: 347
+      width: 38
+      height: 41
+    inner:
+      serializedVersion: 2
+      x: 354
+      y: 347
+      width: 38
+      height: 41
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zudui_free
+    outer:
+      serializedVersion: 2
+      x: 314
+      y: 347
+      width: 38
+      height: 41
+    inner:
+      serializedVersion: 2
+      x: 314
+      y: 347
+      width: 38
+      height: 41
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zudui_hui
+    outer:
+      serializedVersion: 2
+      x: 234
+      y: 347
+      width: 38
+      height: 41
+    inner:
+      serializedVersion: 2
+      x: 234
+      y: 347
+      width: 38
+      height: 41
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zudui_red
+    outer:
+      serializedVersion: 2
+      x: 274
+      y: 347
+      width: 38
+      height: 41
+    inner:
+      serializedVersion: 2
+      x: 274
+      y: 347
+      width: 38
+      height: 41
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fj_zuduidi
+    outer:
+      serializedVersion: 2
+      x: 81
+      y: 326
+      width: 84
+      height: 80
+    inner:
+      serializedVersion: 2
+      x: 121
+      y: 366
+      width: 3
+      height: 1
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: gy_button
+    outer:
+      serializedVersion: 2
+      x: 167
+      y: 325
+      width: 65
+      height: 68
+    inner:
+      serializedVersion: 2
+      x: 167
+      y: 325
+      width: 65
+      height: 68
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: mijing_fangjian_di
+    outer:
+      serializedVersion: 2
+      x: 100
+      y: 243
+      width: 69
+      height: 80
+    inner:
+      serializedVersion: 2
+      x: 163
+      y: 243
+      width: 0
+      height: 80
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: mijing_fangjian_taitou
+    outer:
+      serializedVersion: 2
+      x: 217
+      y: 464
+      width: 89
+      height: 45
+    inner:
+      serializedVersion: 2
+      x: 217
+      y: 464
+      width: 89
+      height: 45
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: xiazai_jindu
+    outer:
+      serializedVersion: 2
+      x: 2
+      y: 500
+      width: 17
+      height: 8
+    inner:
+      serializedVersion: 2
+      x: 12
+      y: 500
+      width: 1
+      height: 8
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: xiazai_jindu_di
+    outer:
+      serializedVersion: 2
+      x: 171
+      y: 308
+      width: 17
+      height: 12
+    inner:
+      serializedVersion: 2
+      x: 178
+      y: 308
+      width: 1
+      height: 12
+    rotated: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: .166666672
+    paddingBottom: 0
+  mCoordinates: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

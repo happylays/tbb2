@@ -12,9 +12,4 @@ public abstract class IRoomScene : IScenceType
 
     public abstract void ChangeScene(int sceneID, bool needLoading);
 
-    public abstract void ChangePosState(RoleRoomType type, int nPos, RoomPosState state, bool showAni);
-
-    public abstract void ChangePlayerState(int pos, RoleRoomState state, bool host, bool hasPlayer);
-    
-    public abstract GameObject[] GetEventListeners();
 }

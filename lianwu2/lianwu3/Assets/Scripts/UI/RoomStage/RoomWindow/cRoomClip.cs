@@ -1,137 +1,23 @@
 ﻿using UnityEngine;
-using LoveDance.Client.Common;
-using LoveDance.Client.Network;
-using LoveDance.Client.Network.Login;
-
-public class cRoomiew : View
+public class cRoomClip : UIClip
 {
-    public override UIFlag UIID
+    public GameObject m_btnOk;
+
+    public cRoomClip(GameObject mainObject)
+        : base(mainObject)
     {
-        get { return UIFlag.ui_taigu; }
+        //btnOk = getGameObject("medal.btnOk");
+
+        m_btnOk = getGameObject("MainUI.0_MainUI.Anchor_br.NormalRoomContent.NormalStart.StartArea.BtnGroup.BtnStart");
     }
 
-    //mvc
-    private cLoginClip _uiClip;    
-
-    public override void Awake()
+    public void SetMethod() 
     {
-        Init();
+        //btnOk.SetActive(true);    
     }
 
-    void Start()
+    public UILabel getNameLabel(GameObject go)
     {
-        OnShowWnd();
+        return null;
     }
-
-    public void show() 
-    {
-        //initView();
-        //addEvent();
-        //initData();
-    }
-
-    public void initView()
-    {
-        if (_uiClip == null)
-        {
-            _uiClip = new cLoginClip(this.gameObject);            
-        }
-    }
-
-    public void initData() { }
-
-    public void hide() 
-    {
-        //view.hide();
-        //view.hide();
-        removeEvent();
-    
-    }
-
-    public void update() { }
-    
-    public void addEvent() 
-    {
-        //UIEventListener.Get(_uiClip.btnOk).onClick = onEvent;
-
-        UIEventListener.Get(_uiClip.m_btnOk.gameObject).onClick = OnClickOk;
-    }
-
-    public void removeEvent() 
-    {
-        UIEventListener.Get(_uiClip.m_btnOk.gameObject).onClick = null;
-
-    }
-
-    public void onEvent(GameObject go) 
-    {
-        //data = DynamicData.Get(id);
-        //_uiClip.SetMethod(data);
-    }
-
-    public void OnClickOk(GameObject go)
-    {
-
-        //GameMsg_C2S_Login msg = new GameMsg_C2S_Login();        
-        //NetworkMgr.SendMsg(msg);
-
-        NetworkMgr.DoMessage(GameMsgType.MSG_ACCOUNT_LoginResult);
-        //NetworkMgr.DoMessage(GameMsgType.MSG_S2C_CreateRoleSuc);
-
-        //GameMsg_C2S_CreateAccount msg = new GameMsg_C2S_CreateAccount();
-        //msg.m_PackageType = (byte)Package_Type.All;
-        //msg.m_nVID = (byte)Version_Type.Free;
-        //msg.m_strAccount = "qqtt19771";
-        //msg.m_arPwd = XQMD5.getMd5Hash("111111");
-        //NetworkMgr.SendMsg(msg);
-
-        UICoroutine.uiCoroutine.StartCoroutine(SwitchingControl.ShowSwitching(true, 110));
-    }
-    
-    // receive msg
-    public void onMsg()//GameMsgBase msg) 
-    {
-        //baseMsg msg = msg;
-    }
-    
-    public void staticMethod()
-    {
-        
-    }
-
-    // send msg
-    public void dynamicMethod() 
-    {
-        //Network.send(msg);
-    }
-
-    public void destroy() 
-    {
-        //base.destroy();
-
-        if (_uiClip != null)
-        {
-            _uiClip.destroy();            
-        }
-        _uiClip = null;
-    }
-
-    //old
-    public void OnShowWnd()
-    {
-        //gameObject.SetActive(true);
-
-        initView();
-        addEvent();
-        initData();
-
-        ///base.OnShowWnd(wndData);
-    }
-
-    public void OnHideWnd()
-    {
-        removeEvent();
-        //base.OnHideWnd();
-    }
-
 }

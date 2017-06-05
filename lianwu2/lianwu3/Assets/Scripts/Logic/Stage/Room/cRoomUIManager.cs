@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cRoomUIManager : MonoBehaviour {
+public class cRoomUIManager : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public void Init() { }
+
+    public void Open() { }
+
+    public void Process() { }
+
+    public void Close() { }
 }

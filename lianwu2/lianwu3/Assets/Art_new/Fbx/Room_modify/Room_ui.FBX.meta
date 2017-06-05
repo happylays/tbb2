@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: b8e18fa940bc3ce43bb734629473187d
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: fangzhu_1
+    100004: yizhunbei_1
+    100006: zhuangbeizhong_1
+    100008: fangzhu_2
+    100010: fangzhu_3
+    100012: fangzhu_4
+    100014: yizhunbei_2
+    100016: yizhunbei_3
+    100018: yizhunbei_4
+    100020: zhuangbeizhong_2
+    100022: zhuangbeizhong_3
+    100024: zhuangbeizhong_4
+    400000: //RootNode
+    400002: fangzhu_1
+    400004: yizhunbei_1
+    400006: zhuangbeizhong_1
+    400008: fangzhu_2
+    400010: fangzhu_3
+    400012: fangzhu_4
+    400014: yizhunbei_2
+    400016: yizhunbei_3
+    400018: yizhunbei_4
+    400020: zhuangbeizhong_2
+    400022: zhuangbeizhong_3
+    400024: zhuangbeizhong_4
+    2300000: //RootNode
+    2300002: fangzhu_1
+    2300004: yizhunbei_1
+    2300006: zhuangbeizhong_1
+    2300008: fangzhu_2
+    2300010: fangzhu_3
+    2300012: fangzhu_4
+    2300014: yizhunbei_2
+    2300016: yizhunbei_3
+    2300018: yizhunbei_4
+    2300020: zhuangbeizhong_2
+    2300022: zhuangbeizhong_3
+    2300024: zhuangbeizhong_4
+    3300000: //RootNode
+    3300002: fangzhu_1
+    3300004: yizhunbei_1
+    3300006: zhuangbeizhong_1
+    3300008: fangzhu_2
+    3300010: fangzhu_3
+    3300012: fangzhu_4
+    3300014: yizhunbei_2
+    3300016: yizhunbei_3
+    3300018: yizhunbei_4
+    3300020: zhuangbeizhong_2
+    3300022: zhuangbeizhong_3
+    3300024: zhuangbeizhong_4
+    4300000: fangzhu_1
+    4300002: zhuangbeizhong_1
+    4300004: yizhunbei_1
+    4300006: zhuangbeizhong_2
+    4300008: yizhunbei_2
+    4300010: fangzhu_2
+    4300012: zhuangbeizhong_3
+    4300014: yizhunbei_3
+    4300016: fangzhu_3
+    4300018: yizhunbei_4
+    4300020: fangzhu_4
+    4300022: zhuangbeizhong_4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 1
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 1
+  userData: 

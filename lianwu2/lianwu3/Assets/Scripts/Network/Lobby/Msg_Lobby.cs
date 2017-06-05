@@ -87,14 +87,7 @@ namespace LoveDance.Client.Network.Lantern
                 m_lstDancer.Add(playerInfo);
             }
 
-            ushort nAudienceCount = DataIn.GetUShort();
-            for (int i = 0; i < nAudienceCount; ++i)
-            {
-                RoomPlayerInfo playerInfo = new RoomPlayerInfo();
-                playerInfo.doDecode(DataIn);
-
-                m_lstAudience.Add(playerInfo);
-            }
+            
         }
     }
 
@@ -335,7 +328,6 @@ namespace LoveDance.Client.Network.Lantern
         public byte m_nPlayScene = CommonDef.SCENE_RANDOM_ID;
         public short m_nPlayMusic = CommonDef.SONG_RANDOM_ID;
         public byte m_nPlayMode = (byte)SongMode.None;
-        public byte m_nPlayLevel = (byte)SongLevel.None;
         public string m_strCheckKey = "";
         public byte[] m_szStage = null;
 
@@ -351,7 +343,6 @@ namespace LoveDance.Client.Network.Lantern
             m_nPlayScene = DataIn.GetByte();
             m_nPlayMusic = DataIn.GetShort();
             m_nPlayMode = DataIn.GetByte();
-            m_nPlayLevel = DataIn.GetByte();
             m_strCheckKey = DataIn.GetPerfixString();
             m_szStage = DataIn.GetFixLenBytes();
 

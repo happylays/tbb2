@@ -60,13 +60,13 @@ public class RoomScene : IRoomScene
         ///RoomData.CreateCacheRoomPlayer();
 
         CreateRoomType roomType = RoomData.RoomType;
-        int nMaxPlayer = CommonDef.MAX_ROOM_PLAYER + CommonDef.MAX_ROOM_AUDIENCE;
+        int nMaxPlayer = 1;// CommonDef.MAX_ROOM_PLAYER + CommonDef.MAX_ROOM_AUDIENCE;
 
-        PlayerBase gtMainPlayer = CommonLogicData.MainPlayer;
-        if (gtMainPlayer != null && roomType != CreateRoomType.Normal && RoomData.SelfRoomType == RoleRoomType.Audience)
-        {
-            gtMainPlayer.CurrentStyle = PlayerStyleType.Room;
-        }
+        //PlayerBase gtMainPlayer = CommonLogicData.MainPlayer;
+        //if (gtMainPlayer != null && roomType != CreateRoomType.Normal)
+        //{
+        //    gtMainPlayer.CurrentStyle = PlayerStyleType.Room;
+        //}
 
         for (int nPos = 0; nPos < nMaxPlayer; nPos++)
         {
@@ -92,46 +92,6 @@ public class RoomScene : IRoomScene
         }
     }
 
-    IEnumerator UpdateScene(string newTexture, string oldTexture, bool needLoading)
-    {
-        if (newTexture != oldTexture)
-        {
-            if (m_RoomOperation != null && m_RoomOperation.SceneRenderer != null)
-            {
-                IEnumerator itor = null;
-                if (needLoading)
-                {
-                    itor = SwitchingControl.ShowSwitching(true, 100);
-                    while (itor.MoveNext())
-                    {
-                        yield return null;
-                    }
-                }
-
-                itor = ExtraLoader.LoadExtraTextureSync(newTexture);
-                while (itor.MoveNext())
-                {
-                    yield return null;
-                }
-
-                Texture tex = ExtraLoader.GetExtraTexture(newTexture);
-                if (tex != null)
-                {
-                    m_RoomOperation.SceneRenderer.material.SetTexture("_MainTex", tex);
-                }
-
-                if (needLoading)
-                {
-                    SwitchingControl.HideSwitching();
-                }
-            }
-
-            if (oldTexture.Length > 0)
-            {
-                ExtraLoader.ReleaseExtraTexture(oldTexture, null);
-            }
-        }
-    }
 
     public override Transform GetPosTransForm(int nPos)
     {
@@ -190,75 +150,11 @@ public class RoomScene : IRoomScene
             if (newTexture.Length > 0)
             {
                 m_CurScene = sceneID;
-                StartCoroutine(UpdateScene(newTexture, oldTexture, needLoading));
+                ///StartCoroutine(UpdateScene(newTexture, oldTexture, needLoading));
             }
         }
     }
 
-    public override void ChangePosState(RoleRoomType type, int nPos, RoomPosState state, bool showAni)
-    {
-        if (m_RoomOperation != null)
-        {
-            if (type == RoleRoomType.Dancer)
-            {
-                if (m_RoomOperation.m_DancerPos != null && m_RoomOperation.m_DancerPos.Length > nPos
-                    && m_RoomOperation.m_DancerPos[nPos] != null)
-                {
-                    m_RoomOperation.m_DancerPos[nPos].SetPosState(state, showAni);
-                }
-            }
-            else
-            {
-                if (m_RoomOperation.m_AudiencePos != null && m_RoomOperation.m_AudiencePos.Length > nPos
-                    && m_RoomOperation.m_AudiencePos[nPos] != null)
-                {
-                    m_RoomOperation.m_AudiencePos[nPos].SetPosState(state, showAni);
-                }
-            }
-        }
-
-    }
-
-    public void ClosePos(int nPos)
-    {
-        if (m_RoomOperation.m_DancerPos != null && m_RoomOperation.m_DancerPos.Length > nPos
-    && m_RoomOperation.m_DancerPos[nPos] != null)
-        {
-            m_RoomOperation.m_DancerPos[nPos].ClosePos();
-        }
-    }
-
-    public override void ChangePlayerState(int pos, RoleRoomState state, bool host, bool hasPlayer)
-    {
-        if (m_RoomOperation.m_DancerPos != null && m_RoomOperation.m_DancerPos.Length > pos
-   && m_RoomOperation.m_DancerPos[pos] != null)
-        {
-            m_RoomOperation.m_DancerPos[pos].SetPlayerState(hasPlayer, host, state);
-        }
-    }
-
-    public override void SetLightCurtainState(int pos, RoomTeamColor teamColor)
-    {
-        bool isShow = true;
-        if (teamColor == RoomTeamColor.NONE || teamColor == RoomTeamColor.MAX)
-            isShow = false;
-
-        if (m_RoomOperation.m_DancerPos != null && m_RoomOperation.m_DancerPos.Length > pos
-&& m_RoomOperation.m_DancerPos[pos] != null)
-        {
-            m_RoomOperation.m_DancerPos[pos].SetLightCurtainState(isShow, teamColor);
-        }
-    }
-
-    public override GameObject[] GetEventListeners()
-    {
-        if (m_RoomOperation != null)
-        {
-            return m_RoomOperation.m_EventListeners;
-        }
-
-        return null;
-    }
 
     public override IEnumerator IEPlayerEnterScene(bool bNewStyle)
     {

@@ -32,6 +32,7 @@ namespace LoveDance.Client.Logic.Login
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_ACCOUNT_CreateAccountResult, this.OnCreateAccountRes);
 
             NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_StartRoomSuc, this.OnSelectRole);
+            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_CreateRoomSuc, this.OnCreateRoom);
         }
         
         void OnRoleLoginRes(GameMsgBase msg)
@@ -58,6 +59,13 @@ namespace LoveDance.Client.Logic.Login
                 cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Game); // SelectStage
             //}
         }
+
+        void OnCreateRoom(GameMsgBase msg)
+        {            
+            cStageManager.Instance.ChangeStage(cBaseStage.eSTAGE.eStage_Room); // SelectStage
+            
+        }
+
         void OnHeartBeatRequest(GameMsgBase msg)
         {
             GameMsg_HeartBeatResponse responseMsg = new GameMsg_HeartBeatResponse();

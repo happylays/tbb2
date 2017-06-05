@@ -2,6 +2,7 @@
 using LoveDance.Client.Data.Tips;
 using LoveDance.Client.Logic.Scene;
 using LoveDance.Client.Network;
+using LoveDance.Client.Network.Lantern;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,7 @@ namespace LoveDance.Client.Logic.Room
         {
             base.RegistNetMessage();
 
-            NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_CreateRoomSuc, this.OnCreateRoom);
+            //NetObserver.AddNetMsgProcessor(GameMsgType.MSG_S2C_CreateRoomSuc, this.OnCreateRoom);
 
         }
 

@@ -79,11 +79,13 @@ namespace LoveDance.Client.Logic.Scene
 
         public override IEnumerator CreateScenePlayer()
         {
-            IEnumerator itor = RoomData.CreateAllRoomPlayer();
-            while (itor.MoveNext())
-            {
-                yield return null;
-            }
+            yield return null;
+
+            //IEnumerator itor = RoomData.CreateAllRoomPlayer();
+            //while (itor.MoveNext())
+            //{
+            //    yield return null;
+            //}
         }
 
         public override IEnumerator PrepareUIAndData()
@@ -104,6 +106,8 @@ namespace LoveDance.Client.Logic.Scene
                 {
                     yield return null;
                 }
+
+                SwitchingControl.HideSwitching();
 
                 //CommonLogicData.UnityLogic.SetMainUI(UIFlag.ui_room);
 

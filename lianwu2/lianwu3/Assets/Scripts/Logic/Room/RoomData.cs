@@ -67,6 +67,12 @@ namespace LoveDance.Client.Logic.Room
         static List<RoomPlayerData> mDancerList = new List<RoomPlayerData>();
         static List<RoomPlayerData> mAudienceList = new List<RoomPlayerData>();
 
+        private static CreateRoomType m_RoomType = CreateRoomType.Normal;
+        public static CreateRoomType RoomType
+        {
+            get { return m_RoomType; }
+        }
+
         public static CMusicInfo PlayMusciInfo
         {
             get

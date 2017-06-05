@@ -2,6 +2,7 @@
 using LoveDance.Client.Network.HeartBeat;
 using LoveDance.Client.Network.Currency;
 using LoveDance.Client.Network.Room;
+using LoveDance.Client.Network.Lantern;
 
 namespace LoveDance.Client.Network
 {
@@ -16,6 +17,7 @@ namespace LoveDance.Client.Network
             MsgFactory.AddProductLine(GameMsg_S2C_CreateAccountRes.CreateMsg, GameMsgType.MSG_ACCOUNT_CreateAccountResult);
             MsgFactory.AddProductLine(GameMsg_S2C_AllowCurrencyList.CreateMsg, GameMsgType.MSG_S2C_AllowCurrencyList);	//Currency
             MsgFactory.AddProductLine(GameMsg_S2C_StartRoomSuc.CreateMsg, GameMsgType.MSG_S2C_StartRoomSuc);
+            MsgFactory.AddProductLine(GameMsg_S2C_CreateRoomSuc.CreateMsg, GameMsgType.MSG_S2C_CreateRoomSuc);
 		}
 	}
 }
