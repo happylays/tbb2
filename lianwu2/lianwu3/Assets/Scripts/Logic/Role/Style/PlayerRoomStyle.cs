@@ -2,21 +2,12 @@
 using LoveDance.Client.Loader;
 using LoveDance.Client.Common;
 using LoveDance.Client.Logic;
-using LoveDance.Client.Logic.Room;
 using System.Collections.Generic;
 using System.Collections;
 using LoveDance.Client.Data;
 
 public class PlayerRoomStyle : PlayerStyle
 {
-    string Hello
-    {
-        get
-        {
-            return "Hello";
-        }
-    }
-
     public override PlayerStyleType StyleType
     {
         get
@@ -25,31 +16,29 @@ public class PlayerRoomStyle : PlayerStyle
         }
     }
 
-    float m_Interval = 0f;
+    protected override bool IsExistAni
+    {
+        get { return AnimationLoader.RoomAniExist; }
+    }
 
-
-    private CapsuleCollider mCapsuleCollider = null;
     private List<string> mStandAniList = new List<string>();
+
+    private List<AnimationType> mAniTypeList = new List<AnimationType>();	//会随机的动画类型（现在是只有默认动画和闪亮饰品）
+
+    private string NextPlayAniName = null;//下一个将要播放的动画
+    private string lastLoadAniName = null;//上一个加载的动画
+
 
     public override void OnAwake()
     {
-        //AddDragScript();
-        if (OwnerPlayer != null && OwnerPlayer.BodyCreated)
-        {
-            OnBodyCreated();
-        }
+        base.OnAwake();
+
+        m_IntervalDuration = 5;
     }
 
-    public override void AddWalkAnimation()
+    public override void OnUpdate()
     {
-        if (AnimationLoader.RoomAniExist && OwnerAni != null)
-        {
-            if (OwnerPlayer.RoleAttr.IsBoy)
-            {
-                OwnerAni.AddClip(AnimationLoader.GetAnimationClip(AnimationLoader.StandRoomBoy_A), AniMoveState.Stand.ToString(), WrapMode.Loop, 1, 1f);
-
-            }            
-        }
+        base.OnUpdate();
     }
 
     public override void RemoveWalkAnimation()
@@ -58,87 +47,70 @@ public class PlayerRoomStyle : PlayerStyle
 
         if (OwnerAni != null)
         {
-            OwnerAni.DestroyClip(AniMoveState.Stand.ToString());
+            OwnerAni.DestroyClip(AniMoveState.Stand);
         }
     }
 
-    void Update()
-    {
-        if (OwnerPlayer != null && OwnerPlayer.BodyCreated)
-        {
-            //在座驾上时不播放房间待机动画
-            if (!false)
-            {
-                m_Interval += Time.deltaTime;
-                if (m_Interval >= 10f)
-                {
-                    m_Interval -= 10f;
-
-                    RandomStandAni();
-                }
-            }
-        }
-    }
-
-    bool HasTransformAni()
-    {
-        bool hasTransformAni = false;
-        if (OwnerPlayer != null && OwnerPlayer.RoleTransform.TransformID != 0)
-        {
-            hasTransformAni = true;
-        }
-
-        return hasTransformAni;
-    }
 
     public override void OnBodyCreated()
     {
         base.OnBodyCreated();
 
-        AddLookAt();
-
         m_Interval = UnityEngine.Random.Range(0, 80000) / (float)10000;
-
-        InitAnimation();
     }
 
-    void InitAnimation()
+    protected override void InitAnimation()
     {
         if (AnimationLoader.RoomAniExist && OwnerAni != null)
         {
-            bool hasTransformAni = HasTransformAni();
-
-            if (OwnerPlayer.RoleAttr.IsBoy)
-            {
-                OwnerAni.AddClip(AnimationLoader.GetAnimationClip(AnimationLoader.HelloBoy), Hello, WrapMode.Once, 3);
-                if (!hasTransformAni)
-                {
-                    
-                        AddStandAni(new List<string>() { AnimationLoader.StandRoomBoy_B,
-													AnimationLoader.StandRoomBoy_C,
-													AnimationLoader.StandRoomBoy_D});
-                    
-                }
-            }
             
 
-            if (!CommonLogicData.IsMainPlayer(OwnerPlayer.RoleAttr.RoleID) && !HasVehicle)
+            // set animName
+            List<string> animationNames = null;
+            string[] standVIPs = new string[3];
+            string[] standRooms = new string[3];
+            if (true)//OwnerPlayer.RoleAttr.IsBoy)
+            {
+                standVIPs[0] = AnimationLoader.VIP_STAND_BOY_01;
+                standVIPs[1] = AnimationLoader.VIP_STAND_BOY_02;
+                standVIPs[2] = AnimationLoader.VIP_STAND_BOY_03;
+                standRooms[0] = AnimationLoader.StandRoomBoy_B;
+                standRooms[1] = AnimationLoader.StandRoomBoy_C;
+                standRooms[2] = AnimationLoader.StandRoomBoy_D;
+            }
+
+
+            OwnerAni.AddClip(GetAniClipBySex(Hello), Hello, WrapMode.Once, 3);
+            if (true)//IsNeedTransIdleAni)
+            {
+                animationNames = new List<string>() { standRooms[0], standRooms[1], standRooms[2] };
+                AddStandAni(animationNames);
+            }
+
+
+            if (!CommonLogicData.IsMainPlayer(OwnerPlayer.RoleAttr.RoleID))
             {
                 OwnerAni.CrossFadeQueued(Hello);
             }
         }
     }
-    void RandomStandAni()
+
+    public override void RandomStandAni()
     {
         if (OwnerAni != null)
         {
             if (mStandAniList.Count > 0)
             {
-                int random = UnityEngine.Random.Range(0, mStandAniList.Count);
-                OwnerAni.CrossFade(mStandAniList[random]);
-                if (OwnerAni.GetClip(AniMoveState.Stand.ToString()) != null)
+                string willPlayAniName = GetWillPlayAniName();
+                if (OwnerAni.GetClip(willPlayAniName))
                 {
-                    OwnerAni.Blend(AniMoveState.Stand.ToString(), 1f);
+                    OwnerAni.CrossFade(willPlayAniName);
+
+                }
+
+                if (OwnerAni.GetClip(AniMoveState.Stand) != null)
+                {
+                    OwnerAni.Blend(AniMoveState.Stand, 1f);
                 }
             }
         }
@@ -148,11 +120,6 @@ public class PlayerRoomStyle : PlayerStyle
     {
         base.BeRemoved();
 
-        //if (OwnerPlayer != null)
-        //{
-        //    OwnerPlayer.RemoveLookAt();
-        //}
-
         if (OwnerAni != null)
         {
             OwnerAni.DestroyClip(Hello);
@@ -161,31 +128,8 @@ public class PlayerRoomStyle : PlayerStyle
                 OwnerAni.DestroyClip(mStandAniList[i]);
             }
         }
-        mStandAniList.Clear();
-        //RemoveDragScript();
-        //ReleaseTransformAni();
+        mStandAniList.Clear();        
     }
-
-    void AddLookAt()
-    {
-        //if (OwnerPlayer != null)
-        //{
-        //    OwnerPlayer.AddLookAt();
-        //}
-    }
-    
-
-    private IRoomScene GetRoomScene()
-    {
-        IRoomScene roomScene = null;
-        if (CommonLogicData.CurrentSceneBehaviour != null)
-        {
-            roomScene = CommonLogicData.CurrentSceneBehaviour.gameObject.GetComponent<IRoomScene>();
-        }
-
-        return roomScene;
-    }
-
 
     private void AddStandAni(List<string> aniList)
     {
@@ -202,5 +146,44 @@ public class PlayerRoomStyle : PlayerStyle
                 OwnerAni.AddClip(clip, clipName, WrapMode.Once, 2, 0f);
             }
         }
+    }
+
+    /// <summary>
+    /// 获取将要播放动画名
+    /// </summary>
+    /// <returns></returns>
+    private string GetWillPlayAniName()
+    {
+        string willPlayAniName = string.Empty;
+
+        if (mAniTypeList.Count > 0)
+        {
+            if (!string.IsNullOrEmpty(NextPlayAniName))
+            {
+                if (OwnerAni.GetClip(NextPlayAniName) != null)
+                {
+                    willPlayAniName = NextPlayAniName;
+                    lastLoadAniName = NextPlayAniName;
+                    NextPlayAniName = string.Empty;
+                }
+            }
+            else
+            {
+                int random = UnityEngine.Random.Range(0, mAniTypeList.Count);
+                if (mAniTypeList[random] == AnimationType.Default)
+                {
+                    random = UnityEngine.Random.Range(0, mStandAniList.Count);
+                    willPlayAniName = mStandAniList[random];
+                }
+                
+            }
+
+            if (string.IsNullOrEmpty(willPlayAniName))
+            {
+                willPlayAniName = mStandAniList[0];
+            }
+        }
+
+        return willPlayAniName;
     }
 }

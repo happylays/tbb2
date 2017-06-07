@@ -44,9 +44,6 @@ public class cRoomStage : cBaseStage
         //res.m_szStage = null;
         //res.m_CountDownTime = 0;
 
-
-
-
         //UICoroutine.uiCoroutine.StartCoroutine(DownLoadMatch());
 
         // coroutine        

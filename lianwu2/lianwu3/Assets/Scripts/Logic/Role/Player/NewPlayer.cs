@@ -248,6 +248,10 @@ public class NewPlayer : PlayerBase
                     case PlayerStyleType.Create:
                         m_RoleStyle = cachedGameObject.AddComponent<PlayerCreateStyle>();
                         break;
+
+                    case PlayerStyleType.Room:
+                        m_RoleStyle = cachedGameObject.AddComponent<PlayerRoomStyle>();
+                        break;
                 }
             }
 		}

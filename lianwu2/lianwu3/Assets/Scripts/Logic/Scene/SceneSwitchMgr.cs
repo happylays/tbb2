@@ -121,7 +121,7 @@ namespace LoveDance.Client.Logic.Scene
                                 yield return null;
                             }
 
-                            SwitchingControl.ShowSwitching();
+                            SwitchingControl.HideSwitching();
                             //unityLogic.HideSwitching();
                         }
                         else
