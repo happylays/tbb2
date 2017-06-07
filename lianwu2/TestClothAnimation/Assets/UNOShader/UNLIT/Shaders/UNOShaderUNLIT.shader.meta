@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1bee25002e0722b4c85de3f14a868173
+labels:
+- Mobile
+- Shader
+- UNOShader
+- UNLIT
+- ShadowColor
+timeCreated: 1426516879
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
