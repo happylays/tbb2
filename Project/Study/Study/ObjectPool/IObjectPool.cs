@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Study
+namespace GameFramework.ObjectPool
 {
     public interface IObjectPool<T> where T : ObjectBase
     {

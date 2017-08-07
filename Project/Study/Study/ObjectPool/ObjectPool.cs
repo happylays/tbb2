@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Study
+namespace GameFramework.ObjectPool
 {
     internal partial class ObejctPoolManager
     {
@@ -92,6 +92,7 @@ namespace Study
                     m_Objects.Remove(current);
                     current.Value.Release();
                     current = next;
+                }
             }
             void Update() { 
                 Release();

@@ -39,20 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ObjectPoolBase.cs" />
-    <Compile Include="IObjectPool.cs" />
-    <Compile Include="Object.cs" />
-    <Compile Include="ObjectBase.cs" />
-    <Compile Include="FsmManager.cs" />
-    <Compile Include="IFsmManager.cs" />
-    <Compile Include="FsmEventHandler.cs" />
-    <Compile Include="FsmState.cs" />
-    <Compile Include="Fsm.cs" />
-    <Compile Include="FsmBase.cs" />
-    <Compile Include="IFsm.cs" />
+    <Compile Include="Download\DownloadManager.cs" />
+    <Compile Include="Download\Class1 - 复制%284%29.cs" />
+    <Compile Include="ObjectPool\ObjectPoolManager.cs" />
+    <Compile Include="ObjectPool\IObjectPoolManager.cs" />
+    <Compile Include="ObjectPool\ObjectPool.cs" />
+    <Compile Include="ObjectPool\ObjectPoolBase.cs" />
+    <Compile Include="ObjectPool\IObjectPool.cs" />
+    <Compile Include="ObjectPool\Object.cs" />
+    <Compile Include="ObjectPool\ObjectBase.cs" />
+    <Compile Include="Fsm\FsmManager.cs" />
+    <Compile Include="Fsm\IFsmManager.cs" />
+    <Compile Include="Fsm\FsmEventHandler.cs" />
+    <Compile Include="Fsm\FsmState.cs" />
+    <Compile Include="Fsm\Fsm.cs" />
+    <Compile Include="Fsm\FsmBase.cs" />
+    <Compile Include="Fsm\IFsm.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
