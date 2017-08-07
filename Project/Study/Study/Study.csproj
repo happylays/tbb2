@@ -39,8 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1 - 复制%282%29.cs" />
-    <Compile Include="Class1 - 复制%283%29.cs" />
+    <Compile Include="ObjectPoolBase.cs" />
+    <Compile Include="IObjectPool.cs" />
+    <Compile Include="Object.cs" />
+    <Compile Include="ObjectBase.cs" />
+    <Compile Include="FsmManager.cs" />
+    <Compile Include="IFsmManager.cs" />
+    <Compile Include="FsmEventHandler.cs" />
+    <Compile Include="FsmState.cs" />
+    <Compile Include="Fsm.cs" />
     <Compile Include="FsmBase.cs" />
     <Compile Include="IFsm.cs" />
     <Compile Include="Class1.cs" />
