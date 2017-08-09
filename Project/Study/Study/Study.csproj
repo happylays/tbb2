@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Resources\Class1 - 复制%284%29.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
     <Compile Include="Download\DownloadManager.cs" />
     <Compile Include="Download\Class1 - 复制%284%29.cs" />
     <Compile Include="ObjectPool\ObjectPoolManager.cs" />
