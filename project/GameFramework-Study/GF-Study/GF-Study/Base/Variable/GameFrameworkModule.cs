@@ -1,6 +1,0 @@
-﻿
-namespace GameFramework
-{
-    class GameFrameModule { }
-
-}

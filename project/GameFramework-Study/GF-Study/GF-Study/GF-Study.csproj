@@ -49,16 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\EventPool\GameFrameworkModule.cs" />
+    <Compile Include="Base\EventPool\EventPool.Event.cs" />
+    <Compile Include="Base\EventPool\EventPoolMode.cs" />
+    <Compile Include="Base\EventPool\GameFrameworkEventArgs.cs" />
+    <Compile Include="Base\EventPool\BaseEventArgs.cs" />
+    <Compile Include="Base\EventPool\EventPool.cs" />
+    <Compile Include="Base\GameFrameworkFunc.cs" />
     <Compile Include="Base\GameFrameworkEventArgs.cs" />
     <Compile Include="Base\GameFrameworkEntry.cs" />
     <Compile Include="Base\GameFrameworkAction.cs" />
     <Compile Include="Base\GameFrameworkModule.cs" />
-    <Compile Include="Base\Log\GameFrameworkModule.cs" />
-    <Compile Include="Base\ReferencePool\GameFrameworkModule.cs" />
-    <Compile Include="Base\Reference\GameFrameworkModule.cs" />
-    <Compile Include="Base\TaskPool\GameFrameworkModule.cs" />
-    <Compile Include="Base\Variable\GameFrameworkModule.cs" />
+    <Compile Include="Base\Log\LogHelper.cs" />
+    <Compile Include="Base\Log\Log.cs" />
+    <Compile Include="Base\Log\LogLevel.cs" />
+    <Compile Include="Base\Log\Log.ILogHelper.cs" />
+    <Compile Include="Base\ReferencePool\ReferencePool.cs" />
+    <Compile Include="Base\ReferencePool\IReference.cs" />
+    <Compile Include="Base\TaskPool\TaskPool.cs" />
+    <Compile Include="Base\TaskPool\ITaskAgent.cs" />
+    <Compile Include="Base\TaskPool\ITask.cs" />
+    <Compile Include="Base\Variable\GenericVariable.cs" />
+    <Compile Include="Base\Variable\Variable.cs" />
+    <Compile Include="Event\GameEventArgs.cs" />
+    <Compile Include="Event\EventManager.cs" />
+    <Compile Include="Event\IEventManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
