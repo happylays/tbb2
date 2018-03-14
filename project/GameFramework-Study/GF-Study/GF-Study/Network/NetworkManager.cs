@@ -90,5 +90,16 @@ namespace GameFramework.Network
             }
             return false;
         }
+
+        private void OnNetworkChannelConnected(NetworkChannel nc, object userData)
+        {
+            if (m_NetworkConnectedEventHandler != null)
+            {
+                lock (m_NetworkConnectedEventHandler)
+                {
+                    m_NetworkConnectedEventHandler(this, new NetworkConnectedEventArgs(NetworkChannel, userData0))
+                }
+            }
+        }
     }
 }

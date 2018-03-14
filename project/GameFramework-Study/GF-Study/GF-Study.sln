@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GF-Study", "GF-Study\GF-Study.csproj", "{3937DC26-E8EA-4671-B92B-D239E2DE7F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{4B36DA8A-CFD6-4AE4-B9FF-72F339FFBE21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarForce", "ClassLibrary1\StarForce.csproj", "{4B36DA8A-CFD6-4AE4-B9FF-72F339FFBE21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{360EB782-6510-4B3F-9964-B61D3A716225}"
 EndProject
