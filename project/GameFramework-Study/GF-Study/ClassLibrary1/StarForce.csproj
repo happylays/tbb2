@@ -51,6 +51,9 @@
     <Compile Include="DataTable\GameMain\DataTableExtension.cs" />
     <Compile Include="DataTable\GameMain\DREntity.cs" />
     <Compile Include="DataTable\GameMain\DRWeapon.cs" />
+    <Compile Include="Download\DownloadComonent.cs" />
+    <Compile Include="Download\DownloadStartEventArgs.cs" />
+    <Compile Include="Download\UnityWebRequestDownloadAgentHelper.cs" />
     <Compile Include="Network\NetworkChannelHelper.cs" />
     <Compile Include="Network\PacketHandler\SCHeartBetHandler.cs" />
     <Compile Include="Network\Packet\SCHeartBeat.cs" />
@@ -64,6 +67,17 @@
     <Compile Include="Network\PacketHeaderBase.cs" />
     <Compile Include="Network\PacketBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Download\DownloadAgentHelperBase.cs" />
+    <Compile Include="Download\DefaultDownloadAgentHelper.cs" />
+    <Compile Include="Download\UIFormHelperBase.cs" />
+    <Compile Include="Download\UIFormLogic.cs" />
+    <Compile Include="Resource\ResourceComponent.cs" />
+    <Compile Include="Resource\DefaultLoadResourceAgentHelper.cs" />
+    <Compile Include="Resource\DefaultResourceHelper.cs" />
+    <Compile Include="Resource\LoadResourceAgentHelperBase.cs" />
+    <Compile Include="Resource\ResourceHelperBase.cs" />
+    <Compile Include="Resource\ResourceInitComleteEventArgs.cs" />
+    <Compile Include="Resource\ResourceCheckCompleteEventArgs.cs" />
     <Compile Include="UI\UIForm.cs" />
     <Compile Include="UI\UIFormHelperBase.cs" />
     <Compile Include="UI\UIFormLogic.cs" />
