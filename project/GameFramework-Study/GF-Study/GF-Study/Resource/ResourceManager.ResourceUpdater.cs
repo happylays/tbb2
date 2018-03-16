@@ -146,7 +146,121 @@ namespace GameFramework.Resource
                         File.Delete(backupFile);
                     }
                 }
-                catch ()
+                catch (Exception e)
+                {
+                    if (File.Exists(file))
+                    {
+                        File.Delete(file);
+                    }
+
+                    if (!string.IsNullOrEmpty(backupFile))
+                    {
+                        File.Move(backupFile, file);
+                    }
+                    throw;
+                }
+                finally
+                {
+                    if (fileStream != null)
+                    {
+                        fileStream.Dispose();
+                        fileStream = null;
+                    }
+                }
+            }
+
+            private void OnDownloadStart(object sender, DownloadStartEventArgs e)
+            {
+                UpdateInfo updateInfo = e.UserData as updateInfo;
+
+                if (e.CurrentLength > updateInfo.ZipLength)
+                {
+                    m_DownloadManager.RemoveDownload(e.Serialid);
+                    string downloadFile = string.Format("{0}.download", e.DownloadPath);
+                    if (File.Exists(downloadFile))
+                    {
+                        File.Delete(downloadFile);
+                    }
+                }
+
+                ResourceUpdateStart(updateInfo.ResourceName, e.DownloadPath);
+            }
+
+            private void OnDownloadSuccess(object sender, DownloadSuccessEventArgs e)
+            {
+                UpdateInfo updateInfo = e.UserData as updateInfo;
+
+                bool zip = (updateInfo.Length != updateInfo.ZipLength;
+                byte[] bytes = File.ReadAllBytes(e.DownloadPath);
+
+                if (!zip)
+                {
+                    byte[] hashBytes = Utility.Converter.GetBytes(updateInfo.HashCode);
+                    if (updateInfo.LoadType = LoadType.LoadFromMemoryAndQuickDecrypt)
+                    {
+                        bytes = Utility.Encryption.GetQuickorBytes(bytes, hashBytes);
+                    }
+                }
+
+                int hashCode = Utility.Converter.GetInt32(Utility.Verifer.GetCrc32(bytes));
+                if (updateInfo.ZipHashCode != hashCode)
+                {
+
+                }
+
+                if (zip)
+                {
+                    try
+                    {
+                        bytes = Utility.Zip.Decompress(bytes);
+                    }
+                    catch (e)
+                    {
+
+                    }
+
+                    if (bytes == null)
+                    {
+
+                    }
+
+                    if (updateInfo.Length != bytes.Length)
+                    {
+
+                    }
+
+                    File.WriteAllBytes(e.DownloadPath, bytes);
+                }
+
+                m_UpdatingCount--;
+
+                m_ResourceManager.m_ReadWriteResourceInfos.Add(updateInfo.ResourceName, new ReadWrieResourceInfo(updateInfo.LoadType, updateInfo.Length));
+
+                GenerateReadWriteList();
+
+                ResourceUpdateSuccess();
+            }
+
+            private void OnDownloadFailure(object sender, DownloadFailureEventArgs e)
+            {
+                UpdateInfo updateInfo = e.UserData as updateInfo;
+
+                if (File.Exists(e.DownloadPath))
+                {
+                    File.Delete(e.DownloadPath);
+                }
+
+                ResourceUpdateFailure();
+
+                if (updateInfo.RetryCount < m_RetryCount)
+                {
+                    m_UpdatingCount--;
+                    updateInfo newUpdateInfo = new updateInfo(updateInfo.ResourceName, updateInfo.LoadType);
+                    if (m_UpdateAllowed)
+                    {
+                        m_UpdateWaitingInfo.Add(newUpdateInfo);
+                    }
+                }
             }
         }
     }

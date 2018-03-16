@@ -92,6 +92,10 @@
     <Compile Include="Resource\ResourceManager.AssetDependencyInfo.cs" />
     <Compile Include="Resource\ResourceManager.LoadType.cs" />
     <Compile Include="Resource\ResourceManager.ResourceChecker.CheckInfo.cs" />
+    <Compile Include="Resource\ResourceManager.ResourceLoader.AssetObject.cs" />
+    <Compile Include="Resource\ResourceManager.ResourceLoader.LoadResourceTaskBase.cs" />
+    <Compile Include="Resource\ResourceManager.ResourceLoader.LoadAssetTask.cs" />
+    <Compile Include="Resource\ResourceManager.ResourceLoader.LoadResourceAgent.cs" />
     <Compile Include="Resource\ResourceManager.ResourceObject.cs" />
     <Compile Include="Resource\ResourceManager.cs" />
     <Compile Include="Resource\ResourceManager.ResourceName.cs" />

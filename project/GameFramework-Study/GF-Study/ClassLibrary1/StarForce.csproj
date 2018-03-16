@@ -43,6 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\GameFrameworkComponent - 复制.cs" />
     <Compile Include="DataTable\DataTableComponent.cs" />
     <Compile Include="DataTable\DataTableHelperBase.cs" />
     <Compile Include="DataTable\DefaultDataTableHelper.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Resource\ResourceHelperBase.cs" />
     <Compile Include="Resource\ResourceInitComleteEventArgs.cs" />
     <Compile Include="Resource\ResourceCheckCompleteEventArgs.cs" />
+    <Compile Include="Base\GameFrameworkComponent.cs" />
     <Compile Include="UI\UIForm.cs" />
     <Compile Include="UI\UIFormHelperBase.cs" />
     <Compile Include="UI\UIFormLogic.cs" />

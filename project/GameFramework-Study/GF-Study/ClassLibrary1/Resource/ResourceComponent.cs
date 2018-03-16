@@ -305,5 +305,9 @@ namespace UnityGameFramework.Runtime
         {
             m_EventComponent.Fire(this, ReferencePool.Acquire<ResourceInitCompleteEventArgs>().Fill(e));
         }
+        private void OnVersionListUpdateSuccess(object sender, GameFramework.Resource.VersionListUpdateSuccessEventArgs e)
+        {
+
+        }
     }
 }
