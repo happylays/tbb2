@@ -49,7 +49,7 @@ namespace GameFramework.Resource
 
             }
 
-            pubic void SetObjectPoolManager(IObjectPoolManager objectPoolManager)
+            public void SetObjectPoolManager(IObjectPoolManager objectPoolManager)
             {
                 m_AssetPool = objectPoolManager.CreateMultiSpawnObjectPool<AssetObject>("Asset Pool");
                 m_ResourcePool = objectPoolManager.CreateMultiSpawnObjectPool<ResourceObject>();
