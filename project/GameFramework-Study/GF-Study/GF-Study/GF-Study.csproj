@@ -83,6 +83,16 @@
     <Compile Include="Download\IDataTableHelper.cs" />
     <Compile Include="Download\IDataTableManager.cs" />
     <Compile Include="Download\LoadDataTableSuccessEventArgs.cs" />
+    <Compile Include="Entity\EntityManager.cs" />
+    <Compile Include="Entity\IEntityManager.cs" />
+    <Compile Include="Entity\EntityManager.EntityInfo.cs" />
+    <Compile Include="Entity\IEntityGroup.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%287%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%288%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%289%29.cs" />
+    <Compile Include="Entity\EntityManager.EntityGroup.cs" />
+    <Compile Include="Entity\EmptyTemplate.cs" />
     <Compile Include="Resource\ResourceManager.LoadResourceTaskBase.cs" />
     <Compile Include="Resource\IResourceManager.cs" />
     <Compile Include="Resource\LoadBytesCallback.cs" />
@@ -93,6 +103,7 @@
     <Compile Include="Resource\ResourceManager.LoadType.cs" />
     <Compile Include="Resource\ResourceManager.ResourceChecker.CheckInfo.cs" />
     <Compile Include="Resource\ResourceManager.ResourceLoader.AssetObject.cs" />
+    <Compile Include="Resource\ResourceManager.ResourceLoader.LoadResourceAgent.WaitType.cs" />
     <Compile Include="Resource\ResourceManager.ResourceLoader.LoadResourceTaskBase.cs" />
     <Compile Include="Resource\ResourceManager.ResourceLoader.LoadAssetTask.cs" />
     <Compile Include="Resource\ResourceManager.ResourceLoader.LoadResourceAgent.cs" />

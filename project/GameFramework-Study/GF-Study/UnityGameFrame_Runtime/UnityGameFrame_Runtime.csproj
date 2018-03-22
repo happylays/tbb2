@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6950B0A-FA83-4333-8AE2-B3A79B728F64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityGameFrame_Runtime</RootNamespace>
+    <AssemblyName>UnityGameFrame_Runtime</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\GameFrameworkComponent - 复制.cs" />
+    <Compile Include="Base\GameFrameworkComponent.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataTable\DataTableComponent.cs" />
+    <Compile Include="DataTable\DataTableHelperBase.cs" />
+    <Compile Include="DataTable\DefaultDataTableHelper.cs" />
+    <Compile Include="DataTable\GameMain\DataTableExtension.cs" />
+    <Compile Include="DataTable\GameMain\DREntity.cs" />
+    <Compile Include="DataTable\GameMain\DRWeapon.cs" />
+    <Compile Include="DataTable\LoadDataTableDependencyAssetArgs.cs" />
+    <Compile Include="DataTable\LoadDataTablInfo.cs" />
+    <Compile Include="Download\DefaultDownloadAgentHelper.cs" />
+    <Compile Include="Download\DownloadAgentHelperBase.cs" />
+    <Compile Include="Download\DownloadComonent.cs" />
+    <Compile Include="Download\DownloadStartEventArgs.cs" />
+    <Compile Include="Download\UIFormHelperBase.cs" />
+    <Compile Include="Download\UIFormLogic.cs" />
+    <Compile Include="Download\UnityWebRequestDownloadAgentHelper.cs" />
+    <Compile Include="Entity\DefaultEntityHelper.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%286%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%287%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%288%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制%289%29.cs" />
+    <Compile Include="Entity\EmptyTemplate - 复制.cs" />
+    <Compile Include="Entity\EmptyTemplate.cs" />
+    <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Entity\EntityComponent.cs" />
+    <Compile Include="Entity\EntityLogic.cs" />
+    <Compile Include="Network\CSPacketBase.cs" />
+    <Compile Include="Network\CSPacketHeader.cs" />
+    <Compile Include="Network\NetworkChannelHelper.cs" />
+    <Compile Include="Network\PacketBase.cs" />
+    <Compile Include="Network\PacketHandlerBase.cs" />
+    <Compile Include="Network\PacketHandler\SCHeartBetHandler.cs" />
+    <Compile Include="Network\PacketHeaderBase.cs" />
+    <Compile Include="Network\PacketType.cs" />
+    <Compile Include="Network\Packet\CSHeartBeat.cs" />
+    <Compile Include="Network\Packet\SCHeartBeat.cs" />
+    <Compile Include="Network\SCPacketBase.cs" />
+    <Compile Include="Network\SCPacketHeader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\DefaultLoadResourceAgentHelper.cs" />
+    <Compile Include="Resource\DefaultResourceHelper.cs" />
+    <Compile Include="Resource\LoadResourceAgentHelperBase.cs" />
+    <Compile Include="Resource\ResourceCheckCompleteEventArgs.cs" />
+    <Compile Include="Resource\ResourceComponent.cs" />
+    <Compile Include="Resource\ResourceHelperBase.cs" />
+    <Compile Include="Resource\ResourceInitComleteEventArgs.cs" />
+    <Compile Include="UI\DefaultUIFormHelper.cs" />
+    <Compile Include="UI\UIForm.cs" />
+    <Compile Include="UI\UIFormHelperBase.cs" />
+    <Compile Include="UI\UIFormLogic.cs" />
+    <Compile Include="Utility\JsonHelper.cs" />
+    <Compile Include="Utility\Program.cs" />
+    <Compile Include="Utility\ZipHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\StarForce\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

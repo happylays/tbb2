@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarForce", "ClassLibrary1\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{360EB782-6510-4B3F-9964-B61D3A716225}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityGameFrame_Runtime", "UnityGameFrame_Runtime\UnityGameFrame_Runtime.csproj", "{F6950B0A-FA83-4333-8AE2-B3A79B728F64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{360EB782-6510-4B3F-9964-B61D3A716225}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{360EB782-6510-4B3F-9964-B61D3A716225}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{360EB782-6510-4B3F-9964-B61D3A716225}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6950B0A-FA83-4333-8AE2-B3A79B728F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6950B0A-FA83-4333-8AE2-B3A79B728F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6950B0A-FA83-4333-8AE2-B3A79B728F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6950B0A-FA83-4333-8AE2-B3A79B728F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
