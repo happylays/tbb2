@@ -1,10 +1,10 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_01D3D8F0.0394CB30"
+Content-Type: multipart/related; boundary="----=_NextPart_01D41139.83097470"
 
 This document is a Single File Web Page, also known as a Web Archive file.  If you are seeing this message, your browser or editor doesn't support Web Archive files.  Please download a browser that supports Web Archive.
 
-------=_NextPart_01D3D8F0.0394CB30
-Content-Location: file:///C:/A7196631/file9633.htm
+------=_NextPart_01D41139.83097470
+Content-Location: file:///C:/A7196634/file9636.htm
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/html; charset="gb2312"
 
@@ -19,8 +19,8 @@ xmlns=3D"http://www.w3.org/TR/REC-html40">
 <meta name=3DProgId content=3DWord.Document>
 <meta name=3DGenerator content=3D"Microsoft Word 15">
 <meta name=3DOriginator content=3D"Microsoft Word 15">
-<link rel=3DFile-List href=3D"file9633_files/filelist.xml">
-<link rel=3DEdit-Time-Data href=3D"file9633_files/editdata.mso">
+<link rel=3DFile-List href=3D"file9636_files/filelist.xml">
+<link rel=3DEdit-Time-Data href=3D"file9636_files/editdata.mso">
 <!--[if !mso]>
 <style>
 v\:* {behavior:url(#default#VML);}
@@ -31,25 +31,25 @@ w\:* {behavior:url(#default#VML);}
 <![endif]--><!--[if gte mso 9]><xml>
  <o:DocumentProperties>
   <o:Author>熊健</o:Author>
-  <o:LastAuthor>熊健</o:LastAuthor>
-  <o:Revision>23</o:Revision>
-  <o:TotalTime>70</o:TotalTime>
+  <o:LastAuthor>happylays@outlook.com</o:LastAuthor>
+  <o:Revision>32</o:Revision>
+  <o:TotalTime>6747</o:TotalTime>
   <o:Created>2017-12-28T08:16:00Z</o:Created>
-  <o:LastSaved>2018-04-20T13:39:00Z</o:LastSaved>
-  <o:Pages>3</o:Pages>
-  <o:Words>449</o:Words>
-  <o:Characters>2561</o:Characters>
-  <o:Lines>21</o:Lines>
+  <o:LastSaved>2018-07-01T04:46:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>468</o:Words>
+  <o:Characters>2673</o:Characters>
+  <o:Lines>22</o:Lines>
   <o:Paragraphs>6</o:Paragraphs>
-  <o:CharactersWithSpaces>3004</o:CharactersWithSpaces>
+  <o:CharactersWithSpaces>3135</o:CharactersWithSpaces>
   <o:Version>16.00</o:Version>
  </o:DocumentProperties>
  <o:OfficeDocumentSettings>
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-<link rel=3DthemeData href=3D"file9633_files/themedata.thmx">
-<link rel=3DcolorSchemeMapping href=3D"file9633_files/colorschememapping.xm=
+<link rel=3DthemeData href=3D"file9636_files/themedata.thmx">
+<link rel=3DcolorSchemeMapping href=3D"file9636_files/colorschememapping.xm=
 l">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
@@ -996,7 +996,7 @@ ue"
 	mso-font-charset:0;
 	mso-generic-font-family:roman;
 	mso-font-pitch:variable;
-	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
 @font-face
 	{font-family:微软雅黑;
 	panose-1:2 11 5 3 2 2 4 2 2 4;
@@ -1066,7 +1066,8 @@ p
 	font-family:宋体;
 	mso-bidi-font-family:宋体;}
 p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{mso-style-priority:34;
+	{mso-style-noshow:yes;
+	mso-style-priority:34;
 	mso-style-unhide:no;
 	mso-style-qformat:yes;
 	margin:0cm;
@@ -3479,7 +3480,7 @@ span
 ll'><span
         style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
         mso-hansi-font-family:"microsoft yahei";color:#333333'>熟悉图形渲染=
-流程和机制，可以编写不同类型的</span><span
+流程和机制，熟悉</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
         color:#333333'>shader<o:p></o:p></span></p>
@@ -3656,29 +3657,42 @@ t 0cm 3.75pt'>
 ont-size:
       10.0pt;mso-bidi-font-size:9.0pt;mso-ascii-font-family:"microsoft yahe=
 i";
-      mso-hansi-font-family:"microsoft yahei"'>技术专家</span></b></span><s=
-pan
+      mso-hansi-font-family:"microsoft yahei"'>前端<span class=3DGramE>架构=
+师</span></span></b></span><span
       class=3Dp52><b style=3D'mso-bidi-font-weight:normal'><span lang=3DEN-=
 US
       style=3D'font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"micro=
-soft yahei",serif'>|
-      <span
+soft yahei",serif'><span
       style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b></span><span
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span></span></b></span><span class=3Dp52><b style=3D'mso-bidi-font-=
+weight:
+      normal'><span style=3D'font-size:10.0pt;mso-bidi-font-size:9.0pt;
+      mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micros=
+oft yahei"'>《庆余年》</span></b></span><span
+      class=3Dp52><b style=3D'mso-bidi-font-weight:normal'><span lang=3DEN-=
+US
+      style=3D'font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"micro=
+soft yahei",serif'>MMO</span></b></span><span
       class=3Dp52><b style=3D'mso-bidi-font-weight:normal'><span style=3D'f=
 ont-size:
       10.0pt;mso-bidi-font-size:9.0pt;mso-ascii-font-family:"microsoft yahe=
 i";
-      mso-hansi-font-family:"microsoft yahei"'>盛大游戏技术中心</span></b><=
-/span><span
+      mso-hansi-font-family:"microsoft yahei"'>项目组</span></b></span><span
       class=3Dp52><b style=3D'mso-bidi-font-weight:normal'><span lang=3DEN-=
 US
       style=3D'font-size:10.0pt;mso-bidi-font-size:12.0pt'><span
       style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
-sp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </span></span></b></span><b style=3D'mso-bidi-font-weight:normal'><sp=
-an
+&nbsp;&nbsp;
+      </span></span></b></span><span class=3Dp52><b style=3D'mso-bidi-font-=
+weight:
+      normal'><span style=3D'font-size:10.0pt;mso-bidi-font-size:12.0pt'>盛=
+大游戏<span
+      lang=3DEN-US><span
+      style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span></span></span></b></span><b style=3D'mso-bidi-font-weight:norm=
+al'><span
       lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei",s=
 erif;
       color:#333333'><o:p></o:p></span></b></p>
@@ -3707,82 +3721,122 @@ nt-size:
 m 0cm 0cm'>
         <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break-a=
 ll'><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>1. </span><span style=3D'font-size:9.0pt;mso-ascii-f=
+ont-family:
+        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
+3333'>对项目提供一整套前端框架，框架为</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>3</span><span style=3D'font-size:9.0pt;mso-ascii-fon=
+t-family:
+        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
+3333'>层架构，底层为一系列</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>Service</span><span style=3D'font-size:9.0pt;mso-asc=
+ii-font-family:
+        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
+3333'>（比如</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>ResourceManager</span><span style=3D'font-size:9.0pt;
+        mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micr=
+osoft yahei";
+        color:#333333'>，</span><span lang=3DEN-US style=3D'font-size:9.0pt;
+        font-family:"microsoft yahei",serif;color:#333333'>Network</span><s=
+pan
         style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
-        mso-hansi-font-family:"microsoft yahei";color:#333333'>开发一套良好=
-架构的</span><span
+        mso-hansi-font-family:"microsoft yahei";color:#333333'>），中间层</=
+span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
-        color:#333333'>MMO</span><span style=3D'font-size:9.0pt;mso-ascii-f=
-ont-family:
+        color:#333333'>Bridge</span><span style=3D'font-size:9.0pt;mso-asci=
+i-font-family:
         "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>框架供其他工作室使用。研究和分析盛大游戏现有几个大型</span><span
+3333'>（对底层</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
-        color:#333333'>MMO</span><span style=3D'font-size:9.0pt;mso-ascii-f=
-ont-family:
+        color:#333333'>Service</span><span style=3D'font-size:9.0pt;mso-asc=
+ii-font-family:
         "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>项目的代码</span><span
+3333'>部分接口进行实现，比如</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>ResourceHelper</span><span style=3D'font-size:9.0pt;
+        mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micr=
+osoft yahei";
+        color:#333333'>完成资源实际加载），上层为基于</span><span lang=3DEN=
+-US style=3D'font-size:
+        9.0pt;font-family:"microsoft yahei",serif;color:#333333'>Component<=
+/span><span
+        style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
+        mso-hansi-font-family:"microsoft yahei";color:#333333'>的逻辑层（比=
+如</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>CharacterSystem</span><span style=3D'font-size:9.0pt;
+        mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micr=
+osoft yahei";
+        color:#333333'>包含很多</span><span lang=3DEN-US style=3D'font-size=
+:9.0pt;
+        font-family:"microsoft yahei",serif;color:#333333'>Component</span>=
+<span
+        style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
+        mso-hansi-font-family:"microsoft yahei";color:#333333'>完成角色内容=
+的驱动），</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
         color:#333333'><o:p></o:p></span></p>
         <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break-a=
 ll'><span
-        style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
-        mso-hansi-font-family:"microsoft yahei";color:#333333'>（包括《传奇=
-世界</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>2. </span><span style=3D'font-size:9.0pt;mso-ascii-f=
+ont-family:
+        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
+3333'>提供部分游戏编辑器的制作（包括技能编辑器，角色编辑等）</span><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'><o:p></o:p></span></p>
+        <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break-a=
+ll'><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'>3.</span><span style=3D'font-size:9.0pt;mso-ascii-fo=
+nt-family:
+        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
+3333'>同时框架结合了《传奇世界</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
         color:#333333'>3D</span><span style=3D'font-size:9.0pt;mso-ascii-fo=
 nt-family:
         "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>》，《光明勇士》，《神无月》），提取出有益的模块。</span><span
+3333'>》的部分底层实现</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
         color:#333333'><o:p></o:p></span></p>
         <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break-a=
 ll'><span
+        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
+,serif;
+        color:#333333'><o:p>&nbsp;</o:p></span></p>
+        <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break-a=
+ll'><span
         style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
-        mso-hansi-font-family:"microsoft yahei";color:#333333'>采用</span><=
-span
+        mso-hansi-font-family:"microsoft yahei";color:#333333'>《庆余年》将=
+在</span><span
         lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
 ,serif;
-        color:#333333'>ECS</span><span style=3D'font-size:9.0pt;mso-ascii-f=
-ont-family:
+        color:#333333'>2019</span><span style=3D'font-size:9.0pt;mso-ascii-=
+font-family:
         "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>的架构：</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'>ECS</span><span style=3D'font-size:9.0pt;mso-ascii-f=
-ont-family:
-        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>实体控制</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'>+Service</span><span style=3D'font-size:9.0pt;mso-as=
-cii-font-family:
-        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>底层模块</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'>+</span><span style=3D'font-size:9.0pt;mso-ascii-fon=
-t-family:
-        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>数据驱动</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'>+</span><span style=3D'font-size:9.0pt;mso-ascii-fon=
-t-family:
-        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>游戏模块（对几个</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'>MMO</span><span style=3D'font-size:9.0pt;mso-ascii-f=
-ont-family:
-        "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#33=
-3333'>游戏模块提取）</span><span
-        lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahei"=
-,serif;
-        color:#333333'><o:p></o:p></span></p>
+3333'>年<span
+        class=3DGramE>微信平台</span>上线，同期电视剧《庆余年》也将上线</sp=
+an><span lang=3DEN-US
+        style=3D'font-size:9.0pt;font-family:"microsoft yahei",serif;color:=
+#333333'><o:p></o:p></span></p>
         </td>
        </tr>
       </table>
@@ -3917,18 +3971,21 @@ microsoft yahei";
 yahei",serif;
               color:#333333'>ARPG</span><span style=3D'font-size:9.0pt;
               mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:
-              "microsoft yahei";color:#333333'>战斗体系的重构，图形渲染效果=
-的制作</span><span
-              lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft =
-yahei",serif;
+              "microsoft yahei";color:#333333'>战斗体系的重构，</span><span=
+ lang=3DEN-US
+              style=3D'font-size:9.0pt;font-family:"microsoft yahei",serif;
+              color:#333333'>Shader</span><span style=3D'font-size:9.0pt;
+              mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:
+              "microsoft yahei";color:#333333'>的制作</span><span lang=3DEN=
+-US
+              style=3D'font-size:9.0pt;font-family:"microsoft yahei",serif;
               color:#333333'><br>
-              </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"=
-microsoft yahei";
-              mso-hansi-font-family:"microsoft yahei";color:#333333'>架构：=
-</span><span
-              lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft =
-yahei",serif;
-              color:#333333'><br>
+              1. </span><span style=3D'font-size:9.0pt;mso-ascii-font-famil=
+y:
+              "microsoft yahei";mso-hansi-font-family:"microsoft yahei";
+              color:#333333'>架构：</span><span lang=3DEN-US style=3D'font-=
+size:9.0pt;
+              font-family:"microsoft yahei",serif;color:#333333'><br>
               </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"=
 microsoft yahei";
               mso-hansi-font-family:"microsoft yahei";color:#333333'>采用</=
@@ -3985,8 +4042,8 @@ ei";
               lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft =
 yahei",serif;
               color:#333333'><br>
-              ARPG</span><span style=3D'font-size:9.0pt;mso-ascii-font-fami=
-ly:
+              2. ARPG</span><span style=3D'font-size:9.0pt;mso-ascii-font-f=
+amily:
               "microsoft yahei";mso-hansi-font-family:"microsoft yahei";
               color:#333333'>战斗：</span><span lang=3DEN-US style=3D'font-=
 size:9.0pt;
@@ -4023,13 +4080,12 @@ y:
 span><span lang=3DEN-US
               style=3D'font-size:9.0pt;font-family:"microsoft yahei",serif;
               color:#333333'>Entity<br>
-              </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"=
-microsoft yahei";
-              mso-hansi-font-family:"microsoft yahei";color:#333333'>渲染效=
-果：</span><span
-              lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft =
-yahei",serif;
-              color:#333333'><br>
+              3. </span><span style=3D'font-size:9.0pt;mso-ascii-font-famil=
+y:
+              "microsoft yahei";mso-hansi-font-family:"microsoft yahei";
+              color:#333333'>渲染效果：</span><span lang=3DEN-US style=3D'f=
+ont-size:
+              9.0pt;font-family:"microsoft yahei",serif;color:#333333'><br>
               </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"=
 microsoft yahei";
               mso-hansi-font-family:"microsoft yahei";color:#333333'>卡通渲=
@@ -4106,10 +4162,8 @@ t;
         font-family:"microsoft yahei",serif;color:#333333'> <span
         style=3D'mso-spacerun:yes'>&nbsp;</span></span><span lang=3DEN-US
         style=3D'color:#333333'><span
-        style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><sp=
-an
         style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;&nbsp;&nbsp;&nbsp;</span></span></b><b
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></b><b
         style=3D'mso-bidi-font-weight:normal'><span style=3D'font-size:9.0p=
 t;
         mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micr=
@@ -4150,9 +4204,12 @@ ly:
 0cm 0cm 0cm'>
           <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break=
 -all'><span
-          style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
-          mso-hansi-font-family:"microsoft yahei";color:#333333'>《恋舞</sp=
-an><span
+          lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
+i",serif;
+          color:#333333'>1. </span><span style=3D'font-size:9.0pt;mso-ascii=
+-font-family:
+          "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#=
+333333'>《恋舞</span><span
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'>2</span><span style=3D'font-size:9.0pt;mso-ascii-f=
@@ -4194,8 +4251,8 @@ ont-size:9.0pt;
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'>IOC<br>
-          </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"micr=
-osoft yahei";
+          2. </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"m=
+icrosoft yahei";
           mso-hansi-font-family:"microsoft yahei";color:#333333'>卡通渲染：=
 </span><span
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
@@ -4214,35 +4271,19 @@ ont-family:
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'><br>
-          </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"micr=
-osoft yahei";
-          mso-hansi-font-family:"microsoft yahei";color:#333333'>换装：</sp=
-an><span
-          lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
-i",serif;
-          color:#333333'><br>
-          </span><span style=3D'font-size:9.0pt;mso-ascii-font-family:"micr=
-osoft yahei";
-          mso-hansi-font-family:"microsoft yahei";color:#333333'>部件合并，=
-减少</span><span
-          lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
-i",serif;
-          color:#333333'>DrawCall</span><span style=3D'font-size:9.0pt;
-          mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"mi=
-crosoft yahei";
-          color:#333333'>数量</span><span lang=3DEN-US style=3D'font-size:9=
-.0pt;
-          font-family:"microsoft yahei",serif;color:#333333'><br
-          style=3D'mso-special-character:line-break'>
+          <br style=3D'mso-special-character:line-break'>
           <![if !supportLineBreakNewLine]><br style=3D'mso-special-characte=
 r:
           line-break'>
           <![endif]><o:p></o:p></span></p>
           <p class=3DMsoNormal style=3D'line-height:18.0pt;word-break:break=
 -all'><span
-          style=3D'font-size:9.0pt;mso-ascii-font-family:"microsoft yahei";
-          mso-hansi-font-family:"microsoft yahei";color:#333333'>《恋舞</sp=
-an><span
+          lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
+i",serif;
+          color:#333333'>3. </span><span style=3D'font-size:9.0pt;mso-ascii=
+-font-family:
+          "microsoft yahei";mso-hansi-font-family:"microsoft yahei";color:#=
+333333'>《恋舞</span><span
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'>OL</span><span style=3D'font-size:9.0pt;mso-ascii-=
@@ -4388,8 +4429,9 @@ i",serif;
 -all'><span
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
-          color:#333333'><span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </sp=
-an><span
+          color:#333333'><span style=3D'mso-spacerun:yes'>&nbsp; </span><sp=
+an
+          style=3D'mso-spacerun:yes'>&nbsp;</span><span
           style=3D'mso-spacerun:yes'>&nbsp;</span></span><span style=3D'fon=
 t-size:
           9.0pt;mso-ascii-font-family:"microsoft yahei";mso-hansi-font-fami=
@@ -4426,7 +4468,8 @@ i",serif;
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'><br>
-          <span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+          <span style=3D'mso-spacerun:yes'>&nbsp; </span><span
+          style=3D'mso-spacerun:yes'>&nbsp;</span><span
           style=3D'mso-spacerun:yes'>&nbsp;</span></span><span style=3D'fon=
 t-size:
           9.0pt;mso-ascii-font-family:"microsoft yahei";mso-hansi-font-fami=
@@ -4546,7 +4589,8 @@ i",serif;
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'><br>
-          <span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+          <span style=3D'mso-spacerun:yes'>&nbsp; </span><span
+          style=3D'mso-spacerun:yes'>&nbsp;</span><span
           style=3D'mso-spacerun:yes'>&nbsp;</span></span><span style=3D'fon=
 t-size:
           9.0pt;mso-ascii-font-family:"microsoft yahei";mso-hansi-font-fami=
@@ -4573,7 +4617,8 @@ font-family:
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'><br>
-          <span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+          <span style=3D'mso-spacerun:yes'>&nbsp; </span><span
+          style=3D'mso-spacerun:yes'>&nbsp;</span><span
           style=3D'mso-spacerun:yes'>&nbsp;</span></span><span style=3D'fon=
 t-size:
           9.0pt;mso-ascii-font-family:"microsoft yahei";mso-hansi-font-fami=
@@ -4589,7 +4634,8 @@ icrosoft yahei";
           lang=3DEN-US style=3D'font-size:9.0pt;font-family:"microsoft yahe=
 i",serif;
           color:#333333'><br>
-          <span style=3D'mso-spacerun:yes'>&nbsp;&nbsp; </span><span
+          <span style=3D'mso-spacerun:yes'>&nbsp; </span><span
+          style=3D'mso-spacerun:yes'>&nbsp;</span><span
           style=3D'mso-spacerun:yes'>&nbsp;</span></span><span style=3D'fon=
 t-size:
           9.0pt;mso-ascii-font-family:"microsoft yahei";mso-hansi-font-fami=
@@ -5044,10 +5090,10 @@ i-font-weight:
 crosoft yahei",serif'>|<span
         style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
 p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
-nbsp;&nbsp;
+nbsp;
         </span><span style=3D'mso-spacerun:yes'>&nbsp;</span><span
         style=3D'mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
-p;</span></span></b></span><b
+p;&nbsp;</span></span></b></span><b
         style=3D'mso-bidi-font-weight:normal'><span style=3D'font-size:9.0p=
 t;
         mso-ascii-font-family:"microsoft yahei";mso-hansi-font-family:"micr=
@@ -5089,8 +5135,8 @@ mily:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
 
 </html>
 
-------=_NextPart_01D3D8F0.0394CB30
-Content-Location: file:///C:/A7196631/file9633_files/themedata.thmx
+------=_NextPart_01D41139.83097470
+Content-Location: file:///C:/A7196634/file9636_files/themedata.thmx
 Content-Transfer-Encoding: base64
 Content-Type: application/vnd.ms-officetheme
 
@@ -5154,8 +5200,8 @@ Z+z5GZ8HAADTIAAAFgAAAAAAAAAAAAAAAADWAgAAdGhlbWUvdGhlbWUvdGhlbWUxLnhtbFBLAQIt
 ABQABgAIAAAAIQAN0ZCftgAAABsBAAAnAAAAAAAAAAAAAAAAAKkKAAB0aGVtZS90aGVtZS9fcmVs
 cy90aGVtZU1hbmFnZXIueG1sLnJlbHNQSwUGAAAAAAUABQBdAQAApAsAAAAA
 
-------=_NextPart_01D3D8F0.0394CB30
-Content-Location: file:///C:/A7196631/file9633_files/colorschememapping.xml
+------=_NextPart_01D41139.83097470
+Content-Location: file:///C:/A7196634/file9636_files/colorschememapping.xml
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/xml
 
@@ -5164,15 +5210,15 @@ Content-Type: text/xml
  bg1=3D"lt1" tx1=3D"dk1" bg2=3D"lt2" tx2=3D"dk2" accent1=3D"accent1" accent=
 2=3D"accent2" accent3=3D"accent3" accent4=3D"accent4" accent5=3D"accent5" a=
 ccent6=3D"accent6" hlink=3D"hlink" folHlink=3D"folHlink"/>
-------=_NextPart_01D3D8F0.0394CB30
-Content-Location: file:///C:/A7196631/file9633_files/filelist.xml
+------=_NextPart_01D41139.83097470
+Content-Location: file:///C:/A7196634/file9636_files/filelist.xml
 Content-Transfer-Encoding: quoted-printable
 Content-Type: text/xml; charset="utf-8"
 
 <xml xmlns:o=3D"urn:schemas-microsoft-com:office:office">
- <o:MainFile HRef=3D"../file9633.htm"/>
+ <o:MainFile HRef=3D"../file9636.htm"/>
  <o:File HRef=3D"themedata.thmx"/>
  <o:File HRef=3D"colorschememapping.xml"/>
  <o:File HRef=3D"filelist.xml"/>
 </xml>
-------=_NextPart_01D3D8F0.0394CB30--
+------=_NextPart_01D41139.83097470--
